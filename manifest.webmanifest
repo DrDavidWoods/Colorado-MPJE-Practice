@@ -1,0 +1,9 @@
+{
+  "name": "Colorado MPJE Mastery",
+  "short_name": "CO MPJE",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fa",
+  "theme_color": "#0b1f33",
+  "description": "Mobile-first Colorado MPJE law mastery practice."
+}
