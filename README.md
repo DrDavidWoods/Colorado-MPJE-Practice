@@ -41,3 +41,19 @@ Verified through **2026-09-16** using current Colorado Board rules, 2026 Colorad
 ## Important
 
 This is a study tool, not an official NABP product and not legal advice. A high score is evidence of performance on this bank, not a guarantee of MPJE passage. Use the official Pre-MPJE as an external readiness check when appropriate.
+
+
+## v2.1 cache fix
+
+This build adds aggressive cache invalidation for GitHub Pages/PWA updates.
+
+After deployment, the header should show:
+
+**v2.1.0 • 200 questions loaded**
+
+If an older browser session still shows v1/60 questions:
+1. Reload the page once.
+2. If necessary, close the tab and reopen it.
+3. As a last resort, clear site data for the GitHub Pages site and reload.
+
+The service worker now uses network-first loading for `index.html`, `app.js`, and `questions.js`, calls `skipWaiting()`, claims existing clients, and automatically reloads after the new worker takes control.

@@ -1,6 +1,6 @@
 window.APP_META = {
   "title": "Colorado MPJE Mastery v2",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "lawVerifiedThrough": "2026-09-16",
   "questionCount": 200,
   "officialExam": {

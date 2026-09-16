@@ -71,3 +71,5 @@ button{cursor:pointer}
 .blueprint-grid span{border:1px solid var(--border);background:var(--surface2);border-radius:12px;padding:10px;font-size:.78rem;line-height:1.35}
 .blueprint-grid b{display:block;font-size:1.05rem;color:var(--navy);margin-bottom:2px}
 @media(max-width:430px){.blueprint-grid{grid-template-columns:1fr}}
+
+#buildInfo{display:block;font-size:.66rem;color:#7a8997;margin-top:1px}

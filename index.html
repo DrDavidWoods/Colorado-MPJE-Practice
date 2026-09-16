@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#0b1f33">
   <meta name="description" content="Colorado MPJE law mastery app with source-verified questions, spaced retrieval, confidence tracking, and mobile-first design.">
   <title>Colorado MPJE Mastery</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.webmanifest?v=2.1.0">
+  <link rel="stylesheet" href="styles.css?v=2.1.0">
 </head>
 <body>
   <div id="app">
@@ -15,7 +15,7 @@
       <button id="homeBtn" class="icon-btn" aria-label="Home">CO</button>
       <div class="brand">
         <strong>Colorado MPJE Mastery</strong>
-        <span id="lawDate">Law verified through —</span>
+        <span id="lawDate">Law verified through —</span><span id="buildInfo">Loading build…</span>
       </div>
       <button id="statsBtn" class="icon-btn" aria-label="Analytics">▥</button>
     </header>
@@ -199,7 +199,7 @@
     </form>
   </dialog>
 
-  <script src="questions.js"></script>
-  <script src="app.js"></script>
+  <script src="questions.js?v=2.1.0"></script>
+  <script src="app.js?v=2.1.0"></script>
 </body>
 </html>

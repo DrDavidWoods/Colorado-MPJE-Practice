@@ -74,6 +74,8 @@
   function updateHome(){
     $("#lawDate").textContent = `Law verified through ${META.lawVerifiedThrough || "—"}`;
     $("#bankCount").textContent = BANK.length;
+    const bi=$("#buildInfo");
+    if(bi) bi.textContent=`v${META.version || "?"} • ${BANK.length} questions loaded`;
     const due = BANK.filter(q=>{const p=qProgress(q.id); return p.attempts && (!p.nextReview || p.nextReview<=today());}).length;
     $("#dueCount").textContent = due;
     const attempted = BANK.filter(q=>qProgress(q.id).attempts);
@@ -431,7 +433,18 @@
   // ---------- Init ----------
   async function init(){
     await loadState(); buildTopicDialog(); updateHome();
-    if("serviceWorker" in navigator) navigator.serviceWorker.register("./service-worker.js").catch(()=>{});
+    if("serviceWorker" in navigator){
+      try{
+        const reg=await navigator.serviceWorker.register("./service-worker.js?v=2.1.0");
+        await reg.update();
+        let refreshing=false;
+        navigator.serviceWorker.addEventListener("controllerchange",()=>{
+          if(refreshing) return;
+          refreshing=true;
+          location.reload();
+        });
+      }catch(e){}
+    }
   }
   init();
 })();
