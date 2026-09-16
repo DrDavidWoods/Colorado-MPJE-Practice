@@ -39,3 +39,28 @@ Verified through: **2026-09-16**
 ## Quality-control policy used in this build
 
 Questions were restricted to rules that could be tied to an identified authority. The app does not display topic, authority, or explanation before the user commits an answer when those details could cue the response.
+
+
+## v2 blueprint and difficulty audit
+
+Current NABP competency statements (for exams before March 1, 2027):
+- Area 1 — Licensure / Personnel: 22%
+- Area 2 — Pharmacist Practice: 33%
+- Area 3 — Dispensing Requirements: 24%
+- Area 4 — Pharmacy Operations: 21%
+
+Source: https://nabp.pharmacy/programs/examinations/mpje/competency-statements/
+
+v2 active bank distribution:
+- 44 / 200 Area 1
+- 66 / 200 Area 2
+- 48 / 200 Area 3
+- 42 / 200 Area 4
+
+Full 120-question simulation distribution:
+- 26 Area 1
+- 40 Area 2
+- 29 Area 3
+- 25 Area 4
+
+New v2 scenarios also use current Colorado Board provisions on return-to-stock, outlet relocation/closure, centralized processing/central fill, telepharmacy, SPDO recordkeeping, and sterile/nonsterile compounding.

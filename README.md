@@ -1,45 +1,43 @@
-# Colorado MPJE Mastery
+# Colorado MPJE Mastery v2 — Challenge Build
 
-A mobile-first, offline-capable Colorado MPJE study app built around legal accuracy, difficult retrieval practice, and concept-level mastery.
+This version is intentionally harder than v1. It is built to test legal reasoning rather than simple recognition.
 
-## Current verified starter bank
+## What changed
 
-- **60 active questions**
-- Law verification date: **2026-09-16**
-- Colorado Board Rules: 3 CCR 719-1
-- 2026 Colorado Revised Statutes / 2026 enacted changes
-- Federal controlled-substance rules in 21 CFR Part 1306
-- MPJE exam-format reference from NABP
+- **200 active questions**
+- Exact bank distribution matching the current MPJE blueprint:
+  - Area 1 — Licensure / Personnel: **44 questions (22%)**
+  - Area 2 — Pharmacist Practice: **66 questions (33%)**
+  - Area 3 — Dispensing Requirements: **48 questions (24%)**
+  - Area 4 — Pharmacy Operations: **42 questions (21%)**
+- Full 120-question simulation draws:
+  - **26 Area 1**
+  - **40 Area 2**
+  - **29 Area 3**
+  - **25 Area 4**
+- Simulation timer: **150 minutes**
+- Harder scenario/application construction, including multi-rule controlled-substance timelines, personnel ratios, Colorado/federal interaction, operational deadlines, and compounding requirements
+- Difficulty badge hidden in exam mode
+- Answer choice content may randomize, but display labels always render in clean **A, B, C, D** order
+- Internal option IDs are hidden from the learner
+- Authority remains hidden until after answering in practice mode
+- Exam mode does not label questions as “Colorado,” “federal,” or by topic
 
-This is intentionally a **starter bank**, not a padded 300-question bank. The build specification explicitly prioritizes a smaller set of verified, difficult questions over a large bank of weak or uncertain questions.
+## Why v2 is harder
 
-## Features
+The current MPJE competency statements say the examination assesses application of knowledge, skills, and abilities to evaluate legal situations. They also state that the exam does not distinguish federal from state questions; candidates answer according to the prevailing law of the jurisdiction.
 
-- Mobile-first responsive layout
-- Single-best-answer, select-all-that-apply, and scenario questions
-- Colorado-only, federal-only, mixed, topic, weak-area, missed, bookmarked, and difficult modes
-- Concept-level mastery scoring
-- Confidence tracking (Guess / Unsure / Confident)
-- Confidently-wrong answers prioritized
-- Spaced review scheduling
-- Local IndexedDB progress storage
-- Offline service worker
-- Authority links hidden until after answering
-- Timed MPJE simulation
-  - NABP's current MPJE format is 120 questions / 150 minutes
-  - Until the verified bank reaches 120 unique active questions, simulation uses all verified questions with a proportionally scaled timer
-  - The app automatically switches to 120 / 150 once the bank reaches 120 active questions
+The challenge bank therefore emphasizes:
+- multiple legal facts in one stem;
+- independent clocks/limits (eg, prescription age + refill count + transfer history);
+- distractors that would be correct under a slightly different fact pattern;
+- role/scope questions that separate physical tasks from clinical judgment;
+- operational questions that combine timing, records, facility, and accountability rules.
 
-## GitHub Pages
+## Law verification
 
-1. Create or open your repository.
-2. Upload **all files in this folder** to the repository root.
-3. Commit the files.
-4. Open **Settings → Pages**.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Select `main` and `/ (root)`, then save.
-7. GitHub will provide the public URL after deployment.
+Verified through **2026-09-16** using current Colorado Board rules, 2026 Colorado pharmacy legislation, and current federal controlled-substance regulations linked inside the app.
 
 ## Important
 
-This is a study aid, not legal advice. Pharmacy law changes. Before relying on a rule in practice, open the authority link shown after the question and verify the current source.
+This is a study tool, not an official NABP product and not legal advice. A high score is evidence of performance on this bank, not a guarantee of MPJE passage. Use the official Pre-MPJE as an external readiness check when appropriate.

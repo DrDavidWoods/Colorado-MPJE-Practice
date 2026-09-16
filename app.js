@@ -112,6 +112,26 @@
     })[mode] || "Practice";
   }
 
+  function chooseWeightedExam(pool){
+    // Current MPJE blueprint before March 1, 2027:
+    // Area 1 22%, Area 2 33%, Area 3 24%, Area 4 21%.
+    // For 120 items: 26 / 40 / 29 / 25 (closest whole-number representation).
+    const quota = {1:26, 2:40, 3:29, 4:25};
+    const chosen=[];
+    Object.entries(quota).forEach(([area,count])=>{
+      let candidates=shuffle(pool.filter(q=>String(q.competencyArea)===String(area)));
+      // Prefer first-seen and due questions, then higher difficulty.
+      candidates.sort((a,b)=>{
+        const pa=qProgress(a.id), pb=qProgress(b.id);
+        const sa=(pa.attempts===0?4:0)+(pa.nextReview&&pa.nextReview<=today()?2:0)+(a.difficulty||0);
+        const sb=(pb.attempts===0?4:0)+(pb.nextReview&&pb.nextReview<=today()?2:0)+(b.difficulty||0);
+        return sb-sa;
+      });
+      chosen.push(...candidates.slice(0,count));
+    });
+    return shuffle(chosen);
+  }
+
   function startSession(mode, topics=[]){
     const pool=chooseQuestions(mode,topics);
     if(!pool.length){
@@ -122,14 +142,17 @@
     let exam=false, minutes=null;
     if(mode==="exam"){
       exam=true;
-      const count = Math.min(120,pool.length);
-      qs=shuffle(pool).slice(0,count);
-      minutes = count>=120 ? 150 : Math.max(30, Math.round(count*1.25)); // scaled starter-bank simulation
+      qs=chooseWeightedExam(pool);
+      if(qs.length<120){
+        alert("The verified bank does not yet contain enough questions in every blueprint area for a full 120-question simulation.");
+        return;
+      }
+      minutes=150;
     }else{
       qs=pool.slice(0, Math.min(30,pool.length));
     }
     session={mode,topics,questions:qs,index:0,exam,minutes,answers:{},startedAt:Date.now(),expiresAt: exam?Date.now()+minutes*60000:null};
-    $("#quizModeName").textContent = exam && qs.length<120 ? `Verified-bank Simulation (${qs.length} Q)` : modeName(mode);
+    $("#quizModeName").textContent = modeName(mode);
     $("#timer").hidden=!exam;
     if(exam) startTimer();
     showView("quiz");
@@ -154,6 +177,7 @@
     $("#submitAnswer").disabled=true; $("#nextQuestion").disabled=true;
     $("#questionNumber").textContent=`Question ${session.index+1} of ${session.questions.length}`;
     $("#difficultyBadge").textContent=`Level ${current.difficulty}`;
+    $("#difficultyBadge").hidden=!!session.exam;
     $("#questionType").textContent = current.type==="multi" ? "Select all that apply" : current.type==="scenario" ? "Scenario / application" : "Single best answer";
     $("#questionStem").textContent=current.stem;
     $("#progressBar").style.width=`${((session.index)/session.questions.length)*100}%`;
@@ -166,10 +190,14 @@
     }
     const randomized = current._renderAnswers || shuffle(current.answers);
     current._renderAnswers=randomized;
+    current._displayLabels = {};
+    const displayLetters=["A","B","C","D","E","F"];
     const wrap=$("#answers"); wrap.innerHTML="";
-    randomized.forEach(a=>{
+    randomized.forEach((a,idx)=>{
+      const label=displayLetters[idx] || String(idx+1);
+      current._displayLabels[a.id]=label;
       const btn=document.createElement("button"); btn.type="button"; btn.className="answer"; btn.dataset.id=a.id;
-      btn.innerHTML=`<span class="letter">${a.id}</span><span>${escapeHtml(a.text)}</span>`;
+      btn.innerHTML=`<span class="letter">${label}</span><span>${escapeHtml(a.text)}</span>`;
       if(selected.has(a.id)) btn.classList.add("selected");
       btn.addEventListener("click",()=>toggleAnswer(a.id));
       wrap.appendChild(btn);
@@ -226,12 +254,13 @@
     });
 
     const analysis=$("#answerAnalysis"); analysis.innerHTML="";
-    current.answers.forEach(a=>{
+    (current._renderAnswers || current.answers).forEach(a=>{
       const div=document.createElement("div"); div.className="analysis-item";
+      const label=(current._displayLabels && current._displayLabels[a.id]) || "?";
       if(current.correctAnswers.includes(a.id)){
-        div.innerHTML=`<b>${a.id} — Correct.</b> ${escapeHtml(current.explanation)}`;
+        div.innerHTML=`<b>${label} — Correct.</b> ${escapeHtml(current.explanation)}`;
       }else{
-        div.innerHTML=`<b>${a.id}.</b> ${escapeHtml(current.distractorExplanations[a.id] || "This option does not satisfy the governing rule.")}`;
+        div.innerHTML=`<b>${label}.</b> ${escapeHtml(current.distractorExplanations[a.id] || "This option does not satisfy the governing rule.")}`;
       }
       analysis.appendChild(div);
     });
@@ -323,7 +352,20 @@
       <div class="stat-card"><span>Accuracy</span><strong>${pct(correct,session.questions.length)}%</strong></div>
       <div class="stat-card"><span>Correct</span><strong>${correct}/${session.questions.length}</strong></div>
       <div class="stat-card"><span>Answered</span><strong>${answered}/${session.questions.length}</strong></div>`;
-    const breakdown=$("#examBreakdown"); breakdown.innerHTML="<h3>Topic diagnostic</h3>";
+    const breakdown=$("#examBreakdown"); breakdown.innerHTML="<h3>Blueprint-area diagnostic</h3>";
+    const areaStats={};
+    session.questions.forEach(q=>{
+      const key=q.competencyAreaName || `Area ${q.competencyArea}`;
+      areaStats[key] ||= {correct:0,total:0};
+      const a=session.answers[q.id];
+      const c=a?isCorrect(q,new Set(a.selected)):false;
+      areaStats[key].total++; if(c) areaStats[key].correct++;
+    });
+    const areaTable=document.createElement("table"); areaTable.className="stats-table";
+    areaTable.innerHTML="<thead><tr><th>Competency area</th><th>Accuracy</th></tr></thead><tbody>"+
+      Object.entries(areaStats).map(([k,v])=>`<tr><td>${escapeHtml(k)}</td><td>${pct(v.correct,v.total)}%</td></tr>`).join("")+"</tbody>";
+    breakdown.appendChild(areaTable);
+    const th=document.createElement("h3"); th.textContent="Topic diagnostic"; th.style.marginTop="22px"; breakdown.appendChild(th);
     const table=document.createElement("table"); table.className="stats-table";
     table.innerHTML="<thead><tr><th>Topic</th><th>Accuracy</th></tr></thead><tbody>"+
       Object.entries(topic).sort((a,b)=>a[0].localeCompare(b[0])).map(([k,v])=>`<tr><td>${escapeHtml(k)}</td><td>${pct(v.correct,v.total)}%</td></tr>`).join("")+"</tbody>";
