@@ -64,3 +64,8 @@ Full 120-question simulation distribution:
 - 25 Area 4
 
 New v2 scenarios also use current Colorado Board provisions on return-to-stock, outlet relocation/closure, centralized processing/central fill, telepharmacy, SPDO recordkeeping, and sterile/nonsterile compounding.
+
+
+## v2.2 replacement audit
+
+All 21 artificial audit-wrapper variants were removed. Replacement questions were grounded in the current 3 CCR 719-1 provisions including Rules 1.00.16, 1.00.22, 1.00.25, 1.00.26, 2.00.10, 2.01.10, 2.01.20, 2.01.50, 3.00.20, 3.00.21, 4.00.40, 4.03.00, 4.05.00, 7.00.10, 24.00.20, and 24.00.50.

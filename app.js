@@ -180,7 +180,7 @@
     $("#questionNumber").textContent=`Question ${session.index+1} of ${session.questions.length}`;
     $("#difficultyBadge").textContent=`Level ${current.difficulty}`;
     $("#difficultyBadge").hidden=!!session.exam;
-    $("#questionType").textContent = current.type==="multi" ? "Select all that apply" : current.type==="scenario" ? "Scenario / application" : "Single best answer";
+    $("#questionType").textContent = current.type==="multi" ? "Select all that apply" : current.type==="ktype" ? "K-type / combination" : current.type==="scenario" ? "Scenario / application" : "Single best answer";
     $("#questionStem").textContent=current.stem;
     $("#progressBar").style.width=`${((session.index)/session.questions.length)*100}%`;
     const p=qProgress(current.id); $("#bookmarkBtn").textContent=p.bookmarked?"★":"☆";
@@ -435,7 +435,7 @@
     await loadState(); buildTopicDialog(); updateHome();
     if("serviceWorker" in navigator){
       try{
-        const reg=await navigator.serviceWorker.register("./service-worker.js?v=2.1.0");
+        const reg=await navigator.serviceWorker.register("./service-worker.js?v=4.0.0");
         await reg.update();
         let refreshing=false;
         navigator.serviceWorker.addEventListener("controllerchange",()=>{

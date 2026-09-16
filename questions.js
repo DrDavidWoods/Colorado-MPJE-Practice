@@ -1,8 +1,8 @@
 window.APP_META = {
-  "title": "Colorado MPJE Mastery v2",
-  "version": "2.1.0",
+  "title": "Colorado MPJE Mastery v3 Strict",
+  "version": "4.0.0",
   "lawVerifiedThrough": "2026-09-16",
-  "questionCount": 200,
+  "questionCount": 120,
   "officialExam": {
     "questions": 120,
     "minutes": 150,
@@ -13,22 +13,22 @@ window.APP_META = {
     "1": {
       "name": "Licensure / Personnel",
       "weight": 22,
-      "bankCount": 44
+      "bankCount": 26
     },
     "2": {
       "name": "Pharmacist Practice",
       "weight": 33,
-      "bankCount": 66
+      "bankCount": 40
     },
     "3": {
       "name": "Dispensing Requirements",
       "weight": 24,
-      "bankCount": 48
+      "bankCount": 29
     },
     "4": {
       "name": "Pharmacy Operations",
       "weight": 21,
-      "bankCount": 42
+      "bankCount": 25
     }
   },
   "examSelection": {
@@ -37,68 +37,1451 @@ window.APP_META = {
     "3": 29,
     "4": 25
   },
-  "difficultyNote": "Challenge bank emphasizes multi-step scenario/application items; exam mode hides jurisdiction and topic cues."
+  "difficultyNote": "Challenge bank emphasizes multi-step scenario/application items; exam mode hides jurisdiction and topic cues.",
+  "auditWrapperQuestions": 0,
+  "releaseNote": "Whole-bank adversarial review passed project acceptance gates.",
+  "strictQualityBuild": true,
+  "qualityGateVersion": "adversarial-v4",
+  "qualityAuditPassed": true,
+  "qualityAuditDate": "2026-09-16"
 };
 
 window.QUESTION_BANK = [
   {
-    "id": "CO-COUNSEL-01",
-    "conceptId": "co-counsel-new",
+    "id": "A1-LIC-CHANGE-04",
+    "conceptId": "A1-LICENSURE-LIFECYCLE",
+    "familyId": "A1-LICENSURE-LIFECYCLE",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
     "jurisdiction": "Colorado",
-    "topic": "Patient Counseling",
-    "subtopic": "Patient Counseling",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "A patient is picking up a medication that represents new medication therapy. The patient has not declined counseling. Which statement best reflects the Colorado pharmacist's legal obligation?",
+    "topic": "Licensure / Personnel",
+    "subtopic": "Licensure / Personnel",
+    "difficulty": 5,
+    "type": "multi",
+    "stem": "A pharmacist changed residential address 35 days ago, changed legal name 18 days ago, and ceased serving as pharmacist manager this morning. Which reporting obligations are implicated now? Select ALL that apply.",
     "answers": [
       {
         "id": "opt1",
-        "text": "Counseling is required only if the patient asks a drug-information question."
+        "text": "The residential-address change is overdue under the 30-day reporting requirement."
       },
       {
         "id": "opt2",
-        "text": "The pharmacist must provide patient counseling on the new medication therapy."
+        "text": "The legal-name change remains within the 30-day reporting period."
       },
       {
         "id": "opt3",
-        "text": "Counseling may be delegated to any trained pharmacy technician."
+        "text": "The pharmacist-manager departure requires immediate written notice to the Board."
       },
       {
         "id": "opt4",
-        "text": "Written manufacturer information alone always satisfies the counseling requirement."
+        "text": "The legal-name change is overdue because that change uses a 10-day reporting period."
+      },
+      {
+        "id": "opt5",
+        "text": "The pharmacist-manager departure may be reported within the same 30-day period as an address change."
       }
     ],
     "correctAnswers": [
-      "opt2"
+      "opt1",
+      "opt2",
+      "opt3"
     ],
-    "explanation": "Colorado requires pharmacist counseling on new medication therapy, subject to statutory exceptions. The obligation is not triggered only by a patient question.",
+    "explanation": "Rule 4.05.00 uses different clocks: name and residential/e-mail address changes are reported within 30 days, while a pharmacist must immediately notify the Board in writing when the pharmacist ceases to be pharmacist manager.",
     "distractorExplanations": {
-      "opt1": "Colorado imposes an affirmative counseling duty for new medication therapy.",
-      "opt3": "A technician cannot replace the pharmacist for the pharmacist counseling duty.",
-      "opt4": "Written material is not automatically a universal substitute for pharmacist counseling."
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
     },
-    "ruleToRemember": "New medication therapy triggers pharmacist counseling unless an applicable exception or patient refusal applies.",
+    "misconceptionTested": {
+      "opt4": "Misapplies a nearby legal rule.",
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Do not assume every Board notification uses the same clock.",
     "authority": [
       {
-        "label": "Colorado Board Rule 1.00.18",
+        "label": "Colorado Board Rule 4.05.00",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1, Rule 1.00.18"
+        "citation": "3 CCR 719-1, Rule 4.05.00(a)-(c)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 3,
+    "reasoningLevel": 5,
+    "subconceptId": "co-license-change-reporting",
+    "nabpCompetencies": [
+      "1.2"
+    ]
+  },
+  {
+    "id": "A1-IMPAIRMENT-06",
+    "conceptId": "A1-IMPAIRMENT-REPORTING",
+    "familyId": "A1-IMPAIRMENT-REPORTING",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
+    "jurisdiction": "Colorado",
+    "topic": "Licensure / Personnel",
+    "subtopic": "Licensure / Personnel",
+    "difficulty": 3,
+    "type": "scenario",
+    "stem": "During a shift, a pharmacist manager discovers that a staff pharmacist is impaired by alcohol and cannot perform duties competently. The staff pharmacist acknowledges an alcohol-use disorder and asks whether a confidential agreement can be used instead of the peer-health program. Which response best accounts for both pharmacists\u2019 obligations?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The manager reports the impairment immediately, and the pharmacist seeks assistance through the Diversion Program."
+      },
+      {
+        "id": "opt2",
+        "text": "The manager reports within 30 days, and the pharmacist may proceed through a confidential-agreement pathway."
+      },
+      {
+        "id": "opt3",
+        "text": "The manager reports immediately, and the pharmacist may use a confidential agreement after stopping clinical duties."
+      },
+      {
+        "id": "opt4",
+        "text": "The manager reports within 10 days, and the Diversion Program is used only after a Board referral."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Rule 7.00.10 requires the pharmacist manager to report a pharmacist impaired by alcohol or drugs immediately upon discovery. Rule 24.00.50 directs a pharmacist or intern with a substance-use disorder or habitual/excessive use or abuse of alcohol or specified drugs to seek assistance from the Diversion Program and states that such individuals are not eligible for the cited confidential-agreement pathway.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Impairment at work triggers immediate manager reporting; substance-use disorder is routed to the Diversion Program.",
+    "authority": [
+      {
+        "label": "Colorado Board Rules 7.00.10(c) and 24.00.50",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rules 7.00.10(c), 24.00.50"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 2,
+    "reasoningLevel": 3,
+    "subconceptId": "co-impairment-dual-reporting",
+    "nabpCompetencies": [
+      "1.2"
+    ]
+  },
+  {
+    "id": "A1-LIC-REINSTATE-02",
+    "conceptId": "A1-LICENSURE-LIFECYCLE",
+    "familyId": "A1-LICENSURE-LIFECYCLE",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
+    "jurisdiction": "Colorado",
+    "topic": "Licensure / Personnel",
+    "subtopic": "Licensure / Personnel",
+    "difficulty": 4,
+    "type": "scenario",
+    "stem": "A Colorado pharmacist license has been inactive for 30 months. The pharmacist completed 24 hours of continuing education during the most recent 24 months and six additional qualifying hours earlier in the inactive period. Which remaining step is required, assuming the application and fee are submitted?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Pass the Board-approved jurisprudence examination before the license is reinstated or reactivated."
+      },
+      {
+        "id": "opt2",
+        "text": "Complete another 24 hours of continuing education because recent hours cannot count toward reinstatement."
+      },
+      {
+        "id": "opt3",
+        "text": "Practice under direct pharmacist supervision for six months before requesting full reactivation."
+      },
+      {
+        "id": "opt4",
+        "text": "Repeat the pharmacist licensure examination because inactivity beyond 24 months cancels prior exam credit."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "For a license inactive or expired more than 24 months, the pharmacist must submit one CE hour for each month inactive or expired, with 24 of those hours completed in the prior 24 months, and pass the approved jurisprudence examination. Thirty months therefore requires 30 CE hours total, which the facts supply.",
+    "distractorExplanations": {
+      "opt2": "The recent 24 hours are part of the total, not an additional block beyond it.",
+      "opt3": "The cited reinstatement rule does not impose a six-month supervised-practice requirement.",
+      "opt4": "The rule requires the jurisprudence examination, not repetition of the pharmacist licensure examination."
+    },
+    "misconceptionTested": {
+      "opt2": "Double-counts the recent-CE requirement.",
+      "opt3": "Imports an internship-style requirement into reinstatement.",
+      "opt4": "Confuses jurisprudence requalification with repeating the full licensure exam."
+    },
+    "ruleToRemember": "Over 24 months inactive/expired: one CE hour per month, 24 recent hours, plus the jurisprudence examination.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 4.03.00(a)",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 4.03.00(a)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 2,
+    "reasoningLevel": 4,
+    "subconceptId": "co-license-reinstatement-over24",
+    "nabpCompetencies": [
+      "1.2"
+    ]
+  },
+  {
+    "id": "A1-LIC-REINSTATE-03",
+    "conceptId": "A1-LICENSURE-LIFECYCLE",
+    "familyId": "A1-LICENSURE-LIFECYCLE",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
+    "jurisdiction": "Colorado",
+    "topic": "Licensure / Personnel",
+    "subtopic": "Licensure / Personnel",
+    "difficulty": 4,
+    "type": "scenario",
+    "stem": "A Colorado pharmacist license has been inactive for 18 months. The pharmacist submits the reinstatement application and fee with 24 hours of continuing education completed during the 24 months before application. No other disqualifying facts are present. Which statement best describes this pathway?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The under-24-month pathway uses 24 recent CE hours without adding the jurisprudence examination required for longer inactivity."
+      },
+      {
+        "id": "opt2",
+        "text": "The under-24-month pathway uses one CE hour per inactive month and also requires the jurisprudence examination before reactivation."
+      },
+      {
+        "id": "opt3",
+        "text": "The under-24-month pathway uses 24 recent CE hours and also requires the jurisprudence examination before the license is reactivated."
+      },
+      {
+        "id": "opt4",
+        "text": "The under-24-month pathway uses one CE hour per inactive month without adding the jurisprudence examination used after longer inactivity."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "For inactivity or expiration of less than 24 months, Rule 4.03.00(b) requires the application and fee plus 24 hours of CE completed in the preceding 24 months. The jurisprudence examination appears in the over-24-month pathway.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt3": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt4": "This option applies a related legal rule or a nearby but different factual pathway."
+    },
+    "misconceptionTested": {
+      "opt2": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt3": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt4": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway."
+    },
+    "ruleToRemember": "Under 24 months inactive/expired: application, fee, and 24 recent CE hours under the cited rule.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 4.03.00(b)",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 4.03.00(b)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 2,
+    "reasoningLevel": 4,
+    "subconceptId": "co-license-reinstatement-under24",
+    "nabpCompetencies": [
+      "1.2"
+    ]
+  },
+  {
+    "id": "A1-LIC-TRANSFER-01",
+    "conceptId": "A1-LICENSURE-LIFECYCLE",
+    "familyId": "A1-LICENSURE-LIFECYCLE",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
+    "jurisdiction": "Colorado",
+    "topic": "Licensure / Personnel",
+    "subtopic": "Licensure / Personnel",
+    "difficulty": 4,
+    "type": "scenario",
+    "stem": "A pharmacist applies for Colorado licensure by transfer using an active license from State A. The pharmacist also holds a current license in State B that is subject to an active disciplinary order. The applicant otherwise meets Colorado transfer requirements. Which conclusion best fits the Board rule?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The State B discipline prevents the applicant from meeting Colorado\u2019s good-standing requirement."
+      },
+      {
+        "id": "opt2",
+        "text": "The State B discipline is irrelevant because the transfer application relies on the State A license."
+      },
+      {
+        "id": "opt3",
+        "text": "The application qualifies if State A confirms at least one year of licensed pharmacy practice."
+      },
+      {
+        "id": "opt4",
+        "text": "The application qualifies if the State B order does not restrict dispensing within Colorado."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado requires the license used for transfer to be active, current, and in good standing, and all pharmacist licenses held in other states must also be in good standing. The rule defines good standing as not being subject to active disciplinary action in any state.",
+    "distractorExplanations": {
+      "opt2": "Colorado expressly considers all pharmacist licenses held by the applicant.",
+      "opt3": "The experience requirement does not replace the separate good-standing requirement.",
+      "opt4": "The rule turns on active discipline, not whether that order restricts Colorado dispensing."
+    },
+    "misconceptionTested": {
+      "opt2": "Assumes only the transfer-state license is evaluated.",
+      "opt3": "Treats one satisfied transfer criterion as replacing another.",
+      "opt4": "Narrows good standing to discipline affecting Colorado practice."
+    },
+    "ruleToRemember": "For license transfer, active discipline on any pharmacist license defeats the rule\u2019s good-standing requirement.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 4.00.40(f)",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 4.00.40(f)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 2,
+    "reasoningLevel": 4,
+    "subconceptId": "co-license-transfer-good-standing",
+    "nabpCompetencies": [
+      "1.2"
+    ]
+  },
+  {
+    "id": "A1-FPV-02",
+    "conceptId": "A1-DELEGATION-SCOPE",
+    "familyId": "A1-DELEGATION-SCOPE",
+    "competencyArea": 1,
+    "jurisdiction": "Colorado",
+    "topic": "2026 Law Changes",
+    "subtopic": "2026 Law Changes",
+    "difficulty": 1,
+    "type": "scenario",
+    "stem": "A pharmacist asks a technician to decide whether a renal dose should be reduced and then perform final product verification. Which part is outside the delegation contemplated by the 2026 statute?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The clinical dose decision."
+      },
+      {
+        "id": "opt2",
+        "text": "The physical product verification."
+      },
+      {
+        "id": "opt3",
+        "text": "Use of barcode verification."
+      },
+      {
+        "id": "opt4",
+        "text": "Verification of another technician's repackaging work."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The 2026 Colorado statute permits specified final-product-verification delegation for noncontrolled orders after pharmacist clinical review, while preserving pharmacist judgment and requiring a continuous quality-assessment system and program plan.",
+    "distractorExplanations": {
+      "opt2": "This option does not satisfy the controlling rule in this scenario.",
+      "opt3": "This option does not satisfy the controlling rule in this scenario.",
+      "opt4": "This option does not satisfy the controlling rule in this scenario."
+    },
+    "ruleToRemember": "FPV delegation is physical verification\u2014not delegation of clinical judgment.",
+    "authority": [
+      {
+        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
+        "url": "https://leg.colorado.gov/bills/HB26-1336",
+        "citation": "Effective August 12, 2026"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyAreaName": "Licensure / Personnel",
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "subconceptId": "co-2026-fpv-advanced",
+    "nabpCompetencies": [
+      "1.1"
+    ]
+  },
+  {
+    "id": "CO-PIC-01",
+    "conceptId": "A1-PIC-TRANSITION",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacist Manager / PIC",
+    "subtopic": "Pharmacist Manager / PIC",
+    "difficulty": 3,
+    "type": "single",
+    "stem": "Following termination of the former pharmacist manager, the owner generally must employ a new pharmacist manager and apply to transfer the outlet registration within:",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "72 hours"
+      },
+      {
+        "id": "opt2",
+        "text": "10 days"
+      },
+      {
+        "id": "opt3",
+        "text": "30 days"
+      },
+      {
+        "id": "opt4",
+        "text": "60 days"
+      }
+    ],
+    "correctAnswers": [
+      "opt3"
+    ],
+    "explanation": "Rule 5.00.70 states that the owner must employ a pharmacist manager and, within 30 days after termination of the former manager's employment, apply to transfer the registration and pay the transfer fee.",
+    "distractorExplanations": {
+      "opt1": "Seventy-two hours is associated with the controlled-substance inventory after manager change, not this registration-transfer application.",
+      "opt2": "Ten days is used in other reporting contexts.",
+      "opt4": "The rule specifies 30 days."
+    },
+    "ruleToRemember": "PIC/manager change: distinguish the 30-day registration action from the 72-hour controlled-substance inventory.",
+    "authority": [
+      {
+        "label": "Colorado Board Rules 5.00.60 / 5.00.70 / 5.01.10",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyArea": 1,
+    "familyId": "A1-PIC-TRANSITION",
+    "competencyAreaName": "Licensure / Personnel",
+    "legalDeterminations": 2,
+    "reasoningLevel": 3,
+    "subconceptId": "co-manager-change",
+    "nabpCompetencies": [
+      "1.1",
+      "1.2"
+    ]
+  },
+  {
+    "id": "A1-PIC-01",
+    "conceptId": "A1-PIC-TRANSITION",
+    "familyId": "A1-PIC-TRANSITION",
+    "competencyArea": 1,
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacist Manager / PIC",
+    "subtopic": "Pharmacist Manager / PIC",
+    "difficulty": 4,
+    "type": "scenario",
+    "stem": "The former pharmacist manager's employment ends April 1. The new manager starts April 4. The owner files the registration-transfer application May 3. The controlled-substance inventory is completed April 8. Which issue is most clearly present?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The controlled-substance inventory was late."
+      },
+      {
+        "id": "opt2",
+        "text": "The registration-transfer application was necessarily late."
+      },
+      {
+        "id": "opt3",
+        "text": "Both were necessarily late."
+      },
+      {
+        "id": "opt4",
+        "text": "Neither timing rule is implicated."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Manager-change rules contain separate clocks: the owner has 30 days for the registration-transfer application, while the new manager or designee has 72 hours for the controlled-substance inventory, taken as of opening or close of business activity.",
+    "distractorExplanations": {
+      "opt2": "This option does not satisfy the controlling rule in this scenario.",
+      "opt3": "This option does not satisfy the controlling rule in this scenario.",
+      "opt4": "This option does not satisfy the controlling rule in this scenario."
+    },
+    "ruleToRemember": "Keep the 30-day manager-registration clock separate from the 72-hour inventory clock.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyAreaName": "Licensure / Personnel",
+    "legalDeterminations": 2,
+    "reasoningLevel": 4,
+    "subconceptId": "co-manager-integrated",
+    "nabpCompetencies": [
+      "1.1",
+      "1.2"
+    ]
+  },
+  {
+    "id": "A1-CERT-02",
+    "conceptId": "A1-TECH-CREDENTIALS",
+    "familyId": "A1-TECH-CREDENTIALS",
+    "competencyArea": 1,
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacy Technicians",
+    "subtopic": "Pharmacy Technicians",
+    "difficulty": 1,
+    "type": "scenario",
+    "stem": "A provisional technician applies 75 days before expiration and documents a qualifying hardship. Which extension is the Board rule designed to allow?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "A one-time nine-month extension"
+      },
+      {
+        "id": "opt2",
+        "text": "A renewable six-month extension"
+      },
+      {
+        "id": "opt3",
+        "text": "A one-time eighteen-month extension"
+      },
+      {
+        "id": "opt4",
+        "text": "An indefinite extension while employed"
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado distinguishes provisional certification from standard certification and defines the qualifying national-certification pathway. The hardship extension is one-time, nine months, and requires advance submission.",
+    "distractorExplanations": {
+      "opt2": "This option does not satisfy the controlling rule in this scenario.",
+      "opt3": "This option does not satisfy the controlling rule in this scenario.",
+      "opt4": "This option does not satisfy the controlling rule in this scenario."
+    },
+    "ruleToRemember": "Do not merge the provisional, hardship-extension, and full-certification rules.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyAreaName": "Licensure / Personnel",
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "subconceptId": "co-tech-cert-advanced",
+    "nabpCompetencies": [
+      "1.1",
+      "1.2"
+    ]
+  },
+  {
+    "id": "CO-TECH-02",
+    "conceptId": "A1-TECH-STAFFING",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacy Technicians",
+    "subtopic": "Pharmacy Technicians",
+    "difficulty": 1,
+    "type": "scenario",
+    "stem": "Four pharmacy technicians are on duty under the general Colorado supervision-ratio statute. Which staffing statement satisfies the certification mix requirement?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "At least three of the four technicians must be fully Board-certified."
+      },
+      {
+        "id": "opt2",
+        "text": "At least two of the four technicians must be fully Board-certified."
+      },
+      {
+        "id": "opt3",
+        "text": "All four technicians must be fully Board-certified while three or more are on duty."
+      },
+      {
+        "id": "opt4",
+        "text": "Certification is measured across interns and technicians together rather than among technicians on duty."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "When three or more pharmacy technicians are on duty, the majority must be fully certified by the Board. For four technicians, a majority means at least three.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "ruleToRemember": "Three or more techs on duty: the majority must be fully Board-certified.",
+    "authority": [
+      {
+        "label": "C.R.S. \u00a7 12-280-122",
+        "url": "https://content.leg.colorado.gov/agencies/office-legislative-legal-services/2026-crs-titles-download",
+        "citation": "2026 Colorado Revised Statutes, Title 12"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyArea": 1,
+    "familyId": "A1-TECH-STAFFING",
+    "competencyAreaName": "Licensure / Personnel",
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "subconceptId": "co-tech-majority",
+    "nabpCompetencies": [
+      "1.1"
+    ]
+  },
+  {
+    "id": "A1-RATIO-CFG-1",
+    "conceptId": "A1-TECH-STAFFING",
+    "familyId": "A1-TECH-STAFFING",
+    "competencyArea": 1,
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacy Technicians",
+    "subtopic": "Pharmacy Technicians",
+    "difficulty": 2,
+    "type": "single",
+    "stem": "A pharmacist is setting the schedule for a Colorado pharmacy. Which staffing plan is compliant under the general rule?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "2 interns + 4 technicians, 3 of the 4 technicians fully certified"
+      },
+      {
+        "id": "opt2",
+        "text": "2 interns + 5 technicians, 4 of the 5 technicians fully certified"
+      },
+      {
+        "id": "opt3",
+        "text": "3 interns + 3 technicians, all technicians fully certified"
+      },
+      {
+        "id": "opt4",
+        "text": "1 intern + 6 technicians, 4 of the 6 technicians fully certified"
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Apply both the six-person total (interns + technicians), the maximum of two interns, and the majority-certification rule when at least three technicians are on duty.",
+    "distractorExplanations": {
+      "opt2": "This option does not satisfy the controlling rule in this scenario.",
+      "opt3": "This option does not satisfy the controlling rule in this scenario.",
+      "opt4": "This option does not satisfy the controlling rule in this scenario."
+    },
+    "ruleToRemember": "Ratio questions often require two independent checks, not one.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyAreaName": "Licensure / Personnel",
+    "legalDeterminations": 2,
+    "reasoningLevel": 2,
+    "subconceptId": "co-tech-ratio-advanced",
+    "nabpCompetencies": [
+      "1.1"
+    ]
+  },
+  {
+    "id": "A1-FPV-03",
+    "conceptId": "A1-DELEGATION-SCOPE",
+    "familyId": "A1-DELEGATION-SCOPE",
+    "competencyArea": 1,
+    "jurisdiction": "Colorado",
+    "topic": "2026 Law Changes",
+    "subtopic": "2026 Law Changes",
+    "difficulty": 1,
+    "type": "scenario",
+    "stem": "A pharmacy proposes technician final product verification for Schedule IV prescriptions. Which is most accurate under the 2026 statutory delegation provision?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The cited FPV delegation pathway does not extend to controlled-substance orders."
+      },
+      {
+        "id": "opt2",
+        "text": "The pathway may be used for Schedule III-V orders after pharmacist clinical review."
+      },
+      {
+        "id": "opt3",
+        "text": "The pathway may be used for controlled orders when barcode verification is incorporated."
+      },
+      {
+        "id": "opt4",
+        "text": "The pathway may be used for controlled unit-dose orders when a pharmacist remains immediately available."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The 2026 Colorado statute permits specified final-product-verification delegation for noncontrolled orders after pharmacist clinical review, while preserving pharmacist judgment and requiring a continuous quality-assessment system and program plan.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "ruleToRemember": "FPV delegation is physical verification\u2014not delegation of clinical judgment.",
+    "authority": [
+      {
+        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
+        "url": "https://leg.colorado.gov/bills/HB26-1336",
+        "citation": "Effective August 12, 2026"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyAreaName": "Licensure / Personnel",
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "subconceptId": "co-2026-fpv-advanced",
+    "nabpCompetencies": [
+      "1.1"
+    ]
+  },
+  {
+    "id": "A2-CONF-02",
+    "conceptId": "A2-CONFIDENTIALITY",
+    "familyId": "A2-CONFIDENTIALITY",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Confidentiality",
+    "subtopic": "Confidentiality",
+    "difficulty": 5,
+    "type": "multi",
+    "stem": "A pharmacist is evaluating requests for a patient\u2019s prescription information. Which recipients are expressly within categories to whom disclosure may be permitted under Rule 1.00.16, assuming the stated role is genuine and other applicable law is satisfied? Select ALL that apply.",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "A third-party entity responsible for payment of the patient's prescription claim."
+      },
+      {
+        "id": "opt2",
+        "text": "A pharmacist acquiring and maintaining the pharmacy's prescription records."
+      },
+      {
+        "id": "opt3",
+        "text": "A neighbor who transports the patient but has no patient authorization."
+      },
+      {
+        "id": "opt4",
+        "text": "A spouse who pays the patient's premiums but has no representative authority."
+      },
+      {
+        "id": "opt5",
+        "text": "An employer requesting the drug name for a routine attendance investigation."
+      }
+    ],
+    "correctAnswers": [
+      "opt1",
+      "opt2"
+    ],
+    "explanation": "Rule 1.00.16 expressly allows disclosure to pharmacy technicians, authorized law enforcement, another pharmacist acquiring and maintaining records, third-party entities responsible for payment, and other parties permitted by federal privacy law. A helpful neighbor without authorization is not included merely by habit.",
+    "distractorExplanations": {
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule.",
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Know permitted-recipient categories, but distinguish a person\u2019s role from actual authorization.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 1.00.16",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 1.00.16"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 3,
+    "reasoningLevel": 5,
+    "subconceptId": "co-confidentiality-permitted-disclosure",
+    "nabpCompetencies": [
+      "2.5"
+    ]
+  },
+  {
+    "id": "A2-CONF-01",
+    "conceptId": "A2-CONFIDENTIALITY",
+    "familyId": "A2-CONFIDENTIALITY",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Confidentiality",
+    "subtopic": "Confidentiality",
+    "difficulty": 4,
+    "type": "scenario",
+    "stem": "A patient\u2019s spouse calls and asks which antidepressant was dispensed last week. The spouse pays the patient\u2019s insurance premiums but is not the patient\u2019s authorized representative, and the patient has not otherwise authorized disclosure. Which action best fits Colorado\u2019s confidentiality rule?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Decline disclosure unless the spouse becomes an authorized recipient under law or patient authorization."
+      },
+      {
+        "id": "opt2",
+        "text": "Disclose the drug because a spouse who pays premiums is automatically the patient\u2019s authorized representative."
+      },
+      {
+        "id": "opt3",
+        "text": "Disclose the drug if the caller verifies the patient\u2019s address and date of birth without authorization."
+      },
+      {
+        "id": "opt4",
+        "text": "Disclose the drug because prescription identity is no longer protected after a third-party payer processes the claim."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Rule 1.00.16 limits disclosure of prescription and medical information to specified recipients, including the patient, authorized representative, treating practitioners, pharmacy personnel serving the patient, persons authorized by law or the patient, and other permitted recipients. Payment of premiums alone does not establish authorization.",
+    "distractorExplanations": {
+      "opt2": "Paying premiums does not itself create authorized-representative status.",
+      "opt3": "Identity verification confirms who is calling but does not create authority to receive the information.",
+      "opt4": "Third-party payment does not make prescription information generally public."
+    },
+    "misconceptionTested": {
+      "opt2": "Equates family/financial status with legal authorization.",
+      "opt3": "Confuses authentication with authorization.",
+      "opt4": "Assumes claim processing extinguishes confidentiality."
+    },
+    "ruleToRemember": "Confidentiality turns on legal or patient authorization, not family status or financial involvement by itself.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 1.00.16",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 1.00.16"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 2,
+    "reasoningLevel": 4,
+    "subconceptId": "co-confidentiality-authorized-recipient",
+    "nabpCompetencies": [
+      "2.5"
+    ]
+  },
+  {
+    "id": "A2-EYEDROP-06",
+    "conceptId": "A2-SPECIAL-DISPENSING",
+    "familyId": "A2-SPECIAL-DISPENSING",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacist Practice",
+    "subtopic": "Pharmacist Practice",
+    "difficulty": 1,
+    "type": "scenario",
+    "stem": "A parent asks at the original dispensing for a second bottle of a covered prescription eye drop so the child can keep one bottle at school. The prescription authorizes enough total quantity, but the order does not state that an additional bottle is needed for school use. Which conclusion best fits the special rule?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The additional-bottle pathway is not met because the original order lacks the required school-use statement."
+      },
+      {
+        "id": "opt2",
+        "text": "The additional bottle may be supplied when the request occurs at the original dispensing and total quantity is sufficient."
+      },
+      {
+        "id": "opt3",
+        "text": "The additional bottle may be supplied after pharmacist documentation of the school need in the dispensing record."
+      },
+      {
+        "id": "opt4",
+        "text": "The additional bottle may be supplied when the payer confirms coverage and the patient has not used the benefit recently."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The special eye-drop rule requires several conditions together, including coverage, request at original dispensing, an original order stating that an additional bottle is needed for day care, school, or an adult day program, the one-additional-bottle-per-three-months limit, and compliance with total prescribed quantity.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "The extra eye-drop bottle is a conditional exception; some satisfied conditions do not replace the required order statement.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 3.00.20(b)",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 3.00.20(b)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "subconceptId": "co-eyedrop-additional-bottle",
+    "nabpCompetencies": [
+      "2.1",
+      "2.4"
+    ]
+  },
+  {
+    "id": "A2-ADAPT-10",
+    "conceptId": "A2-PRESCRIPTION-CHANGES",
+    "familyId": "A2-PRESCRIPTION-CHANGES",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Prescription Requirements",
+    "subtopic": "Prescription Requirements",
+    "difficulty": 2,
+    "type": "scenario",
+    "stem": "A pharmacist makes a minor adaptation to a prescription that is otherwise permitted by Colorado law. The final order accurately reflects the adapted directions, but the record does not show when the adaptation occurred or which pharmacist made it. What is the clearest documentation defect?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The record must identify both the date of the adaptation and the pharmacist who made it."
+      },
+      {
+        "id": "opt2",
+        "text": "The corrected directions on the final label are sufficient when the adaptation does not alter drug strength."
+      },
+      {
+        "id": "opt3",
+        "text": "The adaptation record must identify the prescriber contact and the technician who entered the corrected directions."
+      },
+      {
+        "id": "opt4",
+        "text": "The additional adaptation record is required only when the change affects quantity rather than dosage form or directions."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Rule 2.01.10(f) requires minor adaptations made under the statutory authority to detail the date and identity of the pharmacist making the adaptation.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "A lawful minor adaptation still requires traceable documentation of when it occurred and who made it.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 2.01.10(f)",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 2.01.10(f)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 1,
+    "reasoningLevel": 2,
+    "subconceptId": "co-minor-adaptation-documentation",
+    "nabpCompetencies": [
+      "2.1"
+    ]
+  },
+  {
+    "id": "A2-OFFICEUSE-08",
+    "conceptId": "A2-SPECIAL-DISPENSING",
+    "familyId": "A2-SPECIAL-DISPENSING",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacist Practice",
+    "subtopic": "Pharmacist Practice",
+    "difficulty": 1,
+    "type": "scenario",
+    "stem": "A physician sends a nonpatient-specific order for commercially manufactured amoxicillin to keep in the clinic for future patients. A veterinarian separately requests a compounded prescription drug for office stock under the statutory veterinary pathway. Assuming the veterinary request otherwise qualifies, which decision best fits Rule 3.00.20(d)?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Decline the physician office-use order and evaluate the veterinary compounded office-stock request under its separate pathway."
+      },
+      {
+        "id": "opt2",
+        "text": "Fill the physician order as clinic stock and evaluate the veterinary request under the same general office-use standard."
+      },
+      {
+        "id": "opt3",
+        "text": "Decline both orders because a named patient is required for the physician order and the veterinary office-stock pathway."
+      },
+      {
+        "id": "opt4",
+        "text": "Fill the veterinary request only after converting it to a patient-specific order and decline the physician office-use order."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Rule 3.00.20(d) states that a pharmacist may not dispense a prescription drug or controlled substance to a practitioner on an order without a specific patient and that an \u201coffice use\u201d prescription order is not valid. It separately recognizes compounded prescription drugs distributed to veterinarians for \u201coffice stock\u201d when the statutory and rule requirements are met.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "General office-use orders without a named patient are invalid; veterinary compounded office stock has a distinct pathway.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 3.00.20(d)",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 3.00.20(d)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "subconceptId": "co-office-use-veterinary-exception",
+    "nabpCompetencies": [
+      "2.1",
+      "2.4"
+    ]
+  },
+  {
+    "id": "A2-CLARIFY-13",
+    "conceptId": "A2-PRESCRIPTION-CHANGES",
+    "familyId": "A2-PRESCRIPTION-CHANGES",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Prescription Requirements",
+    "subtopic": "Prescription Requirements",
+    "difficulty": 2,
+    "type": "scenario",
+    "stem": "A pharmacy technician receives a prescription clarification that does not require professional interpretation. The technician updates the electronic prescription record with the clarified information but records neither the date of contact nor the name of the person who conveyed the clarification. Which statement best reflects Colorado\u2019s rule?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The record is incomplete because it must include the contact date and the identity of the person conveying the clarification."
+      },
+      {
+        "id": "opt2",
+        "text": "The record is complete if the technician's identifier and the final pharmacist verifier are both captured electronically."
+      },
+      {
+        "id": "opt3",
+        "text": "The record is incomplete because a technician may enter the clarification only when the prescriber personally speaks to the pharmacist."
+      },
+      {
+        "id": "opt4",
+        "text": "The record is complete if the prescriber's office maintains its own retrievable documentation of the same clarification."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Rule 2.01.20(a) requires any change or clarification to be documented with the initials or unique identifier of the responsible pharmacist, intern, or technician, the date contacted, and the name of the individual conveying the change or clarification.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "A prescription clarification needs a traceable who/when audit trail; later final verification does not replace it.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 2.01.20(a)",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 2.01.20(a)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 1,
+    "reasoningLevel": 2,
+    "subconceptId": "co-order-change-clarification-record",
+    "nabpCompetencies": [
+      "2.1"
+    ]
+  },
+  {
+    "id": "A2-DISCLOSE-03",
+    "conceptId": "A2-PROFESSIONAL-CONDUCT",
+    "familyId": "A2-PROFESSIONAL-CONDUCT",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Professional Conduct",
+    "subtopic": "Professional Conduct",
+    "difficulty": 2,
+    "type": "scenario",
+    "stem": "A pharmacist who is currently subject to a qualifying practice limitation based on sexual misconduct has a patient call on Monday to schedule a face-to-face vaccine appointment for Friday. No exception applies. When must the required written disclosure be provided?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "On Monday, the same day the patient schedules the professional-services appointment."
+      },
+      {
+        "id": "opt2",
+        "text": "On Friday, immediately before the vaccine is administered but not earlier."
+      },
+      {
+        "id": "opt3",
+        "text": "Within 30 days after the vaccine encounter as part of the pharmacist\u2019s treatment record."
+      },
+      {
+        "id": "opt4",
+        "text": "At the next prescription pickup because vaccination is not included within professional services."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Rule 1.00.26 requires disclosure the same day a patient schedules a professional-services appointment. If an appointment is scheduled the same day services will occur, disclosure must occur before treatment. Administration of drugs and vaccines is included within professional services.",
+    "distractorExplanations": {
+      "opt2": "Waiting until Friday misses the same-day-as-scheduling requirement.",
+      "opt3": "The rule requires advance disclosure, not post-encounter documentation.",
+      "opt4": "Drug and vaccine administration are expressly included within professional services."
+    },
+    "misconceptionTested": {
+      "opt2": "Assumes pre-treatment disclosure is always sufficient.",
+      "opt3": "Confuses disclosure timing with other 30-day reports.",
+      "opt4": "Assumes the duty applies only to dispensing or counseling."
+    },
+    "ruleToRemember": "For covered professional services, disclosure timing begins when the appointment is scheduled.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 1.00.26",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 1.00.26(B)-(C)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 1,
+    "reasoningLevel": 2,
+    "subconceptId": "co-professional-services-disclosure-timing",
+    "nabpCompetencies": [
+      "2.5"
+    ]
+  },
+  {
+    "id": "A2-SUB-11",
+    "conceptId": "A2-PRESCRIPTION-CHANGES",
+    "familyId": "A2-PRESCRIPTION-CHANGES",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Prescription Requirements",
+    "subtopic": "Prescription Requirements",
+    "difficulty": 4,
+    "type": "scenario",
+    "stem": "A pharmacist lawfully substitutes a different manufacturer\u2019s equivalent product. The order records the prescribed drug, the drug actually dispensed, and the date of substitution, but records neither the distributor name nor the dispensed product\u2019s NDC. Which conclusion best fits Rule 2.01.20?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The record is incomplete because it must also identify the distributor as on the package or the NDC."
+      },
+      {
+        "id": "opt2",
+        "text": "The record is complete because recording both drug names eliminates the need for a product-source identifier."
+      },
+      {
+        "id": "opt3",
+        "text": "The record is incomplete only for Schedule II prescriptions because noncontrolled substitutions require fewer details."
+      },
+      {
+        "id": "opt4",
+        "text": "The record is complete if the pharmacist can retrieve the wholesaler invoice later during an inspection."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "When a substitution is made, Rule 2.01.20 requires the names of the prescribed and actually dispensed drugs and the date, plus the distributor name as it appears on the package or the NDC number.",
+    "distractorExplanations": {
+      "opt2": "The rule requires a distributor name or NDC in addition to the drug names and date.",
+      "opt3": "The cited documentation rule is not limited to Schedule II prescriptions.",
+      "opt4": "A later-retrievable invoice does not replace required prescription-record information."
+    },
+    "misconceptionTested": {
+      "opt2": "Assumes therapeutic identity replaces product-source traceability.",
+      "opt3": "Incorrectly narrows documentation to controlled substances.",
+      "opt4": "Treats external purchasing records as a substitute."
+    },
+    "ruleToRemember": "Substitution documentation identifies both what changed and the source/product identifier of what was dispensed.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 2.01.20(b)",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 2.01.20(b)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "legalDeterminations": 2,
+    "reasoningLevel": 4,
+    "subconceptId": "co-substitution-record",
+    "nabpCompetencies": [
+      "2.1"
+    ]
+  },
+  {
+    "id": "CO-CPP-01",
+    "conceptId": "A2-COLLABORATIVE-PRACTICE",
+    "jurisdiction": "Colorado",
+    "topic": "Collaborative Practice",
+    "subtopic": "Collaborative Practice",
+    "difficulty": 5,
+    "type": "multi",
+    "stem": "Which are express Colorado pharmacist qualifications for entering a collaborative pharmacy practice agreement under Rule 17.00.30? Select all that apply.",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Current Colorado pharmacist licensure."
+      },
+      {
+        "id": "opt2",
+        "text": "Current engagement in the practice of pharmacy."
+      },
+      {
+        "id": "opt3",
+        "text": "PharmD degree or at least five years of licensed-pharmacist experience."
+      },
+      {
+        "id": "opt4",
+        "text": "Ten years of hospital pharmacy experience."
+      },
+      {
+        "id": "opt5",
+        "text": "Ownership interest in the collaborating prescriber's practice."
+      }
+    ],
+    "correctAnswers": [
+      "opt1",
+      "opt2",
+      "opt3"
+    ],
+    "explanation": "Rule 17.00.30 includes current Colorado licensure, active pharmacy practice, PharmD or at least five years of licensed-pharmacist experience, and adequate professional liability insurance, among other requirements.",
+    "distractorExplanations": {
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "ruleToRemember": "For CPPA eligibility, know the actual qualifications; do not add specialty-employment prerequisites.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 17.00.30",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
     "competencyArea": 2,
-    "familyId": "co-counsel-new",
-    "competencyAreaName": "Pharmacist Practice"
+    "familyId": "A2-COLLABORATIVE-PRACTICE",
+    "competencyAreaName": "Pharmacist Practice",
+    "legalDeterminations": 3,
+    "reasoningLevel": 5,
+    "misconceptionTested": {
+      "opt4": "Misapplies a nearby legal rule.",
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "subconceptId": "co-cppa-qual",
+    "nabpCompetencies": [
+      "2.1",
+      "2.2"
+    ]
+  },
+  {
+    "id": "CO-EMERG-02",
+    "conceptId": "A2-EMERGENCY-LTCF",
+    "jurisdiction": "Colorado",
+    "topic": "Emergency Dispensing",
+    "subtopic": "Emergency Dispensing",
+    "difficulty": 5,
+    "type": "multi",
+    "stem": "The written notice after a Colorado emergency supply of a chronic maintenance drug must include which items? Select all that apply.",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The dispensing pharmacy's identifying/contact information."
+      },
+      {
+        "id": "opt2",
+        "text": "The drug name, strength, dosage form, directions, and quantity dispensed."
+      },
+      {
+        "id": "opt3",
+        "text": "The patient's insurance group number."
+      },
+      {
+        "id": "opt4",
+        "text": "The pharmacy's acquisition cost for the emergency quantity."
+      },
+      {
+        "id": "opt5",
+        "text": "The wholesaler invoice number for the dispensed lot."
+      }
+    ],
+    "correctAnswers": [
+      "opt1",
+      "opt2"
+    ],
+    "explanation": "Rule 3.00.23 specifies the pharmacy identifiers/contact information, drug details, patient name/DOB, and date of emergency dispensing. It does not list the insurance group number.",
+    "distractorExplanations": {
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "ruleToRemember": "Memorize the actual notice elements; do not substitute routine billing data.",
+    "authority": [
+      {
+        "label": "Colorado Board Rules 3.00.23 / 3.00.25",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyArea": 2,
+    "familyId": "A2-EMERGENCY-LTCF",
+    "competencyAreaName": "Pharmacist Practice",
+    "legalDeterminations": 3,
+    "reasoningLevel": 5,
+    "misconceptionTested": {
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule.",
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "subconceptId": "co-emergency-maintenance",
+    "nabpCompetencies": [
+      "2.1"
+    ]
+  },
+  {
+    "id": "CO-VAX-03",
+    "conceptId": "A2-IMMUNIZATION",
+    "jurisdiction": "Colorado",
+    "topic": "Immunizations",
+    "subtopic": "Immunizations",
+    "difficulty": 5,
+    "type": "multi",
+    "stem": "Which information is expressly included in Colorado's required vaccine-administration record? Select all that apply.",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Administration date and injection site."
+      },
+      {
+        "id": "opt2",
+        "text": "Vaccine name, dose, manufacturer, lot number, and expiration date."
+      },
+      {
+        "id": "opt3",
+        "text": "Signed informed consent."
+      },
+      {
+        "id": "opt4",
+        "text": "The date the vaccine information statement was provided."
+      },
+      {
+        "id": "opt5",
+        "text": "The patient's prescription-insurance BIN number."
+      }
+    ],
+    "correctAnswers": [
+      "opt1",
+      "opt2",
+      "opt3",
+      "opt4"
+    ],
+    "explanation": "The rule requires the administration/site information, vaccine product details, signed consent, VIS details, and additional information. It does not list the patient's insurance BIN.",
+    "distractorExplanations": {
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "ruleToRemember": "Know the clinical/legal vaccine record, not billing metadata.",
+    "authority": [
+      {
+        "label": "Colorado Board Rules 19.01.20-19.01.50",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyArea": 2,
+    "familyId": "A2-IMMUNIZATION",
+    "competencyAreaName": "Pharmacist Practice",
+    "legalDeterminations": 3,
+    "reasoningLevel": 5,
+    "misconceptionTested": {
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "subconceptId": "co-vax-records",
+    "nabpCompetencies": [
+      "2.2"
+    ]
   },
   {
     "id": "CO-COUNSEL-02",
-    "conceptId": "co-counsel-refusal",
+    "conceptId": "A2-COUNSELING",
     "jurisdiction": "Colorado",
     "topic": "Patient Counseling",
     "subtopic": "Patient Counseling",
-    "difficulty": 3,
+    "difficulty": 1,
     "type": "scenario",
     "stem": "A patient clearly declines counseling for a new prescription. What must the pharmacy do with the refusal record under Colorado Board rules?",
     "answers": [
@@ -140,100 +1523,115 @@ window.QUESTION_BANK = [
     "lastVerified": "2026-09-16",
     "active": true,
     "competencyArea": 2,
-    "familyId": "co-counsel-refusal",
-    "competencyAreaName": "Pharmacist Practice"
+    "familyId": "A2-COUNSELING",
+    "competencyAreaName": "Pharmacist Practice",
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "subconceptId": "co-counsel-refusal",
+    "nabpCompetencies": [
+      "2.3"
+    ]
   },
   {
-    "id": "CO-COUNSEL-03",
-    "conceptId": "co-counsel-language",
+    "id": "CO-CPP-02",
+    "conceptId": "A2-COLLABORATIVE-PRACTICE",
     "jurisdiction": "Colorado",
-    "topic": "Patient Counseling",
-    "subtopic": "Patient Counseling",
-    "difficulty": 3,
-    "type": "scenario",
-    "stem": "A pharmacist cannot counsel a patient orally because of a language barrier. Which response most closely follows Colorado law?",
+    "topic": "Collaborative Practice",
+    "subtopic": "Collaborative Practice",
+    "difficulty": 1,
+    "type": "single",
+    "stem": "What minimum professional liability coverage does Colorado Rule 17.00.30 specify for a pharmacist entering collaborative practice?",
     "answers": [
       {
         "id": "opt1",
-        "text": "Skip counseling if the prescription label is printed in English."
+        "text": "$500,000 per incident / $1 million aggregate"
       },
       {
         "id": "opt2",
-        "text": "Use alternative means necessary to assure the patient is properly counseled in a way the patient understands."
+        "text": "$1 million per incident / $3 million aggregate"
       },
       {
         "id": "opt3",
-        "text": "Ask a technician to decide whether counseling is necessary."
+        "text": "$2 million per incident / $2 million aggregate"
       },
       {
         "id": "opt4",
-        "text": "Dispense only after the prescriber personally counsels the patient."
+        "text": "$3 million per incident / $5 million aggregate"
       }
     ],
     "correctAnswers": [
       "opt2"
     ],
-    "explanation": "Colorado requires the pharmacist to use alternative means when oral counseling cannot be provided because of a language barrier.",
+    "explanation": "The rule states coverage of at least $1,000,000 per incident and at least $3,000,000 aggregate.",
     "distractorExplanations": {
-      "opt1": "The language barrier does not erase the counseling duty.",
-      "opt3": "The pharmacist remains responsible for counseling.",
-      "opt4": "The rule does not require transfer of the duty to the prescriber."
+      "opt1": "Both limits are below the stated minimums.",
+      "opt3": "This is not the specified combination.",
+      "opt4": "This exceeds the rule but is not the minimum specified."
     },
-    "ruleToRemember": "A language barrier changes the method, not the duty, of required pharmacist counseling.",
+    "ruleToRemember": "CPPA liability minimum: $1M per incident / $3M aggregate.",
     "authority": [
       {
-        "label": "Colorado Board Rule 1.00.18",
+        "label": "Colorado Board Rule 17.00.30",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1, Rule 1.00.18"
+        "citation": "3 CCR 719-1"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
     "competencyArea": 2,
-    "familyId": "co-counsel-language",
-    "competencyAreaName": "Pharmacist Practice"
+    "familyId": "A2-COLLABORATIVE-PRACTICE",
+    "competencyAreaName": "Pharmacist Practice",
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "subconceptId": "co-cppa-insurance",
+    "nabpCompetencies": [
+      "2.1",
+      "2.2"
+    ]
   },
   {
-    "id": "CO-ORDER-01",
-    "conceptId": "co-oral-order",
+    "id": "A2-CPPA-03",
+    "conceptId": "A2-COLLABORATIVE-PRACTICE",
+    "familyId": "A2-COLLABORATIVE-PRACTICE",
+    "competencyArea": 2,
     "jurisdiction": "Colorado",
-    "topic": "Prescription Requirements",
-    "subtopic": "Prescription Requirements",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "In a Colorado community pharmacy, who may receive and reduce to writing an oral prescription order, apart from the chart-order exception?",
+    "topic": "Collaborative Practice",
+    "subtopic": "Collaborative Practice",
+    "difficulty": 2,
+    "type": "scenario",
+    "stem": "A pharmacist and prescriber create a CPPA but no process exists for communicating and documenting medication changes in the patient's medical record. Which deficiency is most direct?",
     "answers": [
       {
         "id": "opt1",
-        "text": "A pharmacist or pharmacy intern"
+        "text": "The agreement lacks the required process for communication and documentation of medication changes."
       },
       {
         "id": "opt2",
-        "text": "A pharmacist, intern, or certified technician"
+        "text": "The agreement lacks a required schedule for in-person pharmacist-prescriber case review."
       },
       {
         "id": "opt3",
-        "text": "Only the pharmacist manager"
+        "text": "The agreement lacks a required provision assigning the prescriber exclusive responsibility for documentation."
       },
       {
         "id": "opt4",
-        "text": "Any employee trained on prescription intake"
+        "text": "The agreement lacks a required patient-specific consent form for each medication change made under the agreement."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "Board Rule 2.00.10 provides that only a pharmacist or intern may receive and reduce to writing an oral order, apart from the chart-order exception.",
+    "explanation": "Collaborative-practice eligibility and operation involve several independent requirements, including current licensure, practice status, training/experience, insurance, patient relationship requirements where applicable, and communication/documentation.",
     "distractorExplanations": {
-      "opt2": "Certification as a technician does not add authority to receive and reduce an oral order.",
-      "opt3": "The authority is not limited to the pharmacist manager.",
-      "opt4": "General training does not create legal authority."
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
     },
-    "ruleToRemember": "Colorado oral orders: pharmacist or intern, except the specified chart-order exception.",
+    "ruleToRemember": "A CPPA can fail because of pharmacist qualifications, prescriber relationship, or agreement infrastructure.",
     "authority": [
       {
-        "label": "Colorado Board Rules 2.00.10 / 2.01.50-2.01.53",
+        "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
         "citation": "3 CCR 719-1"
       }
@@ -241,50 +1639,60 @@ window.QUESTION_BANK = [
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyArea": 2,
-    "familyId": "co-oral-order",
-    "competencyAreaName": "Pharmacist Practice"
+    "competencyAreaName": "Pharmacist Practice",
+    "legalDeterminations": 2,
+    "reasoningLevel": 2,
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "subconceptId": "co-cppa-integrated",
+    "nabpCompetencies": [
+      "2.1",
+      "2.2"
+    ]
   },
   {
-    "id": "CO-ORDER-02",
-    "conceptId": "co-oral-order",
+    "id": "CO-LTCF-01",
+    "conceptId": "A2-EMERGENCY-LTCF",
     "jurisdiction": "Colorado",
-    "topic": "Prescription Requirements",
-    "subtopic": "Prescription Requirements",
-    "difficulty": 4,
+    "topic": "Long-Term Care",
+    "subtopic": "Long-Term Care",
+    "difficulty": 1,
     "type": "scenario",
-    "stem": "A certified pharmacy technician answers a prescriber's telephone call and the prescriber dictates a new outpatient prescription. No chart-order exception applies. Which action is legally appropriate?",
+    "stem": "Under Colorado's first-dose dispensing rule, a pharmacist at a prescription drug outlet may use a duplicate LTCF chart order from another outlet to provide immediate care for a resident. What is the maximum supply described by the rule?",
     "answers": [
       {
         "id": "opt1",
-        "text": "The technician records it because certification permits oral-order receipt."
+        "text": "24 hours"
       },
       {
         "id": "opt2",
-        "text": "The technician records it if a pharmacist later performs final verification."
+        "text": "48 hours"
       },
       {
         "id": "opt3",
-        "text": "The call must be handled by a pharmacist or pharmacy intern for receipt and reduction to writing."
+        "text": "72 hours"
       },
       {
         "id": "opt4",
-        "text": "The technician may receive it only if it is noncontrolled."
+        "text": "7 days"
       }
     ],
     "correctAnswers": [
       "opt3"
     ],
-    "explanation": "Colorado does not authorize a pharmacy technician to receive and reduce a new oral order to writing under the general rule. A pharmacist or intern must do so.",
+    "explanation": "Rule 3.00.25 permits up to a 72-hour supply of a noncontrolled prescription drug for this specific first-dose LTCF situation, one time per order and subject to the rule's conditions.",
     "distractorExplanations": {
-      "opt1": "Technician certification does not confer this authority.",
-      "opt2": "Later pharmacist verification does not cure unauthorized receipt of the oral order.",
-      "opt4": "The rule is not limited to controlled substances."
+      "opt1": "The rule permits more than 24 hours.",
+      "opt2": "The stated ceiling is 72 hours.",
+      "opt4": "Seven days exceeds the rule's limit."
     },
-    "ruleToRemember": "Final verification does not expand who may legally receive an oral order.",
+    "ruleToRemember": "Colorado LTCF first-dose rule: up to 72 hours, noncontrolled, one time per order, with required documentation.",
     "authority": [
       {
-        "label": "Colorado Board Rules 2.00.10 / 2.01.50-2.01.53",
+        "label": "Colorado Board Rules 3.00.23 / 3.00.25",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
         "citation": "3 CCR 719-1"
       }
@@ -293,49 +1701,57 @@ window.QUESTION_BANK = [
     "lastVerified": "2026-09-16",
     "active": true,
     "competencyArea": 2,
-    "familyId": "co-oral-order",
-    "competencyAreaName": "Pharmacist Practice"
+    "familyId": "A2-EMERGENCY-LTCF",
+    "competencyAreaName": "Pharmacist Practice",
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "subconceptId": "co-ltcf-first-dose",
+    "nabpCompetencies": [
+      "2.1"
+    ]
   },
   {
-    "id": "CO-REFILLREC-01",
-    "conceptId": "co-refill-record",
+    "id": "A2-CPPA-04",
+    "conceptId": "A2-COLLABORATIVE-PRACTICE",
+    "familyId": "A2-COLLABORATIVE-PRACTICE",
+    "competencyArea": 2,
     "jurisdiction": "Colorado",
-    "topic": "Recordkeeping",
-    "subtopic": "Recordkeeping",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "Unless a statute requires longer retention, Colorado refill transaction information under Rule 2.01.30 must be maintained and available for inspection for how long from the date of a transaction relating to the order?",
+    "topic": "Collaborative Practice",
+    "subtopic": "Collaborative Practice",
+    "difficulty": 1,
+    "type": "scenario",
+    "stem": "No statewide protocol applies. The collaborating prescriber has never established a relationship with the patient population served. What issue arises?",
     "answers": [
       {
         "id": "opt1",
-        "text": "1 year"
+        "text": "The required established prescriber-patient relationship condition is not met."
       },
       {
         "id": "opt2",
-        "text": "2 years"
+        "text": "The pharmacist can substitute an employer relationship."
       },
       {
         "id": "opt3",
-        "text": "3 years"
+        "text": "The rule is satisfied if the pharmacy has the patient's insurance card."
       },
       {
         "id": "opt4",
-        "text": "5 years"
+        "text": "No relationship is required under any circumstances."
       }
     ],
     "correctAnswers": [
-      "opt2"
+      "opt1"
     ],
-    "explanation": "Rule 2.01.30 specifies a two-year period from the date of any transaction relating to the order unless otherwise required by statute.",
+    "explanation": "Collaborative-practice eligibility and operation involve several independent requirements, including current licensure, practice status, training/experience, insurance, patient relationship requirements where applicable, and communication/documentation.",
     "distractorExplanations": {
-      "opt1": "The rule specifies longer than one year.",
-      "opt3": "Three years is used for some other pharmacy records, such as vaccine-administration records.",
-      "opt4": "Five years is not the default period in Rule 2.01.30."
+      "opt2": "This option does not satisfy the controlling rule in this scenario.",
+      "opt3": "This option does not satisfy the controlling rule in this scenario.",
+      "opt4": "This option does not satisfy the controlling rule in this scenario."
     },
-    "ruleToRemember": "Colorado refill transaction records: generally 2 years unless another law requires longer.",
+    "ruleToRemember": "A CPPA can fail because of pharmacist qualifications, prescriber relationship, or agreement infrastructure.",
     "authority": [
       {
-        "label": "Colorado Board Rules 2.00.10 / 2.01.50-2.01.53",
+        "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
         "citation": "3 CCR 719-1"
       }
@@ -343,50 +1759,55 @@ window.QUESTION_BANK = [
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyArea": 4,
-    "familyId": "co-refill-record",
-    "competencyAreaName": "Pharmacy Operations"
+    "competencyAreaName": "Pharmacist Practice",
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "subconceptId": "co-cppa-integrated",
+    "nabpCompetencies": [
+      "2.1",
+      "2.2"
+    ]
   },
   {
-    "id": "CO-COPY-01",
-    "conceptId": "co-reference-copy",
+    "id": "CO-EMERG-01",
+    "conceptId": "A2-EMERGENCY-LTCF",
     "jurisdiction": "Colorado",
-    "topic": "Prescription Requirements",
-    "subtopic": "Prescription Requirements",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "A patient asks a Colorado pharmacist for a written copy of a prescription for personal records. Which statement is correct?",
+    "topic": "Emergency Dispensing",
+    "subtopic": "Emergency Dispensing",
+    "difficulty": 1,
+    "type": "scenario",
+    "stem": "A Colorado pharmacist properly dispenses an emergency supply of a qualifying chronic maintenance drug without a current valid order. What notification does the Board rule require?",
     "answers": [
       {
         "id": "opt1",
-        "text": "The copy may include refill authority if the patient requests it."
+        "text": "Notify the practitioner of record immediately in writing with the required dispensing details."
       },
       {
         "id": "opt2",
-        "text": "The copy must be marked 'COPY FOR REFERENCE ONLY,' and refill authority is not included."
+        "text": "Notify the practitioner by the end of the next business day; oral notice is sufficient."
       },
       {
         "id": "opt3",
-        "text": "A written copy is prohibited unless the prescriber approves it."
+        "text": "Notify the Board within 72 hours."
       },
       {
         "id": "opt4",
-        "text": "The copy becomes a valid prescription at another pharmacy if signed by the pharmacist."
+        "text": "No notice is required if the patient has used the drug for more than six months."
       }
     ],
     "correctAnswers": [
-      "opt2"
+      "opt1"
     ],
-    "explanation": "A pharmacist may issue a written copy conspicuously marked 'COPY FOR REFERENCE ONLY.' No information regarding authority to refill is to be issued in that written copy.",
+    "explanation": "When emergency dispensing occurs under Rule 3.00.23, the dispensing pharmacist or designee must immediately notify the practitioner of record in writing with specified details.",
     "distractorExplanations": {
-      "opt1": "The Board rule specifically excludes refill-authority information from the written copy.",
-      "opt3": "The rule permits the pharmacist to issue the reference copy.",
-      "opt4": "The copy is informational; it is not itself a valid prescription order for dispensing elsewhere."
+      "opt2": "The rule says immediately and in writing.",
+      "opt3": "The required notice described here is to the practitioner of record, not a routine Board notice.",
+      "opt4": "Duration of prior therapy does not erase the rule's notification requirement."
     },
-    "ruleToRemember": "A Colorado prescription copy is for reference only and does not carry refill authority.",
+    "ruleToRemember": "Emergency chronic-maintenance dispensing requires immediate written notice to the practitioner of record.",
     "authority": [
       {
-        "label": "Colorado Board Rules 2.00.10 / 2.01.50-2.01.53",
+        "label": "Colorado Board Rules 3.00.23 / 3.00.25",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
         "citation": "3 CCR 719-1"
       }
@@ -395,63 +1816,466 @@ window.QUESTION_BANK = [
     "lastVerified": "2026-09-16",
     "active": true,
     "competencyArea": 2,
-    "familyId": "co-reference-copy",
-    "competencyAreaName": "Pharmacist Practice"
+    "familyId": "A2-EMERGENCY-LTCF",
+    "competencyAreaName": "Pharmacist Practice",
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "subconceptId": "co-emergency-maintenance",
+    "nabpCompetencies": [
+      "2.1"
+    ]
   },
   {
-    "id": "CO-XFER-01",
-    "conceptId": "co-transfer-noncontrol",
-    "jurisdiction": "Colorado",
-    "topic": "Prescription Transfers",
-    "subtopic": "Prescription Transfers",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "Which Colorado pharmacy personnel may orally transfer prescription-order information for a noncontrolled substance for dispensing at another prescription drug outlet?",
+    "id": "CO-XFER-03",
+    "conceptId": "A3-CONTROLLED-TRANSFER",
+    "jurisdiction": "Both",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 5,
+    "type": "multi",
+    "stem": "For a one-time initial-dispensing transfer of an electronic Schedule II-V prescription in Colorado, which conditions are required? Select all that apply.",
     "answers": [
       {
         "id": "opt1",
-        "text": "Only pharmacists"
+        "text": "The transfer information is communicated between two licensed pharmacists."
       },
       {
         "id": "opt2",
-        "text": "Pharmacists and interns only"
+        "text": "The prescription remains in electronic form."
       },
       {
         "id": "opt3",
-        "text": "Pharmacists, interns, or pharmacy technicians"
+        "text": "The receiving pharmacy retains the sending pharmacy's original prescription number."
       },
       {
         "id": "opt4",
-        "text": "Only pharmacists and certified pharmacy technicians"
+        "text": "The sending pharmacy converts the electronic prescription to a fax before transfer."
+      },
+      {
+        "id": "opt5",
+        "text": "The receiving pharmacy obtains a new practitioner signature before initial dispensing."
       }
     ],
     "correctAnswers": [
-      "opt3"
+      "opt1",
+      "opt2"
     ],
-    "explanation": "Colorado Rule 2.01.50 permits a pharmacist, pharmacy intern, or pharmacy technician to orally transfer noncontrolled prescription information.",
+    "explanation": "Colorado's rule identifies pharmacist-to-pharmacist communication, continued electronic form, and no alteration as conditions. It does not state that the receiving pharmacy must preserve the sending pharmacy's prescription number.",
     "distractorExplanations": {
-      "opt1": "Colorado permits more than pharmacists for noncontrolled transfers.",
-      "opt2": "Technicians are also included.",
-      "opt4": "Interns are also included."
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
     },
-    "ruleToRemember": "Do not import the controlled-substance transfer personnel rule into noncontrolled transfers.",
+    "ruleToRemember": "Know the three transfer conditions; do not add operational details that the rule does not require.",
     "authority": [
       {
-        "label": "Colorado Board Rules 2.00.10 / 2.01.50-2.01.53",
+        "label": "Colorado Board Rule 2.01.50",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
         "citation": "3 CCR 719-1"
+      },
+      {
+        "label": "DEA controlled-substance transfer rule",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
+        "citation": "21 CFR 1306.25"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
     "competencyArea": 3,
-    "familyId": "co-transfer-noncontrol",
-    "competencyAreaName": "Dispensing Requirements"
+    "familyId": "A3-CONTROLLED-TRANSFER",
+    "competencyAreaName": "Dispensing Requirements",
+    "legalDeterminations": 3,
+    "reasoningLevel": 5,
+    "misconceptionTested": {
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule.",
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "subconceptId": "co-transfer-einitial",
+    "nabpCompetencies": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "FED-CII-03",
+    "conceptId": "A3-CII-LIFECYCLE",
+    "jurisdiction": "Federal",
+    "topic": "Federal Controlled Substances",
+    "subtopic": "Federal Controlled Substances",
+    "difficulty": 5,
+    "type": "multi",
+    "stem": "Which are federal conditions for issuing multiple Schedule II prescriptions totaling up to 90 days? Select all that apply.",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Each prescription is issued for a legitimate medical purpose in the usual course of professional practice."
+      },
+      {
+        "id": "opt2",
+        "text": "Later prescriptions include appropriate earliest-fill instructions when they are not to be filled immediately."
+      },
+      {
+        "id": "opt3",
+        "text": "The practitioner determines that issuing multiple prescriptions does not create undue diversion or abuse risk."
+      },
+      {
+        "id": "opt4",
+        "text": "The arrangement is permissible under applicable state law."
+      },
+      {
+        "id": "opt5",
+        "text": "The patient signs a separate federal consent form acknowledging that the prescriptions cannot be refilled."
+      }
+    ],
+    "correctAnswers": [
+      "opt1",
+      "opt2",
+      "opt3",
+      "opt4"
+    ],
+    "explanation": "The federal rule requires legitimate purpose, earliest-fill instructions for later prescriptions as applicable, the practitioner's diversion-risk judgment, state-law permissibility, and other applicable requirements. Same-day filling of all prescriptions is not required and would defeat the delayed-fill structure.",
+    "distractorExplanations": {
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "ruleToRemember": "The 90-day CII mechanism is conditional; it is not a refill and does not override state law.",
+    "authority": [
+      {
+        "label": "21 CFR 1306.12",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
+        "citation": "Federal Schedule II refill rules"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyArea": 3,
+    "familyId": "A3-CII-LIFECYCLE",
+    "competencyAreaName": "Dispensing Requirements",
+    "legalDeterminations": 3,
+    "reasoningLevel": 5,
+    "misconceptionTested": {
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "subconceptId": "fed-cii-multiple",
+    "nabpCompetencies": [
+      "3.1",
+      "3.4"
+    ]
+  },
+  {
+    "id": "A3-EXTRA-02",
+    "conceptId": "A3-RESTRICTED-NONRX",
+    "familyId": "A3-RESTRICTED-NONRX",
+    "competencyArea": 3,
+    "jurisdiction": "Federal",
+    "topic": "Restricted Nonprescription Products",
+    "subtopic": "Restricted Nonprescription Products",
+    "difficulty": 3,
+    "type": "scenario",
+    "stem": "A customer purchased 2.4 grams of pseudoephedrine base earlier today and now attempts to buy another package containing 1.5 grams of pseudoephedrine base. Assume no special exception applies. What is the federal retail-sales issue?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The additional sale would put the customer above the 3.6-gram daily sales limit."
+      },
+      {
+        "id": "opt2",
+        "text": "The sale is permitted because the customer remains below the nine-gram 30-day purchase limit."
+      },
+      {
+        "id": "opt3",
+        "text": "The sale is permitted when the second transaction occurs at a different retail location."
+      },
+      {
+        "id": "opt4",
+        "text": "The additional sale is barred only after the customer reaches nine grams during the same calendar day."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The federal CMEA retail framework limits sales of scheduled listed chemical products to 3.6 grams per purchaser per day and also imposes a separate nine-gram 30-day purchase limit.",
+    "distractorExplanations": {
+      "opt2": "This choice applies a related legal rule or would fit a slightly different fact pattern.",
+      "opt3": "This choice applies a related legal rule or would fit a slightly different fact pattern.",
+      "opt4": "This choice applies a related legal rule or would fit a slightly different fact pattern."
+    },
+    "ruleToRemember": "Apply the daily and 30-day pseudoephedrine limits independently; satisfying one does not excuse exceeding the other.",
+    "authority": [
+      {
+        "label": "DEA Drugs of Abuse Resource Guide (2024)",
+        "url": "https://www.dea.gov/sites/default/files/2024-12/2024-Drugs-of-Abuse-508.pdf",
+        "citation": "CMEA retail pseudoephedrine limits"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyAreaName": "Dispensing Requirements",
+    "legalDeterminations": 2,
+    "reasoningLevel": 1,
+    "misconceptionTested": {
+      "opt2": "Applies a nearby rule to the wrong pathway or omits a required condition.",
+      "opt3": "Applies a nearby rule to the wrong pathway or omits a required condition.",
+      "opt4": "Applies a nearby rule to the wrong pathway or omits a required condition."
+    },
+    "subconceptId": "pseudoephedrine-sales-limits",
+    "nabpCompetencies": [
+      "3.8"
+    ]
+  },
+  {
+    "id": "A3-DISP-03",
+    "conceptId": "A4-PRODUCT-SELECTION",
+    "familyId": "A4-PRODUCT-SELECTION",
+    "competencyArea": 4,
+    "jurisdiction": "Colorado",
+    "topic": "Product Selection",
+    "subtopic": "Product Selection",
+    "difficulty": 4,
+    "type": "scenario",
+    "stem": "A patient agrees to a therapeutic-class substitution because the prescribed product is on back order. The drug otherwise fits the Colorado therapeutic-class pathway, but the practitioner has clearly indicated that substitution is not permitted. Which action is appropriate?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Dispense the prescribed product when available, or obtain new prescriber authorization before making the therapeutic-class substitution."
+      },
+      {
+        "id": "opt2",
+        "text": "Make the therapeutic-class substitution because patient agreement permits substitution despite the practitioner's no-substitution direction."
+      },
+      {
+        "id": "opt3",
+        "text": "Make the therapeutic-class substitution because back-order status permits substitution despite the practitioner's documented restriction."
+      },
+      {
+        "id": "opt4",
+        "text": "Make the therapeutic-class substitution after documenting the back order and notifying the practitioner after the replacement is dispensed."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The therapeutic-class authority does not apply when the practitioner has properly indicated that substitution is not permitted.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt3": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt4": "This option applies a related legal rule or a nearby but different factual pathway."
+    },
+    "ruleToRemember": "A valid no-substitution direction blocks the therapeutic-class substitution pathway even when another statutory purpose is present.",
+    "authority": [
+      {
+        "label": "C.R.S. \u00a7 12-280-125",
+        "url": "https://leg.colorado.gov/laws/colorado-revised-statutes",
+        "citation": "Practitioner limitation on substitution"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 3,
+    "reasoningLevel": 2,
+    "misconceptionTested": {
+      "opt2": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt3": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt4": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway."
+    },
+    "subconceptId": "product-selection-no-substitution",
+    "nabpCompetencies": [
+      "4.4"
+    ]
+  },
+  {
+    "id": "FED-34-01",
+    "conceptId": "A4-PRODUCT-SELECTION",
+    "jurisdiction": "Colorado",
+    "topic": "Product Selection",
+    "subtopic": "Product Selection",
+    "difficulty": 3,
+    "type": "scenario",
+    "stem": "A prescription specifies a brand-name drug and does not prohibit substitution. The pharmacy stocks a lower-cost product of the same generic drug type that the pharmacist judges therapeutically equivalent and interchangeable. Which action is consistent with Colorado's substitution statute?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Dispense the equivalent product when the statutory substitution conditions are satisfied."
+      },
+      {
+        "id": "opt2",
+        "text": "Dispense the brand product because substitution requires a prescriber-initiated generic prescription."
+      },
+      {
+        "id": "opt3",
+        "text": "Contact the prescriber before substitution because patient agreement cannot support an equivalent-product substitution."
+      },
+      {
+        "id": "opt4",
+        "text": "Use the equivalent product only when the prescribed brand is unavailable from every wholesaler."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado permits substitution of an equivalent drug product when the statutory criteria are met, including professional judgment regarding therapeutic equivalence/interchangeability and the absence of a valid no-substitution direction.",
+    "distractorExplanations": {
+      "opt2": "This choice applies a related legal rule or would fit a slightly different fact pattern.",
+      "opt3": "This choice applies a related legal rule or would fit a slightly different fact pattern.",
+      "opt4": "This choice applies a related legal rule or would fit a slightly different fact pattern."
+    },
+    "ruleToRemember": "Equivalent-product substitution is permitted under defined conditions; it is not limited to brand unavailability.",
+    "authority": [
+      {
+        "label": "C.R.S. \u00a7 12-280-125",
+        "url": "https://leg.colorado.gov/laws/colorado-revised-statutes",
+        "citation": "Substitution of prescribed drugs and biological products"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyArea": 4,
+    "familyId": "A4-PRODUCT-SELECTION",
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 2,
+    "reasoningLevel": 3,
+    "misconceptionTested": {
+      "opt2": "Applies a nearby rule to the wrong pathway or omits a required condition.",
+      "opt3": "Applies a nearby rule to the wrong pathway or omits a required condition.",
+      "opt4": "Applies a nearby rule to the wrong pathway or omits a required condition."
+    },
+    "subconceptId": "product-selection-equivalent",
+    "nabpCompetencies": [
+      "4.4"
+    ]
+  },
+  {
+    "id": "FED-PART-03",
+    "conceptId": "A4-PRODUCT-SELECTION",
+    "jurisdiction": "Colorado",
+    "topic": "Product Selection",
+    "subtopic": "Product Selection",
+    "difficulty": 5,
+    "type": "scenario",
+    "stem": "An uninsured patient agrees to a lower-cost substitution within the same therapeutic class. The prescribed drug is not a biologic, narrow-therapeutic-index drug, or psychotropic drug, and the prescriber has not prohibited substitution. Which additional fact supports the Colorado therapeutic-class substitution pathway?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The substitution maintains patient safety while lowering the uninsured patient's cost for therapy."
+      },
+      {
+        "id": "opt2",
+        "text": "The substitute is the least expensive product available from the pharmacy's contracted wholesaler."
+      },
+      {
+        "id": "opt3",
+        "text": "The substitute carries the same manufacturer labeler code as the originally prescribed drug."
+      },
+      {
+        "id": "opt4",
+        "text": "The substitution is made after the pharmacy obtains a replacement prescription naming that specific product."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado's therapeutic-class substitution authority includes specified purposes, including lowering cost for an uninsured patient while maintaining safety, and excludes certain drug categories and prescriber-prohibited substitutions.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt3": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt4": "This option applies a related legal rule or a nearby but different factual pathway."
+    },
+    "ruleToRemember": "Therapeutic-class substitution is a conditional authority, not a general power to select any cheaper drug.",
+    "authority": [
+      {
+        "label": "C.R.S. \u00a7 12-280-125(1)(a.5)",
+        "url": "https://leg.colorado.gov/laws/colorado-revised-statutes",
+        "citation": "Therapeutic-class substitution conditions"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyArea": 4,
+    "familyId": "A4-PRODUCT-SELECTION",
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 3,
+    "reasoningLevel": 3,
+    "misconceptionTested": {
+      "opt2": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt3": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt4": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway."
+    },
+    "subconceptId": "therapeutic-class-substitution",
+    "nabpCompetencies": [
+      "4.4"
+    ]
+  },
+  {
+    "id": "FED-PART-02",
+    "conceptId": "A3-RESTRICTED-NONRX",
+    "jurisdiction": "Federal",
+    "topic": "Restricted Nonprescription Products",
+    "subtopic": "Restricted Nonprescription Products",
+    "difficulty": 4,
+    "type": "scenario",
+    "stem": "A customer has purchased 8.4 grams of pseudoephedrine base during the preceding 30 days and has made no purchase today. The customer requests a package containing 1.2 grams. Assume the ordinary federal retail limit applies. Which conclusion is correct?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The sale would exceed the nine-gram 30-day purchase limit even though the separate daily limit has not been reached today."
+      },
+      {
+        "id": "opt2",
+        "text": "The sale fits the federal limits because the customer has not reached the 3.6-gram daily amount during the current day."
+      },
+      {
+        "id": "opt3",
+        "text": "The sale fits the federal limits because the customer signs the required logbook and presents acceptable identification for this transaction."
+      },
+      {
+        "id": "opt4",
+        "text": "The sale fits the federal limits because the product remains behind the counter and the requested package contains less than 3.6 grams."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The 3.6-gram daily limit and nine-gram 30-day limit are separate federal restrictions. The proposed purchase would raise the 30-day amount to 9.6 grams.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt3": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt4": "This option applies a related legal rule or a nearby but different factual pathway."
+    },
+    "ruleToRemember": "Pseudoephedrine retail compliance requires checking both the daily and rolling 30-day limits.",
+    "authority": [
+      {
+        "label": "DEA Drugs of Abuse Resource Guide (2024)",
+        "url": "https://www.dea.gov/sites/default/files/2024-12/2024-Drugs-of-Abuse-508.pdf",
+        "citation": "CMEA retail pseudoephedrine limits"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyArea": 3,
+    "familyId": "A3-RESTRICTED-NONRX",
+    "competencyAreaName": "Dispensing Requirements",
+    "legalDeterminations": 2,
+    "reasoningLevel": 4,
+    "misconceptionTested": {
+      "opt2": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt3": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt4": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway."
+    },
+    "subconceptId": "pseudoephedrine-thirty-day",
+    "nabpCompetencies": [
+      "3.8"
+    ]
   },
   {
     "id": "CO-XFER-02",
-    "conceptId": "co-transfer-einitial",
+    "conceptId": "A3-CONTROLLED-TRANSFER",
     "jurisdiction": "Both",
     "topic": "Controlled Substances",
     "subtopic": "Controlled Substances",
@@ -502,338 +2326,80 @@ window.QUESTION_BANK = [
     "lastVerified": "2026-09-16",
     "active": true,
     "competencyArea": 3,
-    "familyId": "co-transfer-einitial",
-    "competencyAreaName": "Dispensing Requirements"
+    "familyId": "A3-CONTROLLED-TRANSFER",
+    "competencyAreaName": "Dispensing Requirements",
+    "legalDeterminations": 2,
+    "reasoningLevel": 4,
+    "subconceptId": "co-transfer-einitial",
+    "nabpCompetencies": [
+      "3.2"
+    ]
   },
   {
-    "id": "CO-XFER-03",
-    "conceptId": "co-transfer-einitial",
-    "jurisdiction": "Both",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
+    "id": "FED-CII-02",
+    "conceptId": "A3-RESTRICTED-NONRX",
+    "jurisdiction": "Federal",
+    "topic": "Restricted Nonprescription Products",
+    "subtopic": "Restricted Nonprescription Products",
     "difficulty": 4,
-    "type": "multi",
-    "stem": "For a one-time initial-dispensing transfer of an electronic Schedule II-V prescription in Colorado, which conditions are required? Select all that apply.",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The transfer information is communicated between two licensed pharmacists."
-      },
-      {
-        "id": "opt2",
-        "text": "The prescription remains in electronic form."
-      },
-      {
-        "id": "opt3",
-        "text": "The prescription information is not altered during transmission."
-      },
-      {
-        "id": "opt4",
-        "text": "The receiving pharmacy must assign the same prescription number as the sending pharmacy."
-      }
-    ],
-    "correctAnswers": [
-      "opt1",
-      "opt2",
-      "opt3"
-    ],
-    "explanation": "Colorado's rule identifies pharmacist-to-pharmacist communication, continued electronic form, and no alteration as conditions. It does not state that the receiving pharmacy must preserve the sending pharmacy's prescription number.",
-    "distractorExplanations": {
-      "opt4": "The cited rule does not make preservation of the sending pharmacy's prescription number a condition of this initial transfer."
-    },
-    "ruleToRemember": "Know the three transfer conditions; do not add operational details that the rule does not require.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 2.01.50",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "DEA controlled-substance transfer rule",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "21 CFR 1306.25"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "co-transfer-einitial",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "CO-XFER-04",
-    "conceptId": "co-transfer-c345-refill",
-    "jurisdiction": "Both",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 4,
-    "type": "single",
-    "stem": "Two Colorado pharmacies do not share a real-time online prescription database. A Schedule IV prescription has valid refills remaining. How many times may the original prescription information generally be transferred for refill dispensing?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "It may not be transferred."
-      },
-      {
-        "id": "opt2",
-        "text": "One time."
-      },
-      {
-        "id": "opt3",
-        "text": "Up to two times."
-      },
-      {
-        "id": "opt4",
-        "text": "As often as refills remain."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "For Schedule III-V refill transfers, the general rule is a one-time transfer. Pharmacies sharing a real-time online database have a separate rule allowing transfer up to the legal/prescriber limit.",
-    "distractorExplanations": {
-      "opt1": "A refill transfer is permissible.",
-      "opt3": "The general rule is not two transfers.",
-      "opt4": "Unlimited movement is not the general rule when the pharmacies do not share the qualifying database."
-    },
-    "ruleToRemember": "CIII-V refill transfer: one time unless the qualifying shared real-time database rule applies.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 2.01.50",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "DEA controlled-substance transfer rule",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "21 CFR 1306.25"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "co-transfer-c345-refill",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "CO-XFER-05",
-    "conceptId": "co-transfer-c345-refill",
-    "jurisdiction": "Both",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
     "type": "scenario",
-    "stem": "Pharmacies A and B electronically share the same real-time online database. A Schedule III prescription has lawful refills remaining. Which statement best describes the transfer limitation for refill dispensing?",
+    "stem": "A retail pharmacy keeps pseudoephedrine products in an unlocked customer-accessible aisle but requires identification and a signed logbook at the register. Which federal compliance problem remains?",
     "answers": [
       {
         "id": "opt1",
-        "text": "The prescription can never be transferred because it is controlled."
+        "text": "The placement violates the requirement to keep covered products behind the counter or in a locked cabinet."
       },
       {
         "id": "opt2",
-        "text": "The transfer is limited to one time even with the shared database."
+        "text": "The placement is compliant because identification and logbook controls replace the separate secured-placement requirement."
       },
       {
         "id": "opt3",
-        "text": "The pharmacies may transfer up to the maximum refills permitted by law and the prescriber's authorization."
+        "text": "The placement is compliant because the package contains less than the federal daily purchase limit."
       },
       {
         "id": "opt4",
-        "text": "The prescription may be transferred without regard to federal refill limits."
-      }
-    ],
-    "correctAnswers": [
-      "opt3"
-    ],
-    "explanation": "The real-time shared-database exception permits transfers up to the maximum refills permitted by law and the prescriber's authorization.",
-    "distractorExplanations": {
-      "opt1": "CIII-V refill transfers are permitted under conditions.",
-      "opt2": "The one-time limitation has an exception for the qualifying shared database.",
-      "opt4": "The shared database does not eliminate federal refill limits."
-    },
-    "ruleToRemember": "Shared database changes the transfer limit, not the underlying refill limit.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 2.01.50",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "DEA controlled-substance transfer rule",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "21 CFR 1306.25"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "co-transfer-c345-refill",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "CO-EMERG-01",
-    "conceptId": "co-emergency-maintenance",
-    "jurisdiction": "Colorado",
-    "topic": "Emergency Dispensing",
-    "subtopic": "Emergency Dispensing",
-    "difficulty": 3,
-    "type": "scenario",
-    "stem": "A Colorado pharmacist properly dispenses an emergency supply of a qualifying chronic maintenance drug without a current valid order. What notification does the Board rule require?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Notify the practitioner of record immediately in writing with the required dispensing details."
-      },
-      {
-        "id": "opt2",
-        "text": "Notify the practitioner by the end of the next business day; oral notice is sufficient."
-      },
-      {
-        "id": "opt3",
-        "text": "Notify the Board within 72 hours."
-      },
-      {
-        "id": "opt4",
-        "text": "No notice is required if the patient has used the drug for more than six months."
+        "text": "The placement is compliant when an electronic sales log is used and acceptable identification is checked."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "When emergency dispensing occurs under Rule 3.00.23, the dispensing pharmacist or designee must immediately notify the practitioner of record in writing with specified details.",
+    "explanation": "The federal CMEA framework includes product-placement controls in addition to identification, logbook, and quantity limits.",
     "distractorExplanations": {
-      "opt2": "The rule says immediately and in writing.",
-      "opt3": "The required notice described here is to the practitioner of record, not a routine Board notice.",
-      "opt4": "Duration of prior therapy does not erase the rule's notification requirement."
+      "opt2": "This option applies a related requirement but does not match the controlling facts.",
+      "opt3": "This option applies a related requirement but does not match the controlling facts.",
+      "opt4": "This option applies a related requirement but does not match the controlling facts."
     },
-    "ruleToRemember": "Emergency chronic-maintenance dispensing requires immediate written notice to the practitioner of record.",
+    "ruleToRemember": "Pseudoephedrine compliance is cumulative: placement, identification/logbook, and quantity restrictions are separate requirements.",
     "authority": [
       {
-        "label": "Colorado Board Rules 3.00.23 / 3.00.25",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
+        "label": "DEA Drugs of Abuse Resource Guide (2024)",
+        "url": "https://www.dea.gov/sites/default/files/2024-12/2024-Drugs-of-Abuse-508.pdf",
+        "citation": "CMEA product-placement and logbook requirements"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyArea": 2,
-    "familyId": "co-emergency-maintenance",
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "CO-EMERG-02",
-    "conceptId": "co-emergency-maintenance",
-    "jurisdiction": "Colorado",
-    "topic": "Emergency Dispensing",
-    "subtopic": "Emergency Dispensing",
-    "difficulty": 4,
-    "type": "multi",
-    "stem": "The written notice after a Colorado emergency supply of a chronic maintenance drug must include which items? Select all that apply.",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The dispensing pharmacy's name, address, and telephone number."
-      },
-      {
-        "id": "opt2",
-        "text": "The drug's name, strength, dosage form, directions, and quantity dispensed."
-      },
-      {
-        "id": "opt3",
-        "text": "The patient's name and date of birth."
-      },
-      {
-        "id": "opt4",
-        "text": "The patient's insurance group number."
-      },
-      {
-        "id": "opt5",
-        "text": "The date of emergency dispensing."
-      }
-    ],
-    "correctAnswers": [
-      "opt1",
-      "opt2",
-      "opt3",
-      "opt5"
-    ],
-    "explanation": "Rule 3.00.23 specifies the pharmacy identifiers/contact information, drug details, patient name/DOB, and date of emergency dispensing. It does not list the insurance group number.",
-    "distractorExplanations": {
-      "opt4": "Insurance group number is not one of the listed notification elements."
+    "competencyArea": 3,
+    "familyId": "A3-RESTRICTED-NONRX",
+    "competencyAreaName": "Dispensing Requirements",
+    "legalDeterminations": 2,
+    "reasoningLevel": 3,
+    "misconceptionTested": {
+      "opt2": "Confuses a nearby rule or exception with the controlling requirement.",
+      "opt3": "Confuses a nearby rule or exception with the controlling requirement.",
+      "opt4": "Confuses a nearby rule or exception with the controlling requirement."
     },
-    "ruleToRemember": "Memorize the actual notice elements; do not substitute routine billing data.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 3.00.23 / 3.00.25",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 2,
-    "familyId": "co-emergency-maintenance",
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "CO-LTCF-01",
-    "conceptId": "co-ltcf-first-dose",
-    "jurisdiction": "Colorado",
-    "topic": "Long-Term Care",
-    "subtopic": "Long-Term Care",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "Under Colorado's first-dose dispensing rule, a pharmacist at a prescription drug outlet may use a duplicate LTCF chart order from another outlet to provide immediate care for a resident. What is the maximum supply described by the rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "24 hours"
-      },
-      {
-        "id": "opt2",
-        "text": "48 hours"
-      },
-      {
-        "id": "opt3",
-        "text": "72 hours"
-      },
-      {
-        "id": "opt4",
-        "text": "7 days"
-      }
-    ],
-    "correctAnswers": [
-      "opt3"
-    ],
-    "explanation": "Rule 3.00.25 permits up to a 72-hour supply of a noncontrolled prescription drug for this specific first-dose LTCF situation, one time per order and subject to the rule's conditions.",
-    "distractorExplanations": {
-      "opt1": "The rule permits more than 24 hours.",
-      "opt2": "The stated ceiling is 72 hours.",
-      "opt4": "Seven days exceeds the rule's limit."
-    },
-    "ruleToRemember": "Colorado LTCF first-dose rule: up to 72 hours, noncontrolled, one time per order, with required documentation.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 3.00.23 / 3.00.25",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 2,
-    "familyId": "co-ltcf-first-dose",
-    "competencyAreaName": "Pharmacist Practice"
+    "subconceptId": "pseudoephedrine-retail-controls",
+    "nabpCompetencies": [
+      "3.8"
+    ]
   },
   {
     "id": "CO-CLOSE-01",
-    "conceptId": "co-closure-records",
+    "conceptId": "A4-CLOSURE-MANAGER-INVENTORY",
     "jurisdiction": "Colorado",
     "topic": "Pharmacy Operations",
     "subtopic": "Pharmacy Operations",
@@ -879,49 +2445,116 @@ window.QUESTION_BANK = [
     "lastVerified": "2026-09-16",
     "active": true,
     "competencyArea": 4,
-    "familyId": "co-closure-records",
-    "competencyAreaName": "Pharmacy Operations"
+    "familyId": "A4-CLOSURE-MANAGER-INVENTORY",
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 2,
+    "reasoningLevel": 3,
+    "subconceptId": "co-closure-records",
+    "nabpCompetencies": [
+      "4.2",
+      "4.7"
+    ]
   },
   {
-    "id": "CO-CLOSE-02",
-    "conceptId": "co-closure-records",
+    "id": "A4-COMP-03",
+    "conceptId": "A4-COMPOUNDING-HAZARDOUS",
+    "familyId": "A4-COMPOUNDING-HAZARDOUS",
+    "competencyArea": 4,
+    "jurisdiction": "Colorado",
+    "topic": "Compounding",
+    "subtopic": "Compounding",
+    "difficulty": 1,
+    "type": "scenario",
+    "stem": "A supervisor directly oversees sterile compounding personnel but does not personally compound. What garbing competency frequency is specified?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Every 12 months."
+      },
+      {
+        "id": "opt2",
+        "text": "Every 3 months."
+      },
+      {
+        "id": "opt3",
+        "text": "Every 6 months."
+      },
+      {
+        "id": "opt4",
+        "text": "No recurring competency."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado compounding rules include recurring competency frequencies and environmental/cleaning controls that vary by compounding category and role.",
+    "distractorExplanations": {
+      "opt2": "This option does not satisfy the controlling rule in this scenario.",
+      "opt3": "This option does not satisfy the controlling rule in this scenario.",
+      "opt4": "This option does not satisfy the controlling rule in this scenario."
+    },
+    "ruleToRemember": "Compounding questions often turn on category, role, frequency, or environmental condition.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "subconceptId": "co-compounding-ops",
+    "nabpCompetencies": [
+      "4.2",
+      "4.5"
+    ]
+  },
+  {
+    "id": "A4-OPS-01",
+    "conceptId": "A4-CLOSURE-MANAGER-INVENTORY",
+    "familyId": "A4-CLOSURE-MANAGER-INVENTORY",
+    "competencyArea": 4,
     "jurisdiction": "Colorado",
     "topic": "Pharmacy Operations",
     "subtopic": "Pharmacy Operations",
-    "difficulty": 4,
+    "difficulty": 2,
     "type": "scenario",
-    "stem": "A Colorado community pharmacy permanently closes on Friday. Which paired duties are both subject to the 72-hour deadline in Rule 5.00.60?",
+    "stem": "A Colorado outlet permanently closes Monday at noon. The last pharmacist manager relocates prescriptions Thursday at 1 PM. What is the clearest issue?",
     "answers": [
       {
         "id": "opt1",
-        "text": "Relocate prescriptions/chart orders and submit the Board closure notice."
+        "text": "The record relocation was late because it occurred outside the 72-hour closure period required by the cited rule."
       },
       {
         "id": "opt2",
-        "text": "Destroy all prescription records and surrender every pharmacist license."
+        "text": "The record relocation was timely because the Board closure notice could satisfy the same 72-hour period independently."
       },
       {
         "id": "opt3",
-        "text": "Return all noncontrolled inventory and terminate all third-party contracts."
+        "text": "The record relocation was timely because patrons retained reasonable access to the pharmacy that received the prescription records."
       },
       {
         "id": "opt4",
-        "text": "Notify every patient individually and publish a newspaper notice."
+        "text": "The record relocation was timely because the pharmacist manager completed the transfer before the next regular pharmacy business day."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "Rule 5.00.60 requires relocation of prescriptions/chart orders and a Board closure notice within 72 hours. It also requires a reasonable effort to inform patrons of the records' location, but not the distractor duties listed.",
+    "explanation": "Colorado outlet-operation rules impose specific deadlines for closure, relocation, and changes affecting registration.",
     "distractorExplanations": {
-      "opt2": "The rule requires relocation, not destruction of all records.",
-      "opt3": "Those actions are not the paired 72-hour duties in the cited rule.",
-      "opt4": "The rule calls for a reasonable effort to inform patrons; it does not impose this specific paired requirement."
+      "opt2": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt3": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt4": "This option applies a related legal rule or a nearby but different factual pathway."
     },
-    "ruleToRemember": "Colorado closure has two prominent 72-hour duties: relocate records and notify the Board.",
+    "ruleToRemember": "Operational deadlines are independent: 72-hour closure duties and separate relocation/registration rules.",
     "authority": [
       {
-        "label": "Colorado Board Rules 5.00.60 / 5.00.70 / 5.01.10",
+        "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
         "citation": "3 CCR 719-1"
       }
@@ -929,254 +2562,60 @@ window.QUESTION_BANK = [
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyArea": 4,
-    "familyId": "co-closure-records",
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "CO-PIC-01",
-    "conceptId": "co-manager-change",
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Manager / PIC",
-    "subtopic": "Pharmacist Manager / PIC",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "Following termination of the former pharmacist manager, the owner generally must employ a new pharmacist manager and apply to transfer the outlet registration within:",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "72 hours"
-      },
-      {
-        "id": "opt2",
-        "text": "10 days"
-      },
-      {
-        "id": "opt3",
-        "text": "30 days"
-      },
-      {
-        "id": "opt4",
-        "text": "60 days"
-      }
-    ],
-    "correctAnswers": [
-      "opt3"
-    ],
-    "explanation": "Rule 5.00.70 states that the owner must employ a pharmacist manager and, within 30 days after termination of the former manager's employment, apply to transfer the registration and pay the transfer fee.",
-    "distractorExplanations": {
-      "opt1": "Seventy-two hours is associated with the controlled-substance inventory after manager change, not this registration-transfer application.",
-      "opt2": "Ten days is used in other reporting contexts.",
-      "opt4": "The rule specifies 30 days."
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 1,
+    "reasoningLevel": 2,
+    "misconceptionTested": {
+      "opt2": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt3": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt4": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway."
     },
-    "ruleToRemember": "PIC/manager change: distinguish the 30-day registration action from the 72-hour controlled-substance inventory.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 5.00.60 / 5.00.70 / 5.01.10",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 1,
-    "familyId": "co-manager-change",
-    "competencyAreaName": "Licensure / Personnel"
+    "subconceptId": "co-outlet-operations",
+    "nabpCompetencies": [
+      "4.2",
+      "4.7"
+    ]
   },
   {
-    "id": "CO-PIC-02",
-    "conceptId": "co-manager-cs-inventory",
+    "id": "CO-REFILLREC-01",
+    "conceptId": "A4-RECORDS-DISTRIBUTION",
     "jurisdiction": "Colorado",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
+    "topic": "Recordkeeping",
+    "subtopic": "Recordkeeping",
     "difficulty": 4,
-    "type": "scenario",
-    "stem": "A new pharmacist manager begins at a Colorado prescription drug outlet. When must the controlled-substance inventory required by Rule 5.01.10 be taken?",
+    "type": "single",
+    "stem": "Unless a statute requires longer retention, Colorado refill transaction information under Rule 2.01.30 must be maintained and available for inspection for how long from the date of a transaction relating to the order?",
     "answers": [
       {
         "id": "opt1",
-        "text": "Before the former manager's last shift ends."
+        "text": "1 year"
       },
       {
         "id": "opt2",
-        "text": "Within 24 hours."
-      },
-      {
-        "id": "opt3",
-        "text": "Within 72 hours."
-      },
-      {
-        "id": "opt4",
-        "text": "By the next biennial inventory date."
-      }
-    ],
-    "correctAnswers": [
-      "opt3"
-    ],
-    "explanation": "Upon a change of pharmacist manager, the controlled-substance inventory must be taken within 72 hours by the new manager or the new manager's designee.",
-    "distractorExplanations": {
-      "opt1": "The rule assigns the inventory to the new manager or designee and gives a 72-hour window.",
-      "opt2": "The stated window is 72 hours.",
-      "opt4": "The manager-change inventory is separate from routine federal biennial inventory requirements."
-    },
-    "ruleToRemember": "New pharmacist manager: controlled-substance inventory within 72 hours.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 5.00.60 / 5.00.70 / 5.01.10",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "co-manager-cs-inventory",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "CO-PIC-03",
-    "conceptId": "co-manager-cs-inventory",
-    "jurisdiction": "Colorado",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
-    "type": "single",
-    "stem": "For the controlled-substance inventory required after a change of Colorado pharmacist manager, which timing method is permitted?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Any time during business hours if the exact count time is recorded."
-      },
-      {
-        "id": "opt2",
-        "text": "As of the opening or as of the close of business activity on the inventory date."
-      },
-      {
-        "id": "opt3",
-        "text": "Only at the close of business."
-      },
-      {
-        "id": "opt4",
-        "text": "Only before the first prescription is processed that day."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "Rule 5.01.10 states the inventory is taken either as of the opening or as of the close of business activity on the inventory date, with the time and date entered on the record.",
-    "distractorExplanations": {
-      "opt1": "The rule is more specific than any time during business hours.",
-      "opt3": "Opening is also permitted.",
-      "opt4": "The rule allows opening or close of business activity."
-    },
-    "ruleToRemember": "For this Colorado inventory, the legally specified reference point is opening or close of business.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 5.00.60 / 5.00.70 / 5.01.10",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "co-manager-cs-inventory",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "CO-VAX-01",
-    "conceptId": "co-vax-delegation",
-    "jurisdiction": "Colorado",
-    "topic": "Immunizations",
-    "subtopic": "Immunizations",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "A trained Colorado pharmacist wishes to delegate vaccine administration. To whom may administration be delegated under Rule 19.01.20?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Any pharmacy employee who has current CPR."
-      },
-      {
-        "id": "opt2",
-        "text": "Only a trained pharmacy intern or trained pharmacy technician."
-      },
-      {
-        "id": "opt3",
-        "text": "Only another pharmacist."
-      },
-      {
-        "id": "opt4",
-        "text": "A medical assistant employed by the pharmacy, regardless of pharmacy credentials."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "A trained pharmacist may delegate vaccine and immunization administration only to a trained pharmacy intern or pharmacy technician.",
-    "distractorExplanations": {
-      "opt1": "General employment plus CPR does not satisfy the rule.",
-      "opt3": "The rule expressly allows trained interns and technicians.",
-      "opt4": "The cited pharmacy rule identifies trained pharmacy interns or technicians."
-    },
-    "ruleToRemember": "Vaccine delegation is credential- and training-specific, not merely employer-specific.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 19.01.20-19.01.50",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 2,
-    "familyId": "co-vax-delegation",
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "CO-VAX-02",
-    "conceptId": "co-vax-records",
-    "jurisdiction": "Colorado",
-    "topic": "Immunizations",
-    "subtopic": "Immunizations",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "How long must a Colorado prescription drug outlet maintain the vaccine-administration records required by Rule 19.01.40 for each dose?",
-    "answers": [
-      {
-        "id": "opt1",
         "text": "2 years"
       },
       {
-        "id": "opt2",
+        "id": "opt3",
         "text": "3 years"
       },
       {
-        "id": "opt3",
+        "id": "opt4",
         "text": "5 years"
-      },
-      {
-        "id": "opt4",
-        "text": "The life of the patient"
       }
     ],
     "correctAnswers": [
       "opt2"
     ],
-    "explanation": "Rule 19.01.40 requires the listed administration information to be maintained for three years for each dose.",
+    "explanation": "Rule 2.01.30 specifies a two-year period from the date of any transaction relating to the order unless otherwise required by statute.",
     "distractorExplanations": {
-      "opt1": "Two years is common for other pharmacy records, but not this vaccine rule.",
-      "opt3": "The rule specifies three years.",
-      "opt4": "The rule does not impose lifetime retention."
+      "opt1": "The rule specifies longer than one year.",
+      "opt3": "Three years is used for some other pharmacy records, such as vaccine-administration records.",
+      "opt4": "Five years is not the default period in Rule 2.01.30."
     },
-    "ruleToRemember": "Colorado vaccine-administration records: 3 years.",
+    "ruleToRemember": "Colorado refill transaction records: generally 2 years unless another law requires longer.",
     "authority": [
       {
-        "label": "Colorado Board Rules 19.01.20-19.01.50",
+        "label": "Colorado Board Rules 2.00.10 / 2.01.50-2.01.53",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
         "citation": "3 CCR 719-1"
       }
@@ -1184,208 +2623,59 @@ window.QUESTION_BANK = [
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyArea": 2,
-    "familyId": "co-vax-records",
-    "competencyAreaName": "Pharmacist Practice"
+    "competencyArea": 4,
+    "familyId": "A4-RECORDS-DISTRIBUTION",
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 2,
+    "reasoningLevel": 4,
+    "subconceptId": "co-refill-record",
+    "nabpCompetencies": [
+      "4.1",
+      "4.2"
+    ]
   },
   {
-    "id": "CO-VAX-03",
-    "conceptId": "co-vax-records",
+    "id": "A4-SPDO-01",
+    "conceptId": "A4-RECORDS-DISTRIBUTION",
+    "familyId": "A4-RECORDS-DISTRIBUTION",
+    "competencyArea": 4,
     "jurisdiction": "Colorado",
-    "topic": "Immunizations",
-    "subtopic": "Immunizations",
-    "difficulty": 4,
-    "type": "multi",
-    "stem": "Which information is expressly included in Colorado's required vaccine-administration record? Select all that apply.",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Administration date and injection site."
-      },
-      {
-        "id": "opt2",
-        "text": "Vaccine name, dose, manufacturer, lot number, and expiration date."
-      },
-      {
-        "id": "opt3",
-        "text": "Signed informed consent."
-      },
-      {
-        "id": "opt4",
-        "text": "The date the VIS was provided."
-      },
-      {
-        "id": "opt5",
-        "text": "The patient's prescription insurance BIN number."
-      }
-    ],
-    "correctAnswers": [
-      "opt1",
-      "opt2",
-      "opt3",
-      "opt4"
-    ],
-    "explanation": "The rule requires the administration/site information, vaccine product details, signed consent, VIS details, and additional information. It does not list the patient's insurance BIN.",
-    "distractorExplanations": {
-      "opt5": "Insurance BIN is not one of the listed vaccine-administration record elements."
-    },
-    "ruleToRemember": "Know the clinical/legal vaccine record, not billing metadata.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 19.01.20-19.01.50",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 2,
-    "familyId": "co-vax-records",
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "CO-TECH-01",
-    "conceptId": "co-tech-ratio",
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 3,
+    "topic": "Pharmacy Operations",
+    "subtopic": "Pharmacy Operations",
+    "difficulty": 1,
     "type": "scenario",
-    "stem": "One pharmacist is supervising two pharmacy interns in a public-facing Colorado pharmacy. Under the general statutory ratio, what is the maximum number of additional pharmacy technicians the pharmacist may supervise at the same time?",
+    "stem": "A managing prescription drug outlet distributes drug stock to an SPDO. For how long must the managing outlet retain the distribution records under the cited rule?",
     "answers": [
       {
         "id": "opt1",
-        "text": "2"
+        "text": "At least 2 years."
       },
       {
         "id": "opt2",
-        "text": "4"
+        "text": "At least 6 months."
       },
       {
         "id": "opt3",
-        "text": "6"
+        "text": "At least 1 year."
       },
       {
         "id": "opt4",
-        "text": "No statutory maximum"
+        "text": "At least 5 years."
       }
     ],
     "correctAnswers": [
-      "opt2"
+      "opt1"
     ],
-    "explanation": "The general ratio permits supervision of up to six persons who are interns or technicians, with no more than two interns. With two interns already included, up to four technicians fit within the six-person maximum.",
+    "explanation": "SPDO distribution records contain detailed traceability requirements and at least two years of retention; Schedule II distribution has an additional DEA-222 requirement.",
     "distractorExplanations": {
-      "opt1": "The six-person total allows four technicians in addition to two interns.",
-      "opt3": "Six additional technicians would produce eight supervised persons.",
-      "opt4": "Colorado sets a general supervision ratio, subject to statutory exceptions."
+      "opt2": "This option does not satisfy the controlling rule in this scenario.",
+      "opt3": "This option does not satisfy the controlling rule in this scenario.",
+      "opt4": "This option does not satisfy the controlling rule in this scenario."
     },
-    "ruleToRemember": "General ratio: up to 6 interns/techs total, with no more than 2 interns.",
+    "ruleToRemember": "Operational law frequently tests chain-of-custody and record content, not just dispensing.",
     "authority": [
       {
-        "label": "C.R.S. \u00a7 12-280-122",
-        "url": "https://content.leg.colorado.gov/agencies/office-legislative-legal-services/2026-crs-titles-download",
-        "citation": "2026 Colorado Revised Statutes, Title 12"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 1,
-    "familyId": "co-tech-ratio",
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "CO-TECH-02",
-    "conceptId": "co-tech-majority",
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "Four pharmacy technicians are on duty under the general Colorado supervision-ratio statute. Which staffing statement satisfies the certification mix requirement?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "At least one of the four must be fully certified."
-      },
-      {
-        "id": "opt2",
-        "text": "At least two of the four must be fully certified."
-      },
-      {
-        "id": "opt3",
-        "text": "At least three of the four must be fully certified."
-      },
-      {
-        "id": "opt4",
-        "text": "All four must be fully certified; provisional certification never counts as being on duty."
-      }
-    ],
-    "correctAnswers": [
-      "opt3"
-    ],
-    "explanation": "When three or more pharmacy technicians are on duty, the majority must be fully certified by the Board. For four technicians, a majority means at least three.",
-    "distractorExplanations": {
-      "opt1": "One is not a majority of four.",
-      "opt2": "Two is exactly half, not a majority.",
-      "opt4": "The statute also contemplates technicians on duty with provisional certification."
-    },
-    "ruleToRemember": "Three or more techs on duty: the majority must be fully Board-certified.",
-    "authority": [
-      {
-        "label": "C.R.S. \u00a7 12-280-122",
-        "url": "https://content.leg.colorado.gov/agencies/office-legislative-legal-services/2026-crs-titles-download",
-        "citation": "2026 Colorado Revised Statutes, Title 12"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 1,
-    "familyId": "co-tech-majority",
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "CO-TECH-03",
-    "conceptId": "co-tech-cert",
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "For a non-provisional Colorado pharmacy technician certification, the applicant must provide proof of certification by:",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Any employer-approved pharmacy training program."
-      },
-      {
-        "id": "opt2",
-        "text": "A nationally recognized certification board/body approved by NABP or NCCA."
-      },
-      {
-        "id": "opt3",
-        "text": "Only PTCB; no other certifying body can qualify."
-      },
-      {
-        "id": "opt4",
-        "text": "A Colorado community college, regardless of national certification."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "Rule 29.00.30 defines the qualifying nationally recognized certification boards/bodies as those approved by NABP or NCCA.",
-    "distractorExplanations": {
-      "opt1": "Employer approval alone is not the stated national-certification requirement.",
-      "opt3": "The rule defines eligibility by NABP/NCCA approval rather than naming only one certifier.",
-      "opt4": "College training alone is not the stated proof for non-provisional certification."
-    },
-    "ruleToRemember": "Non-provisional Colorado technician certification requires qualifying national certification.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 29.00.00",
+        "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
         "citation": "3 CCR 719-1"
       }
@@ -1393,1419 +2683,85 @@ window.QUESTION_BANK = [
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyArea": 1,
-    "familyId": "co-tech-cert",
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "CO-TECH-04",
-    "conceptId": "co-tech-hardship",
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 4,
-    "type": "single",
-    "stem": "A Colorado provisional pharmacy technician seeks the hardship extension described in Rule 29.00.50. Which timing/duration combination is correct?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Apply at least 30 days before expiration; extension up to 6 months."
-      },
-      {
-        "id": "opt2",
-        "text": "Apply at least 60 days before expiration; one-time extension of 9 months."
-      },
-      {
-        "id": "opt3",
-        "text": "Apply before expiration; extension of 18 months."
-      },
-      {
-        "id": "opt4",
-        "text": "Apply within 30 days after expiration; extension of 9 months."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "The Board considers a one-time, fee-waived nine-month hardship extension based on a detailed written explanation submitted at least 60 days before expiration.",
-    "distractorExplanations": {
-      "opt1": "Both the lead time and extension duration are wrong.",
-      "opt3": "The provisional period and hardship extension are different concepts.",
-      "opt4": "The submission is required before expiration, at least 60 days in advance."
-    },
-    "ruleToRemember": "Hardship extension: one time, 9 months, request at least 60 days before provisional certification expires.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 29.00.00",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 1,
-    "familyId": "co-tech-hardship",
-    "competencyAreaName": "Licensure / Personnel"
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 1,
+    "reasoningLevel": 1,
+    "subconceptId": "co-spdo-records",
+    "nabpCompetencies": [
+      "4.1",
+      "4.2"
+    ]
   },
   {
     "id": "CO-TELE-01",
-    "conceptId": "co-tele-central",
+    "conceptId": "A4-RECORDS-DISTRIBUTION",
     "jurisdiction": "Colorado",
-    "topic": "Telepharmacy",
-    "subtopic": "Telepharmacy",
+    "topic": "Ordering / Acquisition",
+    "subtopic": "Ordering / Acquisition",
     "difficulty": 3,
-    "type": "single",
-    "stem": "Under Colorado Board Rule 31.00.05, a central pharmacy may be responsible for overseeing no more than how many telepharmacies?",
+    "type": "scenario",
+    "stem": "A Colorado prescription drug outlet plans to purchase routine prescription stock from a supplier that is federally authorized to distribute the products but is not registered with the Colorado Board. No investigational-drug exception applies. Which compliance issue is most direct?",
     "answers": [
       {
         "id": "opt1",
-        "text": "1"
+        "text": "The outlet should not use that supplier for routine stock because the cited rule requires procurement from a Board-registered source."
       },
       {
         "id": "opt2",
-        "text": "2"
+        "text": "The outlet may use the supplier because federal distribution authority satisfies the Colorado procurement requirement for routine stock."
       },
       {
         "id": "opt3",
-        "text": "3"
+        "text": "The outlet may use the supplier for noncontrolled prescription drugs but not for controlled substances under the cited Colorado rule."
       },
       {
         "id": "opt4",
-        "text": "5"
+        "text": "The outlet may use the supplier for a one-time purchase when the pharmacist manager documents the reason and verifies product integrity."
       }
     ],
     "correctAnswers": [
-      "opt2"
+      "opt1"
     ],
-    "explanation": "The rule defines a central pharmacy as the registered Colorado prescription drug outlet responsible for overseeing no more than two telepharmacies.",
+    "explanation": "Colorado Board Rule 1.00.24 requires a prescription drug outlet to ensure that prescription drugs and controlled substances are procured from an entity or person registered by the Board, subject to the stated exceptions.",
     "distractorExplanations": {
-      "opt1": "The maximum is two, not one.",
-      "opt3": "Three exceeds the definition's maximum.",
-      "opt4": "Five exceeds the definition's maximum."
+      "opt2": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt3": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt4": "This option applies a related legal rule or a nearby but different factual pathway."
     },
-    "ruleToRemember": "Colorado central pharmacy: no more than 2 telepharmacies.",
+    "ruleToRemember": "For ordinary procurement, verify the supplier meets Colorado Board registration requirements in addition to other applicable authority.",
     "authority": [
       {
-        "label": "Colorado Board Rule 31.00.00",
+        "label": "Colorado Board Rule 1.00.24",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
+        "citation": "3 CCR 719-1, Rule 1.00.24"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
     "competencyArea": 4,
-    "familyId": "co-tele-central",
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "CO-TELE-02",
-    "conceptId": "co-tele-space",
-    "jurisdiction": "Colorado",
-    "topic": "Telepharmacy",
-    "subtopic": "Telepharmacy",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "What minimum continuous square footage does Colorado Rule 31.01.10 specify for a telepharmacy's principal compounding/dispensing area?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "100 sq ft"
-      },
-      {
-        "id": "opt2",
-        "text": "125 sq ft"
-      },
-      {
-        "id": "opt3",
-        "text": "150 sq ft"
-      },
-      {
-        "id": "opt4",
-        "text": "225 sq ft"
-      }
-    ],
-    "correctAnswers": [
-      "opt3"
-    ],
-    "explanation": "The telepharmacy principal compounding/dispensing area must be at least 150 continuous square feet.",
-    "distractorExplanations": {
-      "opt1": "The rule specifies 150.",
-      "opt2": "The rule specifies 150.",
-      "opt4": "225 square feet is associated with the general principal area rule for certain prescription drug outlets, not this telepharmacy provision."
+    "familyId": "A4-RECORDS-DISTRIBUTION",
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 2,
+    "reasoningLevel": 2,
+    "subconceptId": "procurement-board-registered-source",
+    "misconceptionTested": {
+      "opt2": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt3": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt4": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway."
     },
-    "ruleToRemember": "Telepharmacy principal compounding/dispensing area: 150 continuous sq ft.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 31.00.00",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 4,
-    "familyId": "co-tele-space",
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "CO-TELE-03",
-    "conceptId": "co-tele-temp",
-    "jurisdiction": "Colorado",
-    "topic": "Telepharmacy",
-    "subtopic": "Telepharmacy",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "A telepharmacy stores refrigerated drugs. Which monitoring rule is stated in Colorado Rule 31.01.10?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The refrigerator temperature must be manually checked once each business week."
-      },
-      {
-        "id": "opt2",
-        "text": "The refrigerator temperature must be electronically monitored each calendar day."
-      },
-      {
-        "id": "opt3",
-        "text": "Monitoring is required only if the manufacturer specifies refrigeration below 2\u00b0C."
-      },
-      {
-        "id": "opt4",
-        "text": "A continuous monitor is optional if the refrigerator has an alarm."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "The rule requires electronic monitoring each calendar day for refrigerated drug storage in the telepharmacy principal compounding/dispensing area.",
-    "distractorExplanations": {
-      "opt1": "Weekly manual monitoring does not meet the stated rule.",
-      "opt3": "The requirement applies to the refrigerated drug storage described by the rule.",
-      "opt4": "An alarm does not replace the stated electronic daily monitoring requirement."
-    },
-    "ruleToRemember": "Telepharmacy refrigerated/frozen storage: electronically monitor temperature each calendar day.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 31.00.00",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 4,
-    "familyId": "co-tele-temp",
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "CO-CPP-01",
-    "conceptId": "co-cppa-qual",
-    "jurisdiction": "Colorado",
-    "topic": "Collaborative Practice",
-    "subtopic": "Collaborative Practice",
-    "difficulty": 3,
-    "type": "multi",
-    "stem": "Which are express Colorado pharmacist qualifications for entering a collaborative pharmacy practice agreement under Rule 17.00.30? Select all that apply.",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Current Colorado pharmacist license."
-      },
-      {
-        "id": "opt2",
-        "text": "Engaged in the practice of pharmacy."
-      },
-      {
-        "id": "opt3",
-        "text": "PharmD degree or at least five years' experience as a licensed pharmacist."
-      },
-      {
-        "id": "opt4",
-        "text": "A minimum of ten years of hospital practice."
-      },
-      {
-        "id": "opt5",
-        "text": "Adequate professional liability insurance."
-      }
-    ],
-    "correctAnswers": [
-      "opt1",
-      "opt2",
-      "opt3",
-      "opt5"
-    ],
-    "explanation": "Rule 17.00.30 includes current Colorado licensure, active pharmacy practice, PharmD or at least five years of licensed-pharmacist experience, and adequate professional liability insurance, among other requirements.",
-    "distractorExplanations": {
-      "opt4": "The rule does not impose a ten-year hospital-practice requirement."
-    },
-    "ruleToRemember": "For CPPA eligibility, know the actual qualifications; do not add specialty-employment prerequisites.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 17.00.30",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 2,
-    "familyId": "co-cppa-qual",
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "CO-CPP-02",
-    "conceptId": "co-cppa-insurance",
-    "jurisdiction": "Colorado",
-    "topic": "Collaborative Practice",
-    "subtopic": "Collaborative Practice",
-    "difficulty": 4,
-    "type": "single",
-    "stem": "What minimum professional liability coverage does Colorado Rule 17.00.30 specify for a pharmacist entering collaborative practice?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "$500,000 per incident / $1 million aggregate"
-      },
-      {
-        "id": "opt2",
-        "text": "$1 million per incident / $3 million aggregate"
-      },
-      {
-        "id": "opt3",
-        "text": "$2 million per incident / $2 million aggregate"
-      },
-      {
-        "id": "opt4",
-        "text": "$3 million per incident / $5 million aggregate"
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "The rule states coverage of at least $1,000,000 per incident and at least $3,000,000 aggregate.",
-    "distractorExplanations": {
-      "opt1": "Both limits are below the stated minimums.",
-      "opt3": "This is not the specified combination.",
-      "opt4": "This exceeds the rule but is not the minimum specified."
-    },
-    "ruleToRemember": "CPPA liability minimum: $1M per incident / $3M aggregate.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 17.00.30",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 2,
-    "familyId": "co-cppa-insurance",
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "CO-CPP-03",
-    "conceptId": "co-cppa-patient",
-    "jurisdiction": "Colorado",
-    "topic": "Collaborative Practice",
-    "subtopic": "Collaborative Practice",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "A pharmacist wants to enter a patient-specific collaborative practice arrangement. No statewide protocol applies. Which additional relationship condition is generally required by Colorado statute/rules?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The pharmacist and patient must have had a dispensing relationship for at least one year."
-      },
-      {
-        "id": "opt2",
-        "text": "The collaborating prescriber must have an established relationship with the patient(s) served."
-      },
-      {
-        "id": "opt3",
-        "text": "The pharmacist must be employed by the prescriber."
-      },
-      {
-        "id": "opt4",
-        "text": "The patient must have Medicare Part D coverage."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "Absent a statewide protocol, collaborative practice generally requires the physician/APRN collaborator to have an established relationship with the patient or patients served.",
-    "distractorExplanations": {
-      "opt1": "No one-year dispensing prerequisite is stated.",
-      "opt3": "Employment is not required and the statute prevents certain employment arrangements solely to create the agreement.",
-      "opt4": "Insurance status is not the qualifying relationship."
-    },
-    "ruleToRemember": "Without a statewide protocol, look for the collaborating prescriber's established patient relationship.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 17.00.30",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "C.R.S. \u00a7 12-280-602",
-        "url": "https://content.leg.colorado.gov/agencies/office-legislative-legal-services/2026-crs-titles-download",
-        "citation": "2026 Title 12"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 2,
-    "familyId": "co-cppa-patient",
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "CO-2026-FPV-01",
-    "conceptId": "co-2026-fpv",
-    "jurisdiction": "Colorado",
-    "topic": "2026 Law Changes",
-    "subtopic": "2026 Law Changes",
-    "difficulty": 4,
-    "type": "single",
-    "stem": "Under the 2026 Colorado amendment to C.R.S. \u00a7 12-280-122, a supervising pharmacist's new final-product-verification delegation authority described in subsection (5) applies to physical preparation/processing tasks for orders that are:",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Only Schedule III-V controlled substances."
-      },
-      {
-        "id": "opt2",
-        "text": "Only Schedule II controlled substances."
-      },
-      {
-        "id": "opt3",
-        "text": "Not for controlled substances."
-      },
-      {
-        "id": "opt4",
-        "text": "Any drug or device order without limitation."
-      }
-    ],
-    "correctAnswers": [
-      "opt3"
-    ],
-    "explanation": "HB 26-1336 added subsection (5), allowing specified delegated tasks associated with physical preparation and processing of drug/device/product orders that are not for controlled substances.",
-    "distractorExplanations": {
-      "opt1": "The statutory text excludes controlled-substance orders from this delegation provision.",
-      "opt2": "The statutory text excludes controlled-substance orders.",
-      "opt4": "The authority is not unlimited; the subsection expressly excludes controlled substances."
-    },
-    "ruleToRemember": "2026 FPV delegation provision: noncontrolled orders only.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / C.R.S. \u00a7 12-280-122(5)",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective Aug. 12, 2026"
-      }
-    ],
-    "effectiveDate": "2026-08-12",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 1,
-    "familyId": "co-2026-fpv",
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "CO-2026-FPV-02",
-    "conceptId": "co-2026-fpv",
-    "jurisdiction": "Colorado",
-    "topic": "2026 Law Changes",
-    "subtopic": "2026 Law Changes",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist delegates final product verification of a noncontrolled unit-dose repackaging process to a properly trained technician under the new 2026 statute. Which safeguard is specifically required of the pharmacy or other outlet?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "A continuous quality assessment system that periodically verifies accuracy and records/evaluates errors."
-      },
-      {
-        "id": "opt2",
-        "text": "A second pharmacist must repeat every delegated verification before release."
-      },
-      {
-        "id": "opt3",
-        "text": "The technician must hold a PharmD degree."
-      },
-      {
-        "id": "opt4",
-        "text": "The product may be released without any quality review if barcode technology is used."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 law requires a continuous quality assessment system to periodically verify accuracy and include a process for recording and evaluating errors.",
-    "distractorExplanations": {
-      "opt2": "The statute creates delegation authority; it does not require a pharmacist to repeat every delegated verification.",
-      "opt3": "A PharmD is not a technician qualification.",
-      "opt4": "Technology does not eliminate the statutory quality-assessment requirement."
-    },
-    "ruleToRemember": "Delegated final product verification requires a continuous quality assessment system.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / C.R.S. \u00a7 12-280-122(5)",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective Aug. 12, 2026"
-      }
-    ],
-    "effectiveDate": "2026-08-12",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 1,
-    "familyId": "co-2026-fpv",
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "CO-2026-FPV-03",
-    "conceptId": "co-2026-fpv",
-    "jurisdiction": "Colorado",
-    "topic": "2026 Law Changes",
-    "subtopic": "2026 Law Changes",
-    "difficulty": 5,
-    "type": "single",
-    "stem": "When delegating final product verification under the 2026 Colorado statute, the supervising pharmacist must ensure the delegated task:",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Requires independent therapeutic judgment by the technician."
-      },
-      {
-        "id": "opt2",
-        "text": "Does not require the technician to exercise discretion or clinical judgment."
-      },
-      {
-        "id": "opt3",
-        "text": "Is performed only after the technician contacts the prescriber."
-      },
-      {
-        "id": "opt4",
-        "text": "Is limited to compounded sterile preparations."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "The statute requires the supervising pharmacist to use reasonable professional judgment and ensure the authorized tasks do not require discretion or clinical judgment by a pharmacy technician.",
-    "distractorExplanations": {
-      "opt1": "This is the opposite of the statutory limitation.",
-      "opt3": "Prescriber contact is not the defining limitation in this provision.",
-      "opt4": "The statute describes broader noncontrolled final-product-verification tasks."
-    },
-    "ruleToRemember": "Technician FPV delegation cannot shift clinical judgment or discretion to the technician.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / C.R.S. \u00a7 12-280-122(5)",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective Aug. 12, 2026"
-      }
-    ],
-    "effectiveDate": "2026-08-12",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 1,
-    "familyId": "co-2026-fpv",
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "FED-CII-01",
-    "conceptId": "fed-cii-refill",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "Under federal law, how many refills may be authorized on a Schedule II prescription?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "0"
-      },
-      {
-        "id": "opt2",
-        "text": "1"
-      },
-      {
-        "id": "opt3",
-        "text": "3"
-      },
-      {
-        "id": "opt4",
-        "text": "5 within six months"
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "21 CFR 1306.12 prohibits refilling a Schedule II prescription.",
-    "distractorExplanations": {
-      "opt2": "A Schedule II prescription is not refillable.",
-      "opt3": "A Schedule II prescription is not refillable.",
-      "opt4": "The five-refill/six-month rule applies to Schedule III-IV prescriptions."
-    },
-    "ruleToRemember": "Federal Schedule II prescriptions are not refillable.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Federal Schedule II refill rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-cii-refill",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "FED-CII-02",
-    "conceptId": "fed-cii-multiple",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "A practitioner wants to provide multiple Schedule II prescriptions at one visit. Under federal law, if all regulatory conditions are met, the prescriptions may authorize the patient to receive a total of up to:",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "30 days' supply"
-      },
-      {
-        "id": "opt2",
-        "text": "60 days' supply"
-      },
-      {
-        "id": "opt3",
-        "text": "90 days' supply"
-      },
-      {
-        "id": "opt4",
-        "text": "180 days' supply"
-      }
-    ],
-    "correctAnswers": [
-      "opt3"
-    ],
-    "explanation": "21 CFR 1306.12 permits multiple Schedule II prescriptions totaling up to a 90-day supply when the listed federal and state-law conditions are satisfied.",
-    "distractorExplanations": {
-      "opt1": "Federal law allows up to 90 days under the rule.",
-      "opt2": "Federal law allows up to 90 days under the rule.",
-      "opt4": "The cited federal rule does not authorize a 180-day total."
-    },
-    "ruleToRemember": "Multiple CII prescriptions can total up to 90 days if every condition is satisfied.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Federal Schedule II refill rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-cii-multiple",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "FED-CII-03",
-    "conceptId": "fed-cii-multiple",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 5,
-    "type": "multi",
-    "stem": "Which are federal conditions for issuing multiple Schedule II prescriptions totaling up to 90 days? Select all that apply.",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Each prescription is for a legitimate medical purpose in the usual course of practice."
-      },
-      {
-        "id": "opt2",
-        "text": "Later prescriptions include written instructions specifying the earliest fill date, as applicable."
-      },
-      {
-        "id": "opt3",
-        "text": "The practitioner concludes the approach does not create an undue risk of diversion or abuse."
-      },
-      {
-        "id": "opt4",
-        "text": "The practice is permissible under applicable state law."
-      },
-      {
-        "id": "opt5",
-        "text": "The pharmacy must fill all prescriptions on the day they are issued."
-      }
-    ],
-    "correctAnswers": [
-      "opt1",
-      "opt2",
-      "opt3",
-      "opt4"
-    ],
-    "explanation": "The federal rule requires legitimate purpose, earliest-fill instructions for later prescriptions as applicable, the practitioner's diversion-risk judgment, state-law permissibility, and other applicable requirements. Same-day filling of all prescriptions is not required and would defeat the delayed-fill structure.",
-    "distractorExplanations": {
-      "opt5": "Later prescriptions are specifically intended to carry earliest-fill instructions when not to be filled immediately."
-    },
-    "ruleToRemember": "The 90-day CII mechanism is conditional; it is not a refill and does not override state law.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Federal Schedule II refill rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-cii-multiple",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "FED-34-01",
-    "conceptId": "fed-c34-refills",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "Under federal law, a Schedule III or IV prescription may be refilled, if authorized, no more than:",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "3 times within 90 days"
-      },
-      {
-        "id": "opt2",
-        "text": "5 times within 6 months"
-      },
-      {
-        "id": "opt3",
-        "text": "6 times within 6 months"
-      },
-      {
-        "id": "opt4",
-        "text": "11 times within 1 year"
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "21 CFR 1306.22 provides that Schedule III-IV prescriptions may not be filled/refilled more than six months after issue and may not be refilled more than five times.",
-    "distractorExplanations": {
-      "opt1": "This is not the federal limit.",
-      "opt3": "The maximum is five refills, not six.",
-      "opt4": "That does not match the federal controlled-substance limit."
-    },
-    "ruleToRemember": "CIII-IV federal rule: 5 refills in 6 months.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Federal Schedule III-IV refill rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-c34-refills",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "FED-34-02",
-    "conceptId": "fed-c34-refills",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "A Schedule IV prescription was issued 6 months and 2 days ago. It has two refills remaining on the label. No new prescription has been issued. Under federal law, what is the key problem?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "No problem; the printed remaining-refill count controls."
-      },
-      {
-        "id": "opt2",
-        "text": "The prescription is beyond the federal six-month fill/refill window."
-      },
-      {
-        "id": "opt3",
-        "text": "Only Schedule III prescriptions have a six-month limit."
-      },
-      {
-        "id": "opt4",
-        "text": "The prescription remains valid until all five possible refills are used."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "The six-month time limit and five-refill maximum are independent ceilings. Remaining authorized refills do not extend the prescription beyond six months.",
-    "distractorExplanations": {
-      "opt1": "A remaining-refill display cannot override the federal time limit.",
-      "opt3": "The federal rule applies to both Schedule III and IV.",
-      "opt4": "Both the time and refill-number ceilings must be satisfied."
-    },
-    "ruleToRemember": "For CIII-IV, you must satisfy both ceilings: no more than 5 refills and no later than 6 months.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Federal Schedule III-IV refill rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-c34-refills",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "FED-34-03",
-    "conceptId": "fed-c34-refills",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 5,
-    "type": "single",
-    "stem": "A prescriber orally authorizes additional refills on an existing Schedule III prescription. Which statement is consistent with 21 CFR 1306.22?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Oral refill authorization can extend the prescription beyond six months if total refills stay at five."
-      },
-      {
-        "id": "opt2",
-        "text": "The total authorization still cannot exceed five refills or extend beyond six months from the original issue date."
-      },
-      {
-        "id": "opt3",
-        "text": "An oral refill authorization is never permitted for Schedule III or IV prescriptions."
-      },
-      {
-        "id": "opt4",
-        "text": "Any quantity may be authorized on an added refill even if it exceeds the initial fill quantity."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "The rule allows oral authorization of additional refills under conditions, but the total must remain within the five-refill/six-month limits; each added refill quantity is also constrained by the rule.",
-    "distractorExplanations": {
-      "opt1": "The six-month ceiling remains.",
-      "opt3": "The regulation expressly allows oral additional-refill authorization under conditions.",
-      "opt4": "The regulation limits the quantity of each additional refill."
-    },
-    "ruleToRemember": "Adding refills does not reset the original six-month clock.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Federal Schedule III-IV refill rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-c34-refills",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "FED-PART-01",
-    "conceptId": "fed-cii-partial-request",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "A patient requests a partial fill of a valid Schedule II prescription for a reason unrelated to pharmacy stock. State law permits the partial fill. Under the federal patient-request rule, by when must any remaining portions generally be filled?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Within 72 hours of the first partial fill"
-      },
-      {
-        "id": "opt2",
-        "text": "Within 7 days of issue"
-      },
-      {
-        "id": "opt3",
-        "text": "Not later than 30 days after the date the prescription was written"
-      },
-      {
-        "id": "opt4",
-        "text": "Within 60 days of issue"
-      }
-    ],
-    "correctAnswers": [
-      "opt3"
-    ],
-    "explanation": "For a qualifying patient/practitioner-requested Schedule II partial fill, remaining portions generally must be filled not later than 30 days after the prescription was written.",
-    "distractorExplanations": {
-      "opt1": "The 72-hour rule is associated with emergency oral prescriptions and the unable-to-supply framework.",
-      "opt2": "The federal rule provides a 30-day window in this circumstance.",
-      "opt4": "The 60-day rule applies to certain LTCF/terminal-illness Schedule II prescriptions."
-    },
-    "ruleToRemember": "Patient/practitioner-requested CII partial fill: generally complete within 30 days of the written date.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Federal Schedule II partial-fill rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-cii-partial-request",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "FED-PART-02",
-    "conceptId": "fed-cii-partial-shortage",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacy cannot supply the full quantity of a Schedule II prescription and dispenses a partial quantity under the federal unable-to-supply rule. What is the general deadline for dispensing the remainder under that provision?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "24 hours"
-      },
-      {
-        "id": "opt2",
-        "text": "48 hours"
-      },
-      {
-        "id": "opt3",
-        "text": "72 hours"
-      },
-      {
-        "id": "opt4",
-        "text": "30 days"
-      }
-    ],
-    "correctAnswers": [
-      "opt3"
-    ],
-    "explanation": "Under 21 CFR 1306.13(a), when the pharmacist is unable to supply the full quantity, the remaining portion may be filled within 72 hours. If it cannot be completed in that period, the practitioner is notified and no further quantity may be supplied without a new prescription.",
-    "distractorExplanations": {
-      "opt1": "The rule provides 72 hours.",
-      "opt2": "The rule provides 72 hours.",
-      "opt4": "The 30-day rule applies to a different partial-fill pathway."
-    },
-    "ruleToRemember": "CII partial-fill deadlines depend on WHY the prescription was partially filled.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Federal Schedule II partial-fill rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-cii-partial-shortage",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "FED-PART-03",
-    "conceptId": "fed-cii-partial-ltcf",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 4,
-    "type": "single",
-    "stem": "A Schedule II prescription for a qualifying LTCF patient is being dispensed in partial quantities. Under federal law, the prescription may remain valid for a period not to exceed:",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "30 days from issue"
-      },
-      {
-        "id": "opt2",
-        "text": "45 days from issue"
-      },
-      {
-        "id": "opt3",
-        "text": "60 days from issue"
-      },
-      {
-        "id": "opt4",
-        "text": "90 days from issue"
-      }
-    ],
-    "correctAnswers": [
-      "opt3"
-    ],
-    "explanation": "Federal law permits partial quantities for qualifying LTCF or terminally ill patients and provides a validity period not exceeding 60 days from issue, unless the medication is discontinued sooner.",
-    "distractorExplanations": {
-      "opt1": "The specific LTCF/terminal-illness provision allows up to 60 days.",
-      "opt2": "The rule specifies 60 days.",
-      "opt4": "The rule specifies 60 days, not 90."
-    },
-    "ruleToRemember": "LTCF/terminal-illness CII partial-fill provision: up to 60 days from issue.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Federal Schedule II partial-fill rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-cii-partial-ltcf",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "FED-PART-04",
-    "conceptId": "fed-cii-partial-distinguish",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 5,
-    "type": "single",
-    "stem": "Which pairing correctly matches a federal Schedule II partial-fill circumstance with its principal remaining-fill deadline?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Unable to supply full quantity \u2192 30 days; patient-requested partial fill \u2192 72 hours."
-      },
-      {
-        "id": "opt2",
-        "text": "Unable to supply full quantity \u2192 72 hours; qualifying patient-requested partial fill \u2192 30 days from written date."
-      },
-      {
-        "id": "opt3",
-        "text": "Both circumstances \u2192 60 days."
-      },
-      {
-        "id": "opt4",
-        "text": "Both circumstances \u2192 72 hours."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "Federal law has distinct Schedule II partial-fill pathways. Unable-to-supply uses a 72-hour remainder period; qualifying patient/practitioner-requested partial fill generally uses 30 days from the written date.",
-    "distractorExplanations": {
-      "opt1": "The deadlines are reversed.",
-      "opt3": "Sixty days is associated with the LTCF/terminal-illness provision.",
-      "opt4": "The patient-request pathway is not limited to 72 hours."
-    },
-    "ruleToRemember": "Do not memorize one CII partial-fill number; identify the legal pathway first.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Federal Schedule II partial-fill rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-cii-partial-distinguish",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "FED-RESP-01",
-    "conceptId": "fed-corresponding",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "A controlled-substance prescription is facially complete, but the pharmacist has unresolved facts strongly suggesting it was not issued for a legitimate medical purpose. Which statement best reflects federal law?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The prescriber's signature eliminates pharmacist responsibility."
-      },
-      {
-        "id": "opt2",
-        "text": "The pharmacist has a corresponding responsibility regarding the legitimacy of the controlled-substance prescription."
-      },
-      {
-        "id": "opt3",
-        "text": "Only the DEA can decide whether the prescription may be dispensed."
-      },
-      {
-        "id": "opt4",
-        "text": "The pharmacist must dispense if the prescriber's DEA registration is active."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "21 CFR 1306.04 places responsibility on the prescriber and a corresponding responsibility on the pharmacist who fills the prescription.",
-    "distractorExplanations": {
-      "opt1": "A prescriber's signature does not eliminate the pharmacist's corresponding responsibility.",
-      "opt3": "The pharmacist has an independent legal responsibility when deciding whether to fill.",
-      "opt4": "An active DEA registration does not by itself establish legitimate medical purpose."
-    },
-    "ruleToRemember": "Controlled substances: a technically complete prescription can still be legally invalid.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.04(a)",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.04",
-        "citation": "Federal corresponding responsibility"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-corresponding",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "FED-XFER-01",
-    "conceptId": "fed-c345-transfer",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 4,
-    "type": "single",
-    "stem": "Under the general federal rule, transfer of original Schedule III-V prescription information for refill purposes between pharmacies that do not share the qualifying real-time online database is permitted:",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Zero times"
-      },
-      {
-        "id": "opt2",
-        "text": "One time"
-      },
-      {
-        "id": "opt3",
-        "text": "Twice"
-      },
-      {
-        "id": "opt4",
-        "text": "Without a transfer limit until refills expire"
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "21 CFR 1306.25 permits the refill transfer on a one-time basis, with an exception for pharmacies sharing a real-time online database.",
-    "distractorExplanations": {
-      "opt1": "Federal law permits a transfer under the rule.",
-      "opt3": "The general limit is one transfer.",
-      "opt4": "The number of authorized refills does not create unlimited transfer authority."
-    },
-    "ruleToRemember": "CIII-V refill-transfer limit and refill limit are different questions.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Federal CIII-V refill transfer rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-c345-transfer",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "FED-XFER-02",
-    "conceptId": "fed-c345-transfer-personnel",
-    "jurisdiction": "Federal",
-    "topic": "Federal Controlled Substances",
-    "subtopic": "Federal Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "For a traditional federal Schedule III-V refill transfer under 21 CFR 1306.25, the transfer must be communicated directly between:",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Two licensed pharmacists"
-      },
-      {
-        "id": "opt2",
-        "text": "A pharmacist and any certified technician"
-      },
-      {
-        "id": "opt3",
-        "text": "Two pharmacy technicians if both are nationally certified"
-      },
-      {
-        "id": "opt4",
-        "text": "Any two employees acting under pharmacist supervision"
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The federal transfer rule specifies direct communication between two licensed pharmacists for this transfer pathway.",
-    "distractorExplanations": {
-      "opt2": "Certification does not replace the pharmacist-to-pharmacist federal requirement in this rule.",
-      "opt3": "The rule does not authorize technician-to-technician communication.",
-      "opt4": "General supervision does not alter the direct communication requirement."
-    },
-    "ruleToRemember": "Federal CIII-V refill transfer under 1306.25: pharmacist to pharmacist.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Federal CIII-V refill transfer rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-c345-transfer-personnel",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "MIX-01",
-    "conceptId": "mixed-transfer-distinction",
-    "jurisdiction": "Both",
-    "topic": "Federal vs Colorado",
-    "subtopic": "Federal vs Colorado",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Colorado technician is authorized by state rule to orally transfer a noncontrolled prescription. The technician then assumes the same authority applies to a Schedule IV refill transfer governed by federal controlled-substance transfer rules. What is the legal flaw?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "None; state technician authority automatically controls all prescription transfers."
-      },
-      {
-        "id": "opt2",
-        "text": "Federal controlled-substance transfer rules impose their own pharmacist-to-pharmacist requirement for the traditional CIII-V refill-transfer pathway."
-      },
-      {
-        "id": "opt3",
-        "text": "Schedule IV prescriptions cannot be transferred at all."
-      },
-      {
-        "id": "opt4",
-        "text": "The transfer is valid only if the patient has no refills remaining."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "Colorado's noncontrolled-transfer personnel rule does not erase the federal pharmacist-to-pharmacist requirement for the traditional Schedule III-V refill transfer pathway.",
-    "distractorExplanations": {
-      "opt1": "Different categories can carry different personnel requirements.",
-      "opt3": "Schedule III-V refill transfers are permitted under conditions.",
-      "opt4": "A refill transfer presupposes remaining refill authority."
-    },
-    "ruleToRemember": "Always classify the prescription before applying the transfer-personnel rule.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 2.01.50",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "DEA controlled-substance transfer rule",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "21 CFR 1306.25"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "mixed-transfer-distinction",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "MIX-02",
-    "conceptId": "mixed-refill-vs-transfer",
-    "jurisdiction": "Both",
-    "topic": "Federal vs Colorado",
-    "subtopic": "Federal vs Colorado",
-    "difficulty": 5,
-    "type": "single",
-    "stem": "A Schedule IV prescription has already been transferred once between two non-shared-database pharmacies and still has three authorized refills remaining. Which statement is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The remaining refill count automatically authorizes another transfer."
-      },
-      {
-        "id": "opt2",
-        "text": "Refill authorization and transfer authorization are separate limits; remaining refills do not necessarily permit another transfer."
-      },
-      {
-        "id": "opt3",
-        "text": "A prescription with three refills remaining may always be transferred three more times."
-      },
-      {
-        "id": "opt4",
-        "text": "Once transferred, all remaining refills are void under federal law."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "The number of refills remaining does not equal the number of lawful transfers remaining. Under the general one-time transfer rule, a prescription can retain refills but have exhausted its transfer authorization.",
-    "distractorExplanations": {
-      "opt1": "This confuses refill count with transfer count.",
-      "opt3": "The transfer rule does not track one-for-one with remaining refills.",
-      "opt4": "A lawful transfer does not automatically void all remaining refills."
-    },
-    "ruleToRemember": "Keep the refill clock/count and the transfer count mentally separate.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 2.01.50",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "DEA controlled-substance transfer rule",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "21 CFR 1306.25"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "mixed-refill-vs-transfer",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "MIX-03",
-    "conceptId": "mixed-cii-refill",
-    "jurisdiction": "Both",
-    "topic": "Federal vs Colorado",
-    "subtopic": "Federal vs Colorado",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "A Colorado prescription system displays '2 refills remaining' on a Schedule II prescription. Which legal principle controls?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The computer display authorizes two refills."
-      },
-      {
-        "id": "opt2",
-        "text": "Federal law prohibits refilling a Schedule II prescription; the display cannot create refill authority."
-      },
-      {
-        "id": "opt3",
-        "text": "Colorado law permits two Schedule II refills if the original was electronic."
-      },
-      {
-        "id": "opt4",
-        "text": "The patient may choose whether to use the displayed refills."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "Schedule II refills are prohibited under federal law. A software field or label display cannot create legal refill authority.",
-    "distractorExplanations": {
-      "opt1": "System data cannot override federal law.",
-      "opt3": "Electronic format does not make a Schedule II prescription refillable.",
-      "opt4": "Patient preference does not create legal authority."
-    },
-    "ruleToRemember": "Operational data never outranks the governing controlled-substance rule.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Federal Schedule II refill rules"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "mixed-cii-refill",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "CO-VAX-04",
-    "conceptId": "co-vax-offsite",
-    "jurisdiction": "Colorado",
-    "topic": "Immunizations",
-    "subtopic": "Immunizations",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "Vaccines are removed from a Colorado prescription drug outlet for an authorized off-site immunization event. What must happen to the remaining vaccines under Rule 19.01.50?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "They may remain secured off-site for up to 72 hours."
-      },
-      {
-        "id": "opt2",
-        "text": "They must be returned to the prescription drug outlet the day they were removed."
-      },
-      {
-        "id": "opt3",
-        "text": "They may remain off-site until their beyond-use date."
-      },
-      {
-        "id": "opt4",
-        "text": "They must be destroyed at the off-site location."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "Rule 19.01.50 requires remaining vaccines and immunizations to be returned to the prescription drug outlet the day they were removed.",
-    "distractorExplanations": {
-      "opt1": "The rule requires same-day return.",
-      "opt3": "The rule does not permit indefinite off-site retention.",
-      "opt4": "The rule requires return, not routine destruction."
-    },
-    "ruleToRemember": "Off-site vaccine stock: return remaining doses to the outlet the same day.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 19.01.20-19.01.50",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 2,
-    "familyId": "co-vax-offsite",
-    "competencyAreaName": "Pharmacist Practice"
+    "nabpCompetencies": [
+      "4.1",
+      "4.2"
+    ]
   },
   {
     "id": "CO-TELE-04",
-    "conceptId": "co-tele-closure",
+    "conceptId": "A4-PRACTICE-SETTING-OPS",
     "jurisdiction": "Colorado",
     "topic": "Telepharmacy",
     "subtopic": "Telepharmacy",
-    "difficulty": 4,
+    "difficulty": 3,
     "type": "scenario",
     "stem": "A Colorado telepharmacy permanently closes. By when must the last pharmacist manager of record relocate applicable orders and submit the closure notice?",
     "answers": [
@@ -2847,100 +2803,184 @@ window.QUESTION_BANK = [
     "lastVerified": "2026-09-16",
     "active": true,
     "competencyArea": 4,
-    "familyId": "co-tele-closure",
-    "competencyAreaName": "Pharmacy Operations"
+    "familyId": "A4-PRACTICE-SETTING-OPS",
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 2,
+    "reasoningLevel": 3,
+    "subconceptId": "co-tele-closure",
+    "nabpCompetencies": [
+      "4.2",
+      "4.7"
+    ]
   },
   {
-    "id": "CO-TELE-05",
-    "conceptId": "co-tele-staff",
+    "id": "CO-TELE-02",
+    "conceptId": "A4-PRACTICE-SETTING-OPS",
     "jurisdiction": "Colorado",
-    "topic": "Telepharmacy",
-    "subtopic": "Telepharmacy",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "Who may engage in the practice of pharmacy in a Colorado telepharmacy under Rule 31.02.00?",
+    "topic": "Central Fill / Delivery",
+    "subtopic": "Central Fill / Delivery",
+    "difficulty": 4,
+    "type": "scenario",
+    "stem": "A fulfillment pharmacy sends a completed prescription back to the originating pharmacy rather than directly to the patient. The originating pharmacy records the date received and the carrier type but not who accepted the delivery. Which requirement is incomplete?",
     "answers": [
       {
         "id": "opt1",
-        "text": "Any employee who completes employer training."
+        "text": "The receipt record is missing the name of the pharmacy employee who accepted the delivery."
       },
       {
         "id": "opt2",
-        "text": "Only a Colorado-licensed pharmacist, Colorado-licensed pharmacy intern, or Colorado-certified pharmacy technician."
+        "text": "The receipt record is missing a patient signature confirming receipt from the originating pharmacy."
       },
       {
         "id": "opt3",
-        "text": "Only a pharmacist physically present at the telepharmacy."
+        "text": "The receipt record is missing the fulfillment pharmacist's individual license-renewal date."
       },
       {
         "id": "opt4",
-        "text": "Only pharmacists and interns; technicians are excluded."
+        "text": "The receipt record is missing a second prescription number assigned by the fulfillment pharmacy."
       }
     ],
     "correctAnswers": [
-      "opt2"
+      "opt1"
     ],
-    "explanation": "Rule 31.02.00 identifies Colorado-licensed pharmacists, Colorado-licensed interns, and Colorado-certified technicians as the personnel who may engage in the practice of pharmacy in the telepharmacy.",
+    "explanation": "When an originating pharmacy receives a prescription from a fulfillment pharmacy, the cited rule requires the date of receipt, method of delivery, and name of the pharmacy employee accepting delivery.",
     "distractorExplanations": {
-      "opt1": "Employer training alone is insufficient.",
-      "opt3": "The rule includes remote/telepharmacy staffing structures and is not limited to a pharmacist physically present at the telepharmacy.",
-      "opt4": "Certified technicians are included."
+      "opt2": "This option applies a related requirement but does not match the controlling facts.",
+      "opt3": "This option applies a related requirement but does not match the controlling facts.",
+      "opt4": "This option applies a related requirement but does not match the controlling facts."
     },
-    "ruleToRemember": "Telepharmacy personnel must hold the Colorado credential appropriate to their role.",
+    "ruleToRemember": "Central-fill receipt records identify when and how the prescription arrived and who accepted it.",
     "authority": [
       {
-        "label": "Colorado Board Rule 31.00.00",
+        "label": "Colorado Board Rule 20.00.90(c)",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
+        "citation": "3 CCR 719-1, Rule 20.00.90(c)"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
     "competencyArea": 4,
-    "familyId": "co-tele-staff",
-    "competencyAreaName": "Pharmacy Operations"
+    "familyId": "A4-PRACTICE-SETTING-OPS",
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 2,
+    "reasoningLevel": 2,
+    "subconceptId": "central-fill-receipt-record",
+    "nabpCompetencies": [
+      "4.3",
+      "4.6"
+    ],
+    "misconceptionTested": {
+      "opt2": "Confuses a nearby rule or exception with the controlling requirement.",
+      "opt3": "Confuses a nearby rule or exception with the controlling requirement.",
+      "opt4": "Confuses a nearby rule or exception with the controlling requirement."
+    }
   },
   {
-    "id": "CO-REFCOPY-02",
-    "conceptId": "co-reference-copy",
+    "id": "CO-TELE-03",
+    "conceptId": "A4-PRACTICE-SETTING-OPS",
     "jurisdiction": "Colorado",
-    "topic": "Prescription Requirements",
-    "subtopic": "Prescription Requirements",
-    "difficulty": 5,
+    "topic": "Central Fill / Delivery",
+    "subtopic": "Central Fill / Delivery",
+    "difficulty": 4,
     "type": "scenario",
-    "stem": "A patient brings Pharmacy B a paper labeled 'COPY FOR REFERENCE ONLY' issued by Pharmacy A and asks B to dispense directly from the copy. Which response is most accurate under Colorado's transfer rules?",
+    "stem": "A fulfillment pharmacy can show when an order was received and fulfilled, but its record cannot identify the pharmacist responsible for final evaluation or the date and method of delivery. Which requirement is implicated?",
     "answers": [
       {
         "id": "opt1",
-        "text": "The copy itself is a valid prescription if it has the pharmacist's initials."
+        "text": "The record lacks required responsibility and delivery-traceability elements for the completed order."
       },
       {
         "id": "opt2",
-        "text": "The copy is informational only; B needs prescriber authorization or must complete a lawful transfer process."
+        "text": "The record is sufficient because receipt and fulfillment dates establish the required audit trail."
       },
       {
         "id": "opt3",
-        "text": "The copy can be used only for Schedule II drugs."
+        "text": "The record is sufficient when the originating pharmacy separately maintains the original prescription."
       },
       {
         "id": "opt4",
-        "text": "The copy is valid if the patient has photo identification."
+        "text": "The record is deficient only when the fulfilled prescription is a controlled substance."
       }
     ],
     "correctAnswers": [
-      "opt2"
+      "opt1"
     ],
-    "explanation": "Colorado treats a prescription label or written prescription copy from another pharmacy as informational only, not as a valid order. The receiving pharmacy must contact the prescriber or comply with the transfer rules.",
+    "explanation": "The fulfillment pharmacy must retain an electronic record identifying the pharmacist responsible for final evaluation and the fulfillment and delivery details required by the rule.",
     "distractorExplanations": {
-      "opt1": "The copy is not transformed into a valid prescription by initials.",
-      "opt3": "The rule is not a special Schedule II pathway.",
-      "opt4": "Patient identification does not turn a reference copy into a prescription order."
+      "opt2": "This option applies a related requirement but does not match the controlling facts.",
+      "opt3": "This option applies a related requirement but does not match the controlling facts.",
+      "opt4": "This option applies a related requirement but does not match the controlling facts."
     },
-    "ruleToRemember": "A reference copy is evidence about a prescription, not authority to dispense.",
+    "ruleToRemember": "A central-fill audit trail must identify responsibility and the fulfillment/delivery sequence.",
     "authority": [
       {
-        "label": "Colorado Board Rules 2.00.10 / 2.01.50-2.01.53",
+        "label": "Colorado Board Rule 20.01.00",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 20.01.00(a)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "competencyArea": 4,
+    "familyId": "A4-PRACTICE-SETTING-OPS",
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 2,
+    "reasoningLevel": 1,
+    "subconceptId": "fulfillment-pharmacy-audit-trail",
+    "nabpCompetencies": [
+      "4.3",
+      "4.6"
+    ],
+    "misconceptionTested": {
+      "opt2": "Confuses a nearby rule or exception with the controlling requirement.",
+      "opt3": "Confuses a nearby rule or exception with the controlling requirement.",
+      "opt4": "Confuses a nearby rule or exception with the controlling requirement."
+    }
+  },
+  {
+    "id": "A4-OPS-02",
+    "conceptId": "A4-CLOSURE-MANAGER-INVENTORY",
+    "familyId": "A4-CLOSURE-MANAGER-INVENTORY",
+    "competencyArea": 4,
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacy Operations",
+    "subtopic": "Pharmacy Operations",
+    "difficulty": 2,
+    "type": "scenario",
+    "stem": "An outlet closes and relocates prescription records within 72 hours but does not submit the Board closure notice until day 8. Which requirement was missed?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The closure notice also has a 72-hour deadline."
+      },
+      {
+        "id": "opt2",
+        "text": "The Board notice has a 30-day deadline."
+      },
+      {
+        "id": "opt3",
+        "text": "No Board notice is required if records are moved."
+      },
+      {
+        "id": "opt4",
+        "text": "The Board notice is required only for nonresident pharmacies."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado outlet-operation rules impose specific deadlines for closure, relocation, and changes affecting registration.",
+    "distractorExplanations": {
+      "opt2": "This option does not satisfy the controlling rule in this scenario.",
+      "opt3": "This option does not satisfy the controlling rule in this scenario.",
+      "opt4": "This option does not satisfy the controlling rule in this scenario."
+    },
+    "ruleToRemember": "Operational deadlines are independent: 72-hour closure duties and separate relocation/registration rules.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
         "citation": "3 CCR 719-1"
       }
@@ -2948,13 +2988,18 @@ window.QUESTION_BANK = [
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyArea": 2,
-    "familyId": "co-reference-copy",
-    "competencyAreaName": "Pharmacist Practice"
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 2,
+    "reasoningLevel": 2,
+    "subconceptId": "co-outlet-operations",
+    "nabpCompetencies": [
+      "4.2",
+      "4.7"
+    ]
   },
   {
     "id": "CO-REFILLREC-02",
-    "conceptId": "co-refill-record",
+    "conceptId": "A4-RECORDS-DISTRIBUTION",
     "jurisdiction": "Colorado",
     "topic": "Recordkeeping",
     "subtopic": "Recordkeeping",
@@ -3000,7380 +3045,1924 @@ window.QUESTION_BANK = [
     "lastVerified": "2026-09-16",
     "active": true,
     "competencyArea": 4,
-    "familyId": "co-refill-record",
-    "competencyAreaName": "Pharmacy Operations"
+    "familyId": "A4-RECORDS-DISTRIBUTION",
+    "competencyAreaName": "Pharmacy Operations",
+    "legalDeterminations": 2,
+    "reasoningLevel": 4,
+    "subconceptId": "co-refill-record",
+    "nabpCompetencies": [
+      "4.1",
+      "4.2"
+    ]
   },
   {
-    "id": "CO-LABEL-01",
-    "conceptId": "co-label-identity",
+    "id": "V3-A1-01",
+    "conceptId": "A1-LICENSURE-LIFECYCLE",
+    "familyId": "A1-LICENSURE-LIFECYCLE",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
     "jurisdiction": "Colorado",
-    "topic": "Labeling",
-    "subtopic": "Labeling",
-    "difficulty": 3,
-    "type": "single",
-    "stem": "Under Colorado Rule 3.00.30, absent a practitioner's request otherwise, the drug name appearing on a dispensed prescription container label must:",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Use only the brand name."
-      },
-      {
-        "id": "opt2",
-        "text": "Use only the generic name."
-      },
-      {
-        "id": "opt3",
-        "text": "Correspond with the identity of the drug actually contained in the package."
-      },
-      {
-        "id": "opt4",
-        "text": "Match the wholesaler invoice description verbatim."
-      }
-    ],
-    "correctAnswers": [
-      "opt3"
-    ],
-    "explanation": "Colorado's labeling rule requires the name on the container label to correspond with the identity of the drug contained, unless otherwise requested by the practitioner.",
-    "distractorExplanations": {
-      "opt1": "The rule does not require brand-only naming.",
-      "opt2": "The rule does not require generic-only naming.",
-      "opt4": "The wholesaler invoice is not the governing labeling standard."
-    },
-    "ruleToRemember": "The label must identify what is actually in the container, subject to the practitioner's lawful request.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 3.00.23 / 3.00.25",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "co-label-identity",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "CO-CPPA-04",
-    "conceptId": "co-cppa-communication",
-    "jurisdiction": "Colorado",
-    "topic": "Collaborative Practice",
-    "subtopic": "Collaborative Practice",
+    "topic": "Licensure / Personnel",
+    "subtopic": "Licensure / Personnel",
     "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A pharmacist holds current licenses in Colorado and another state. The other-state license becomes subject to active discipline while the Colorado license remains unrestricted. Which fact is most relevant to Colorado's good-standing analysis for a later transfer application?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The active discipline on the other-state license matters to good standing."
+      },
+      {
+        "id": "opt2",
+        "text": "The Colorado license status alone controls the transfer review."
+      },
+      {
+        "id": "opt3",
+        "text": "The pharmacist's employer decides whether the discipline is material."
+      },
+      {
+        "id": "opt4",
+        "text": "The discipline matters only if it involved a controlled substance."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado's transfer rule looks to good standing across licenses held by the applicant, not just the license used for transfer.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Active discipline in another state can defeat the good-standing requirement.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 4.00.40"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "license-good-standing",
+    "nabpCompetencies": [
+      "1.2"
+    ]
+  },
+  {
+    "id": "V3-A1-02",
+    "conceptId": "A1-LICENSURE-LIFECYCLE",
+    "familyId": "A1-LICENSURE-LIFECYCLE",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
+    "jurisdiction": "Colorado",
+    "topic": "Licensure / Personnel",
+    "subtopic": "Licensure / Personnel",
+    "difficulty": 2,
+    "reasoningLevel": 2,
+    "legalDeterminations": 1,
     "type": "single",
-    "stem": "A pharmacist and prescriber establish a Colorado collaborative pharmacy practice agreement. Which infrastructure requirement is explicit?",
+    "stem": "A pharmacist license has been inactive for 26 months. Which additional requirement distinguishes this from an 18-month inactive license under the cited reinstatement rule?",
     "answers": [
       {
         "id": "opt1",
-        "text": "A process for the prescriber and pharmacist to communicate and document changes to the patient's medical record."
+        "text": "The longer lapse adds the Board-approved jurisprudence examination to the reinstatement requirements."
       },
       {
         "id": "opt2",
-        "text": "A shared ownership interest in the pharmacy."
+        "text": "The longer lapse adds a supervised pharmacist internship before the license may be reactivated."
       },
       {
         "id": "opt3",
-        "text": "A daily in-person meeting between pharmacist and prescriber."
+        "text": "The longer lapse replaces continuing education with a new pharmacist license-transfer application."
       },
       {
         "id": "opt4",
-        "text": "A requirement that all patients use the same insurer."
+        "text": "The longer lapse requires repeating the pharmacist licensure examination used for initial licensure."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "Collaborative practice requires a process for communication between the prescriber and pharmacist and documentation of changes to the patient's medical record.",
+    "explanation": "The over-24-month pathway adds the jurisprudence examination and a month-based CE requirement.",
     "distractorExplanations": {
-      "opt2": "Common ownership is not the stated requirement.",
-      "opt3": "A daily in-person meeting is not required by the cited rule.",
-      "opt4": "Insurance uniformity is irrelevant to the legal requirement."
+      "opt2": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt3": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt4": "This option applies a related legal rule or a nearby but different factual pathway."
     },
-    "ruleToRemember": "Collaborative practice needs a reliable communication-and-documentation process.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 17.00.30",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 2,
-    "familyId": "co-cppa-communication",
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "FED-EPCS-01",
-    "conceptId": "fed-epcs-initial-transfer",
-    "jurisdiction": "Both",
-    "topic": "Federal vs Colorado",
-    "subtopic": "Federal vs Colorado",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A patient asks to move an unfilled electronic Schedule III prescription from one Colorado retail pharmacy to another for initial dispensing. Which statement is most accurate under the current federal/Colorado framework?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Initial dispensing can never be transferred for a controlled-substance electronic prescription."
-      },
-      {
-        "id": "opt2",
-        "text": "A one-time electronic transfer for initial dispensing may occur when applicable federal and Colorado conditions are satisfied."
-      },
-      {
-        "id": "opt3",
-        "text": "The prescription must first be converted to paper and then faxed."
-      },
-      {
-        "id": "opt4",
-        "text": "The transfer may occur repeatedly until all authorized refills are exhausted."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "Current federal rules permit a one-time transfer of an electronic controlled-substance prescription for initial dispensing when state law authorizes it, and Colorado has a corresponding rule for Schedule II-V electronic prescriptions.",
-    "distractorExplanations": {
-      "opt1": "Current federal rules created an initial-dispensing transfer pathway for electronic Schedule II-V prescriptions, subject to state law.",
-      "opt3": "The transfer is designed to remain electronic; conversion to paper is not the required pathway.",
-      "opt4": "The initial-dispensing transfer is one-time, not repeatable based on refill count."
+    "misconceptionTested": {
+      "opt2": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt3": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt4": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway."
     },
-    "ruleToRemember": "Initial EPCS transfer is a distinct one-time pathway; do not confuse it with refill-transfer rules.",
-    "authority": [
-      {
-        "label": "DEA 2026 controlled-substance transfer notice",
-        "url": "https://www.dea.gov/press-releases/2026/01/09/dea-releases-2026-aggregate-production-quotas",
-        "citation": "DEA notes one-time initial EPCS transfer for Schedules II-V if state law allows"
-      },
-      {
-        "label": "Colorado Board Rule 2.01.50(e)",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyArea": 3,
-    "familyId": "fed-epcs-initial-transfer",
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A1-RATIO-01",
-    "conceptId": "co-tech-ratio-advanced",
-    "familyId": "co-tech-ratio-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Colorado pharmacist is simultaneously supervising 0 pharmacy interns and 6 pharmacy technicians. Of the technicians on duty, 4 are fully Board-certified. Assume no special statutory exception applies. Which conclusion is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The staffing arrangement can satisfy the general supervision and certification-mix limits."
-      },
-      {
-        "id": "opt2",
-        "text": "The arrangement is lawful only if every technician is nationally certified, regardless of Colorado certification status."
-      },
-      {
-        "id": "opt3",
-        "text": "The arrangement is automatically lawful because interns do not count toward the supervision ratio."
-      },
-      {
-        "id": "opt4",
-        "text": "The arrangement is automatically unlawful whenever more than four people are supervised."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado's general ratio counts interns and technicians together, caps interns at two, and when three or more technicians are on duty the majority of those technicians must be fully Board-certified.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Count the people first, then separately test the intern cap and the technician-certification majority.",
+    "ruleToRemember": "More than 24 months inactive triggers the longer reinstatement pathway.",
     "authority": [
       {
         "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
+        "citation": "Rule 4.03.00"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyAreaName": "Licensure / Personnel"
+    "subconceptId": "license-reinstatement",
+    "nabpCompetencies": [
+      "1.2"
+    ]
   },
   {
-    "id": "A1-RATIO-02",
-    "conceptId": "co-tech-ratio-advanced",
-    "familyId": "co-tech-ratio-advanced",
+    "id": "V3-A1-03",
+    "conceptId": "A1-LICENSURE-LIFECYCLE",
+    "familyId": "A1-LICENSURE-LIFECYCLE",
     "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
     "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
+    "topic": "Licensure / Personnel",
+    "subtopic": "Licensure / Personnel",
     "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Colorado pharmacist is simultaneously supervising 1 pharmacy intern and 5 pharmacy technicians. Of the technicians on duty, 3 are fully Board-certified. Assume no special statutory exception applies. Which conclusion is most accurate?",
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
+    "type": "ktype",
+    "stem": "Which statements correctly describe Colorado reporting clocks for a pharmacist?\n\nI. A residential-address change uses a 10-day reporting period.\nII. A legal-name change uses a 30-day reporting period.\nIII. Cessation as pharmacist manager requires immediate written notice.",
     "answers": [
       {
         "id": "opt1",
-        "text": "The staffing arrangement can satisfy the general supervision and certification-mix limits."
+        "text": "I only"
       },
       {
         "id": "opt2",
-        "text": "The arrangement is lawful only if every technician is nationally certified, regardless of Colorado certification status."
+        "text": "III only"
       },
       {
         "id": "opt3",
-        "text": "The arrangement is automatically lawful because interns do not count toward the supervision ratio."
+        "text": "I and II only"
       },
       {
         "id": "opt4",
-        "text": "The arrangement is automatically unlawful whenever more than four people are supervised."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado's general ratio counts interns and technicians together, caps interns at two, and when three or more technicians are on duty the majority of those technicians must be fully Board-certified.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Count the people first, then separately test the intern cap and the technician-certification majority.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-RATIO-03",
-    "conceptId": "co-tech-ratio-advanced",
-    "familyId": "co-tech-ratio-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Colorado pharmacist is simultaneously supervising 2 pharmacy interns and 4 pharmacy technicians. Of the technicians on duty, 3 are fully Board-certified. Assume no special statutory exception applies. Which conclusion is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The staffing arrangement can satisfy the general supervision and certification-mix limits."
+        "text": "II and III only"
       },
       {
-        "id": "opt2",
-        "text": "The arrangement is lawful only if every technician is nationally certified, regardless of Colorado certification status."
-      },
-      {
-        "id": "opt3",
-        "text": "The arrangement is automatically lawful because interns do not count toward the supervision ratio."
-      },
-      {
-        "id": "opt4",
-        "text": "The arrangement is automatically unlawful whenever more than four people are supervised."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado's general ratio counts interns and technicians together, caps interns at two, and when three or more technicians are on duty the majority of those technicians must be fully Board-certified.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Count the people first, then separately test the intern cap and the technician-certification majority.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-RATIO-04",
-    "conceptId": "co-tech-ratio-advanced",
-    "familyId": "co-tech-ratio-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Colorado pharmacist is simultaneously supervising 2 pharmacy interns and 5 pharmacy technicians. Of the technicians on duty, 3 are fully Board-certified. Assume no special statutory exception applies. Which conclusion is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The staffing arrangement violates at least one general supervision or certification-mix limit."
-      },
-      {
-        "id": "opt2",
-        "text": "The arrangement is lawful only if every technician is nationally certified, regardless of Colorado certification status."
-      },
-      {
-        "id": "opt3",
-        "text": "The arrangement is automatically lawful because interns do not count toward the supervision ratio."
-      },
-      {
-        "id": "opt4",
-        "text": "The arrangement is automatically unlawful whenever more than four people are supervised."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado's general ratio counts interns and technicians together, caps interns at two, and when three or more technicians are on duty the majority of those technicians must be fully Board-certified.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Count the people first, then separately test the intern cap and the technician-certification majority.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-RATIO-05",
-    "conceptId": "co-tech-ratio-advanced",
-    "familyId": "co-tech-ratio-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Colorado pharmacist is simultaneously supervising 1 pharmacy intern and 6 pharmacy technicians. Of the technicians on duty, 4 are fully Board-certified. Assume no special statutory exception applies. Which conclusion is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The staffing arrangement violates at least one general supervision or certification-mix limit."
-      },
-      {
-        "id": "opt2",
-        "text": "The arrangement is lawful only if every technician is nationally certified, regardless of Colorado certification status."
-      },
-      {
-        "id": "opt3",
-        "text": "The arrangement is automatically lawful because interns do not count toward the supervision ratio."
-      },
-      {
-        "id": "opt4",
-        "text": "The arrangement is automatically unlawful whenever more than four people are supervised."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado's general ratio counts interns and technicians together, caps interns at two, and when three or more technicians are on duty the majority of those technicians must be fully Board-certified.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Count the people first, then separately test the intern cap and the technician-certification majority.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-RATIO-06",
-    "conceptId": "co-tech-ratio-advanced",
-    "familyId": "co-tech-ratio-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Colorado pharmacist is simultaneously supervising 0 pharmacy interns and 7 pharmacy technicians. Of the technicians on duty, 5 are fully Board-certified. Assume no special statutory exception applies. Which conclusion is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The staffing arrangement violates at least one general supervision or certification-mix limit."
-      },
-      {
-        "id": "opt2",
-        "text": "The arrangement is lawful only if every technician is nationally certified, regardless of Colorado certification status."
-      },
-      {
-        "id": "opt3",
-        "text": "The arrangement is automatically lawful because interns do not count toward the supervision ratio."
-      },
-      {
-        "id": "opt4",
-        "text": "The arrangement is automatically unlawful whenever more than four people are supervised."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado's general ratio counts interns and technicians together, caps interns at two, and when three or more technicians are on duty the majority of those technicians must be fully Board-certified.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Count the people first, then separately test the intern cap and the technician-certification majority.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-RATIO-07",
-    "conceptId": "co-tech-ratio-advanced",
-    "familyId": "co-tech-ratio-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Colorado pharmacist is simultaneously supervising 2 pharmacy interns and 3 pharmacy technicians. Of the technicians on duty, 2 are fully Board-certified. Assume no special statutory exception applies. Which conclusion is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The staffing arrangement can satisfy the general supervision and certification-mix limits."
-      },
-      {
-        "id": "opt2",
-        "text": "The arrangement is lawful only if every technician is nationally certified, regardless of Colorado certification status."
-      },
-      {
-        "id": "opt3",
-        "text": "The arrangement is automatically lawful because interns do not count toward the supervision ratio."
-      },
-      {
-        "id": "opt4",
-        "text": "The arrangement is automatically unlawful whenever more than four people are supervised."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado's general ratio counts interns and technicians together, caps interns at two, and when three or more technicians are on duty the majority of those technicians must be fully Board-certified.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Count the people first, then separately test the intern cap and the technician-certification majority.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-RATIO-08",
-    "conceptId": "co-tech-ratio-advanced",
-    "familyId": "co-tech-ratio-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Colorado pharmacist is simultaneously supervising 1 pharmacy intern and 4 pharmacy technicians. Of the technicians on duty, 2 are fully Board-certified. Assume no special statutory exception applies. Which conclusion is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The staffing arrangement can satisfy the general supervision and certification-mix limits."
-      },
-      {
-        "id": "opt2",
-        "text": "The arrangement is lawful only if every technician is nationally certified, regardless of Colorado certification status."
-      },
-      {
-        "id": "opt3",
-        "text": "The arrangement is automatically lawful because interns do not count toward the supervision ratio."
-      },
-      {
-        "id": "opt4",
-        "text": "The arrangement is automatically unlawful whenever more than four people are supervised."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado's general ratio counts interns and technicians together, caps interns at two, and when three or more technicians are on duty the majority of those technicians must be fully Board-certified.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Count the people first, then separately test the intern cap and the technician-certification majority.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-RATIO-CFG-1",
-    "conceptId": "co-tech-ratio-advanced",
-    "familyId": "co-tech-ratio-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
-    "type": "single",
-    "stem": "A pharmacist is setting the schedule for a Colorado pharmacy. Which staffing plan is compliant under the general rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "2 interns + 4 technicians, 3 of the 4 technicians fully certified"
-      },
-      {
-        "id": "opt2",
-        "text": "2 interns + 5 technicians, 4 of the 5 technicians fully certified"
-      },
-      {
-        "id": "opt3",
-        "text": "3 interns + 3 technicians, all technicians fully certified"
-      },
-      {
-        "id": "opt4",
-        "text": "1 intern + 6 technicians, 4 of the 6 technicians fully certified"
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Apply both the six-person total (interns + technicians), the maximum of two interns, and the majority-certification rule when at least three technicians are on duty.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Ratio questions often require two independent checks, not one.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-RATIO-CFG-2",
-    "conceptId": "co-tech-ratio-advanced",
-    "familyId": "co-tech-ratio-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
-    "type": "single",
-    "stem": "A pharmacist is setting the schedule for a Colorado pharmacy. Which staffing plan is NOT compliant under the general rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "0 interns + 6 technicians, 4 fully certified"
-      },
-      {
-        "id": "opt2",
-        "text": "1 intern + 5 technicians, 3 fully certified"
-      },
-      {
-        "id": "opt3",
-        "text": "2 interns + 4 technicians, 3 fully certified"
-      },
-      {
-        "id": "opt4",
-        "text": "2 interns + 4 technicians, 2 fully certified"
+        "id": "opt5",
+        "text": "I, II, and III"
       }
     ],
     "correctAnswers": [
       "opt4"
     ],
-    "explanation": "Apply both the six-person total (interns + technicians), the maximum of two interns, and the majority-certification rule when at least three technicians are on duty.",
+    "explanation": "Only statements II and III are correct. Address and legal-name changes use the 30-day framework; cessation as pharmacist manager is reported immediately.",
     "distractorExplanations": {
-      "opt1": "This option does not satisfy the controlling rule in this scenario.",
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario."
+      "opt1": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
     },
-    "ruleToRemember": "Ratio questions often require two independent checks, not one.",
+    "misconceptionTested": {
+      "opt1": "Misapplies a nearby legal rule.",
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Do not collapse address, name, and pharmacist-manager reporting into one deadline.",
     "authority": [
       {
         "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
+        "citation": "Rule 4.05.00"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyAreaName": "Licensure / Personnel"
+    "subconceptId": "license-reporting-clocks",
+    "nabpCompetencies": [
+      "1.2"
+    ]
   },
   {
-    "id": "A1-CERT-01",
-    "conceptId": "co-tech-cert-advanced",
-    "familyId": "co-tech-cert-advanced",
+    "id": "V3-A1-04",
+    "conceptId": "A1-IMPAIRMENT-REPORTING",
+    "familyId": "A1-IMPAIRMENT-REPORTING",
     "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "A provisional technician's credential expires July 31. On June 10 the technician submits a detailed hardship request for a nine-month extension. What is the best conclusion?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The request is too late for the hardship process because it was not submitted at least 60 days before expiration."
-      },
-      {
-        "id": "opt2",
-        "text": "The request is timely because any request before July 31 is sufficient."
-      },
-      {
-        "id": "opt3",
-        "text": "The request is timely only if a pharmacist manager cosigns it."
-      },
-      {
-        "id": "opt4",
-        "text": "The request automatically converts the credential to a full certification."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado distinguishes provisional certification from standard certification and defines the qualifying national-certification pathway. The hardship extension is one-time, nine months, and requires advance submission.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Do not merge the provisional, hardship-extension, and full-certification rules.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-CERT-02",
-    "conceptId": "co-tech-cert-advanced",
-    "familyId": "co-tech-cert-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "A provisional technician applies 75 days before expiration and documents a qualifying hardship. Which extension is the Board rule designed to allow?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "A one-time nine-month extension"
-      },
-      {
-        "id": "opt2",
-        "text": "A renewable six-month extension"
-      },
-      {
-        "id": "opt3",
-        "text": "A one-time eighteen-month extension"
-      },
-      {
-        "id": "opt4",
-        "text": "An indefinite extension while employed"
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado distinguishes provisional certification from standard certification and defines the qualifying national-certification pathway. The hardship extension is one-time, nine months, and requires advance submission.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Do not merge the provisional, hardship-extension, and full-certification rules.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-CERT-03",
-    "conceptId": "co-tech-cert-advanced",
-    "familyId": "co-tech-cert-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "A technician has employer training but no qualifying national certification. Which statement best describes a standard, non-provisional Colorado technician certification?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Employer training alone is sufficient."
-      },
-      {
-        "id": "opt2",
-        "text": "Proof of certification by a qualifying nationally recognized certification body is required."
-      },
-      {
-        "id": "opt3",
-        "text": "A pharmacist manager may waive national certification."
-      },
-      {
-        "id": "opt4",
-        "text": "National certification matters only for sterile compounding."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "Colorado distinguishes provisional certification from standard certification and defines the qualifying national-certification pathway. The hardship extension is one-time, nine months, and requires advance submission.",
-    "distractorExplanations": {
-      "opt1": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Do not merge the provisional, hardship-extension, and full-certification rules.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-CERT-04",
-    "conceptId": "co-tech-cert-advanced",
-    "familyId": "co-tech-cert-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 4,
-    "type": "scenario",
-    "stem": "A technician holds a certification from a body that is neither NABP- nor NCCA-approved. For the standard Colorado technician certification requirement, which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "It automatically qualifies because it is national."
-      },
-      {
-        "id": "opt2",
-        "text": "It does not satisfy the rule's stated qualifying-certification standard."
-      },
-      {
-        "id": "opt3",
-        "text": "It qualifies if the employer accepts it."
-      },
-      {
-        "id": "opt4",
-        "text": "It qualifies only in a hospital."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "Colorado distinguishes provisional certification from standard certification and defines the qualifying national-certification pathway. The hardship extension is one-time, nine months, and requires advance submission.",
-    "distractorExplanations": {
-      "opt1": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Do not merge the provisional, hardship-extension, and full-certification rules.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-PIC-01",
-    "conceptId": "co-manager-integrated",
-    "familyId": "co-manager-integrated",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Manager / PIC",
-    "subtopic": "Pharmacist Manager / PIC",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "The former pharmacist manager's employment ends April 1. The new manager starts April 4. The owner files the registration-transfer application May 3. The controlled-substance inventory is completed April 8. Which issue is most clearly present?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The controlled-substance inventory was late."
-      },
-      {
-        "id": "opt2",
-        "text": "The registration-transfer application was necessarily late."
-      },
-      {
-        "id": "opt3",
-        "text": "Both were necessarily late."
-      },
-      {
-        "id": "opt4",
-        "text": "Neither timing rule is implicated."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Manager-change rules contain separate clocks: the owner has 30 days for the registration-transfer application, while the new manager or designee has 72 hours for the controlled-substance inventory, taken as of opening or close of business activity.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Keep the 30-day manager-registration clock separate from the 72-hour inventory clock.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-PIC-02",
-    "conceptId": "co-manager-integrated",
-    "familyId": "co-manager-integrated",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Manager / PIC",
-    "subtopic": "Pharmacist Manager / PIC",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A new pharmacist manager begins Monday at 8:00 AM. The manager's designee takes the controlled-substance inventory Wednesday at close of business and records date and time. Which statement is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The timing can satisfy the 72-hour manager-change inventory rule."
-      },
-      {
-        "id": "opt2",
-        "text": "Only the new pharmacist manager personally may take the inventory."
-      },
-      {
-        "id": "opt3",
-        "text": "The inventory had to be taken Monday before opening."
-      },
-      {
-        "id": "opt4",
-        "text": "The inventory may wait until the next federal biennial inventory."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Manager-change rules contain separate clocks: the owner has 30 days for the registration-transfer application, while the new manager or designee has 72 hours for the controlled-substance inventory, taken as of opening or close of business activity.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Keep the 30-day manager-registration clock separate from the 72-hour inventory clock.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-PIC-03",
-    "conceptId": "co-manager-integrated",
-    "familyId": "co-manager-integrated",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Manager / PIC",
-    "subtopic": "Pharmacist Manager / PIC",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist manager leaves March 1. The owner employs a replacement immediately but does not apply to transfer the outlet registration until April 5. Which requirement is the central concern?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The 30-day registration-transfer application deadline after the former manager's termination."
-      },
-      {
-        "id": "opt2",
-        "text": "A 72-hour deadline to renew every technician certificate."
-      },
-      {
-        "id": "opt3",
-        "text": "A 7-day deadline to close all patient profiles."
-      },
-      {
-        "id": "opt4",
-        "text": "A 60-day federal DEA reporting requirement."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Manager-change rules contain separate clocks: the owner has 30 days for the registration-transfer application, while the new manager or designee has 72 hours for the controlled-substance inventory, taken as of opening or close of business activity.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Keep the 30-day manager-registration clock separate from the 72-hour inventory clock.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-PIC-04",
-    "conceptId": "co-manager-integrated",
-    "familyId": "co-manager-integrated",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Manager / PIC",
-    "subtopic": "Pharmacist Manager / PIC",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A manager-change inventory is performed at 2:15 PM during normal dispensing operations. The precise time is documented. Which statement best reflects the Colorado rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Documentation of the exact time makes any time of day acceptable."
-      },
-      {
-        "id": "opt2",
-        "text": "The manager-change inventory is specified as of opening or close of business activity, so mid-day performance does not match the stated timing method."
-      },
-      {
-        "id": "opt3",
-        "text": "Only opening is allowed."
-      },
-      {
-        "id": "opt4",
-        "text": "Only close of business is allowed."
-      }
-    ],
-    "correctAnswers": [
-      "opt2"
-    ],
-    "explanation": "Manager-change rules contain separate clocks: the owner has 30 days for the registration-transfer application, while the new manager or designee has 72 hours for the controlled-substance inventory, taken as of opening or close of business activity.",
-    "distractorExplanations": {
-      "opt1": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Keep the 30-day manager-registration clock separate from the 72-hour inventory clock.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-FPV-01",
-    "conceptId": "co-2026-fpv-advanced",
-    "familyId": "co-2026-fpv-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "2026 Law Changes",
-    "subtopic": "2026 Law Changes",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A trained technician performs a physical verification of a noncontrolled unit-dose product after a pharmacist has already reviewed the order for therapeutic appropriateness. The technician exercises no clinical judgment. Which additional program feature is required?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "A continuous quality assessment process that records and evaluates errors and potential errors."
-      },
-      {
-        "id": "opt2",
-        "text": "A second pharmacist must repeat every physical check."
-      },
-      {
-        "id": "opt3",
-        "text": "The order must be converted to a verbal order."
-      },
-      {
-        "id": "opt4",
-        "text": "The technician must independently repeat the DUR."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado statute permits specified final-product-verification delegation for noncontrolled orders after pharmacist clinical review, while preserving pharmacist judgment and requiring a continuous quality-assessment system and program plan.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "FPV delegation is physical verification\u2014not delegation of clinical judgment.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-FPV-02",
-    "conceptId": "co-2026-fpv-advanced",
-    "familyId": "co-2026-fpv-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "2026 Law Changes",
-    "subtopic": "2026 Law Changes",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist asks a technician to decide whether a renal dose should be reduced and then perform final product verification. Which part is outside the delegation contemplated by the 2026 statute?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The clinical dose decision."
-      },
-      {
-        "id": "opt2",
-        "text": "The physical product verification."
-      },
-      {
-        "id": "opt3",
-        "text": "Use of barcode verification."
-      },
-      {
-        "id": "opt4",
-        "text": "Verification of another technician's repackaging work."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado statute permits specified final-product-verification delegation for noncontrolled orders after pharmacist clinical review, while preserving pharmacist judgment and requiring a continuous quality-assessment system and program plan.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "FPV delegation is physical verification\u2014not delegation of clinical judgment.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-FPV-03",
-    "conceptId": "co-2026-fpv-advanced",
-    "familyId": "co-2026-fpv-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "2026 Law Changes",
-    "subtopic": "2026 Law Changes",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacy proposes technician final product verification for Schedule IV prescriptions. Which is most accurate under the 2026 statutory delegation provision?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The provision excludes controlled-substance orders from this delegation authority."
-      },
-      {
-        "id": "opt2",
-        "text": "It is allowed if the technician is nationally certified."
-      },
-      {
-        "id": "opt3",
-        "text": "It is allowed only for Schedule III-V, not Schedule II."
-      },
-      {
-        "id": "opt4",
-        "text": "It is allowed whenever barcode scanning is used."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado statute permits specified final-product-verification delegation for noncontrolled orders after pharmacist clinical review, while preserving pharmacist judgment and requiring a continuous quality-assessment system and program plan.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "FPV delegation is physical verification\u2014not delegation of clinical judgment.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-FPV-04",
-    "conceptId": "co-2026-fpv-advanced",
-    "familyId": "co-2026-fpv-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "2026 Law Changes",
-    "subtopic": "2026 Law Changes",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacy creates an FPV program but does not document how pharmacist hours will be maintained and redirected toward direct patient-care activities. Which statutory program element is missing?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The required program plan component addressing pharmacist hours."
-      },
-      {
-        "id": "opt2",
-        "text": "A DEA-222 log."
-      },
-      {
-        "id": "opt3",
-        "text": "A patient counseling refusal log."
-      },
-      {
-        "id": "opt4",
-        "text": "A collaborative practice agreement."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado statute permits specified final-product-verification delegation for noncontrolled orders after pharmacist clinical review, while preserving pharmacist judgment and requiring a continuous quality-assessment system and program plan.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "FPV delegation is physical verification\u2014not delegation of clinical judgment.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-FPV-05",
-    "conceptId": "co-2026-fpv-advanced",
-    "familyId": "co-2026-fpv-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "2026 Law Changes",
-    "subtopic": "2026 Law Changes",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A second technician verifies another technician's bulk-to-unit-dose repackaging of a noncontrolled drug. Which statement is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "That type of second-person verification is among the FPV tasks the 2026 statute contemplates, subject to the program safeguards."
-      },
-      {
-        "id": "opt2",
-        "text": "Technician verification is limited to commercially packaged outpatient prescriptions."
-      },
-      {
-        "id": "opt3",
-        "text": "Only a pharmacist may verify repackaging under any circumstance."
-      },
-      {
-        "id": "opt4",
-        "text": "The task is permitted only if no electronic system is used."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado statute permits specified final-product-verification delegation for noncontrolled orders after pharmacist clinical review, while preserving pharmacist judgment and requiring a continuous quality-assessment system and program plan.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "FPV delegation is physical verification\u2014not delegation of clinical judgment.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-FPV-06",
-    "conceptId": "co-2026-fpv-advanced",
-    "familyId": "co-2026-fpv-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "2026 Law Changes",
-    "subtopic": "2026 Law Changes",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "Barcode technology is used to verify a noncontrolled drug before administration by a health-care provider. Under the 2026 statute, this is best characterized as:",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "One of the listed FPV mechanisms that may be delegated under the statutory framework."
-      },
-      {
-        "id": "opt2",
-        "text": "A controlled-substance exception."
-      },
-      {
-        "id": "opt3",
-        "text": "A substitute for pharmacist clinical review of the order."
-      },
-      {
-        "id": "opt4",
-        "text": "A process that eliminates the continuous quality-assessment requirement."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado statute permits specified final-product-verification delegation for noncontrolled orders after pharmacist clinical review, while preserving pharmacist judgment and requiring a continuous quality-assessment system and program plan.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "FPV delegation is physical verification\u2014not delegation of clinical judgment.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-FPV-07",
-    "conceptId": "co-2026-fpv-advanced",
-    "familyId": "co-2026-fpv-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "2026 Law Changes",
-    "subtopic": "2026 Law Changes",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A technician performing FPV encounters a mismatch and must choose which therapeutic alternative would be best for the patient. What should happen?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The pharmacist must resolve the clinical judgment issue; the delegated task cannot require technician discretion or clinical judgment."
-      },
-      {
-        "id": "opt2",
-        "text": "The technician may select the alternative if nationally certified."
-      },
-      {
-        "id": "opt3",
-        "text": "The technician may decide if the drug is noncontrolled."
-      },
-      {
-        "id": "opt4",
-        "text": "The prescriber must physically come to the pharmacy."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado statute permits specified final-product-verification delegation for noncontrolled orders after pharmacist clinical review, while preserving pharmacist judgment and requiring a continuous quality-assessment system and program plan.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "FPV delegation is physical verification\u2014not delegation of clinical judgment.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-FPV-08",
-    "conceptId": "co-2026-fpv-advanced",
-    "familyId": "co-2026-fpv-advanced",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "2026 Law Changes",
-    "subtopic": "2026 Law Changes",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist intends to implement technician FPV tomorrow but has no written program plan or quality-assessment process. Which response best fits the 2026 statute?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Do not implement until the required safeguards and program plan are in place."
-      },
-      {
-        "id": "opt2",
-        "text": "Proceed if the pharmacist verbally approves the program."
-      },
-      {
-        "id": "opt3",
-        "text": "Proceed for one week as a pilot before creating records."
-      },
-      {
-        "id": "opt4",
-        "text": "Proceed only for controlled substances."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado statute permits specified final-product-verification delegation for noncontrolled orders after pharmacist clinical review, while preserving pharmacist judgment and requiring a continuous quality-assessment system and program plan.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "FPV delegation is physical verification\u2014not delegation of clinical judgment.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-MISC-01",
-    "conceptId": "co-personnel-integrated",
-    "familyId": "co-personnel-integrated",
-    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
     "jurisdiction": "Colorado",
     "topic": "Licensure / Personnel",
     "subtopic": "Licensure / Personnel",
-    "difficulty": 5,
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
     "type": "scenario",
-    "stem": "A technician receives a prescriber's dictated new outpatient prescription by telephone and enters it. A pharmacist later performs final verification. No chart-order exception applies. What is the legal problem?",
+    "stem": "A pharmacist manager learns at 2 PM that a staff pharmacist is impaired by alcohol and removes the pharmacist from duty. The manager plans to report the event with the monthly compliance file. Which step remains deficient?",
     "answers": [
       {
         "id": "opt1",
-        "text": "The technician was not authorized under the general Colorado rule to receive and reduce the oral order to writing."
+        "text": "The Board report should be made immediately rather than delayed."
       },
       {
         "id": "opt2",
-        "text": "There is no problem because final pharmacist verification cures the intake step."
+        "text": "The report should wait until a medication error is confirmed."
       },
       {
         "id": "opt3",
-        "text": "The only issue is whether the drug is controlled."
+        "text": "The report should be sent only after the staff pharmacist resigns."
       },
       {
         "id": "opt4",
-        "text": "Technicians may receive oral orders only after one year of employment."
+        "text": "The report should be deferred until the next license renewal."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "Colorado personnel rules distinguish legal scope from training or certification status. Final pharmacist review does not retroactively authorize an intake task that the technician could not perform.",
+    "explanation": "The manager's incident-report duty for impairment is immediate.",
     "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
     },
-    "ruleToRemember": "Ask two questions: who may perform the task, and whether staffing/certification ratios are independently satisfied.",
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Removing the pharmacist from duty does not replace immediate Board reporting.",
     "authority": [
       {
         "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
+        "citation": "Rule 7.00.10"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyAreaName": "Licensure / Personnel"
+    "subconceptId": "impairment-reporting",
+    "nabpCompetencies": [
+      "1.2"
+    ]
   },
   {
-    "id": "A1-MISC-02",
-    "conceptId": "co-personnel-integrated",
-    "familyId": "co-personnel-integrated",
+    "id": "V3-A1-05",
+    "conceptId": "A1-TECH-STAFFING",
+    "familyId": "A1-TECH-STAFFING",
     "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
     "jurisdiction": "Colorado",
-    "topic": "Licensure / Personnel",
-    "subtopic": "Licensure / Personnel",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A certified technician argues that national certification gives the same authority as an intern to receive a new oral prescription. Which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Certification does not expand the general oral-order receipt rule to technicians."
-      },
-      {
-        "id": "opt2",
-        "text": "Certification creates full intern authority."
-      },
-      {
-        "id": "opt3",
-        "text": "Certification permits oral orders only for noncontrolled drugs."
-      },
-      {
-        "id": "opt4",
-        "text": "Certification permits oral orders if recorded electronically."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado personnel rules distinguish legal scope from training or certification status. Final pharmacist review does not retroactively authorize an intake task that the technician could not perform.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Ask two questions: who may perform the task, and whether staffing/certification ratios are independently satisfied.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-MISC-03",
-    "conceptId": "co-personnel-integrated",
-    "familyId": "co-personnel-integrated",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Licensure / Personnel",
-    "subtopic": "Licensure / Personnel",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist supervises two interns and four technicians. Three technicians are fully certified. Later a fifth technician starts the shift while staffing remains otherwise unchanged. What changes?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The total supervised-person count exceeds the general six-person ceiling."
-      },
-      {
-        "id": "opt2",
-        "text": "Only the technician-certification majority becomes a problem."
-      },
-      {
-        "id": "opt3",
-        "text": "Nothing; technicians are not counted with interns."
-      },
-      {
-        "id": "opt4",
-        "text": "The arrangement becomes lawful only if all five technicians are certified."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado personnel rules distinguish legal scope from training or certification status. Final pharmacist review does not retroactively authorize an intake task that the technician could not perform.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Ask two questions: who may perform the task, and whether staffing/certification ratios are independently satisfied.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-MISC-04",
-    "conceptId": "co-personnel-integrated",
-    "familyId": "co-personnel-integrated",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Licensure / Personnel",
-    "subtopic": "Licensure / Personnel",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacy has three technicians on duty; two are fully certified and one is provisional. Assuming the general rule applies, which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The majority-certification requirement can be satisfied."
-      },
-      {
-        "id": "opt2",
-        "text": "All three must be fully certified."
-      },
-      {
-        "id": "opt3",
-        "text": "Only one must be fully certified."
-      },
-      {
-        "id": "opt4",
-        "text": "Provisional technicians may never work when two certified technicians are present."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado personnel rules distinguish legal scope from training or certification status. Final pharmacist review does not retroactively authorize an intake task that the technician could not perform.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Ask two questions: who may perform the task, and whether staffing/certification ratios are independently satisfied.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A2-COUNSEL-01",
-    "conceptId": "co-counsel-integrated",
-    "familyId": "co-counsel-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Patient Counseling",
-    "subtopic": "Patient Counseling",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A patient picking up a new medication says, 'I already know how to take it; no counseling.' The pharmacist documents the refusal but deletes the record 18 months later. Which is the best conclusion?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The counseling refusal was properly accepted, but the retention period was too short."
-      },
-      {
-        "id": "opt2",
-        "text": "Counseling may never be refused."
-      },
-      {
-        "id": "opt3",
-        "text": "Eighteen months exceeds the required retention period."
-      },
-      {
-        "id": "opt4",
-        "text": "A refusal need not be documented."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado requires counseling on new therapy, provides for documented refusal, and requires refusal records to remain readily retrievable for at least two years. Language barriers alter the method, not the duty.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Counseling questions often test duty + documentation + retention together.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-COUNSEL-02",
-    "conceptId": "co-counsel-integrated",
-    "familyId": "co-counsel-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Patient Counseling",
-    "subtopic": "Patient Counseling",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A patient with a language barrier cannot understand the pharmacist's oral English counseling. Which approach most closely satisfies Colorado law?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Use alternative means necessary to counsel the patient in a way the patient understands."
-      },
-      {
-        "id": "opt2",
-        "text": "Provide the English label and treat that as sufficient."
-      },
-      {
-        "id": "opt3",
-        "text": "Ask a technician to waive counseling."
-      },
-      {
-        "id": "opt4",
-        "text": "Refuse to dispense until the patient brings an interpreter."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado requires counseling on new therapy, provides for documented refusal, and requires refusal records to remain readily retrievable for at least two years. Language barriers alter the method, not the duty.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Counseling questions often test duty + documentation + retention together.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-COUNSEL-03",
-    "conceptId": "co-counsel-integrated",
-    "familyId": "co-counsel-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Patient Counseling",
-    "subtopic": "Patient Counseling",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist counsels every refill but skips counseling on a new therapy because the patient did not ask a question. What is the problem?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Colorado imposes an affirmative counseling duty on new medication therapy unless an exception/refusal applies."
-      },
-      {
-        "id": "opt2",
-        "text": "Counseling is never required unless requested."
-      },
-      {
-        "id": "opt3",
-        "text": "Refill counseling substitutes for new-therapy counseling."
-      },
-      {
-        "id": "opt4",
-        "text": "Only written counseling is required."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado requires counseling on new therapy, provides for documented refusal, and requires refusal records to remain readily retrievable for at least two years. Language barriers alter the method, not the duty.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Counseling questions often test duty + documentation + retention together.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-COUNSEL-04",
-    "conceptId": "co-counsel-integrated",
-    "familyId": "co-counsel-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Patient Counseling",
-    "subtopic": "Patient Counseling",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A patient refuses counseling on two new prescriptions. The pharmacy documents one global refusal not linked to either order. Which aspect is deficient?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The refusal documentation should be directly linked to each affected corresponding order."
-      },
-      {
-        "id": "opt2",
-        "text": "A refusal may not cover more than one medication."
-      },
-      {
-        "id": "opt3",
-        "text": "Refusals must be notarized."
-      },
-      {
-        "id": "opt4",
-        "text": "The patient must return within 24 hours to sign the refusal."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado requires counseling on new therapy, provides for documented refusal, and requires refusal records to remain readily retrievable for at least two years. Language barriers alter the method, not the duty.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Counseling questions often test duty + documentation + retention together.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-COUNSEL-05",
-    "conceptId": "co-counsel-integrated",
-    "familyId": "co-counsel-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Patient Counseling",
-    "subtopic": "Patient Counseling",
+    "topic": "Pharmacy Technicians",
+    "subtopic": "Pharmacy Technicians",
     "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
     "type": "scenario",
-    "stem": "A counseling-refusal record is readily retrievable for 25 months after the refusal. Which statement is most accurate?",
+    "stem": "One pharmacist supervises two interns and four technicians; three technicians are fully Board-certified. A fifth technician arrives while all other personnel remain. Which issue appears first under the general staffing rule?",
     "answers": [
       {
         "id": "opt1",
-        "text": "This meets the Board-rule minimum retention period for that refusal record."
+        "text": "The general total-person supervision limit is exceeded on this shift."
       },
       {
         "id": "opt2",
-        "text": "It must be kept for five years."
+        "text": "The separate intern-count limit is exceeded on this shift."
       },
       {
         "id": "opt3",
-        "text": "It may be destroyed after six months."
+        "text": "The technician-certification majority is no longer met on this shift."
       },
       {
         "id": "opt4",
-        "text": "It must be kept permanently."
+        "text": "The pharmacist-manager designation no longer applies on this shift."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "Colorado requires counseling on new therapy, provides for documented refusal, and requires refusal records to remain readily retrievable for at least two years. Language barriers alter the method, not the duty.",
+    "explanation": "The general rule counts interns and technicians together. Adding a fifth technician makes seven supervised persons.",
     "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
     },
-    "ruleToRemember": "Counseling questions often test duty + documentation + retention together.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-VAX-01",
-    "conceptId": "co-vax-integrated",
-    "familyId": "co-vax-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Immunizations",
-    "subtopic": "Immunizations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist delegates vaccine administration to a trained pharmacy technician. The technician administers the vaccine, and the pharmacy keeps the administration record for 30 months. What is the clearest compliance issue?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The record-retention period is too short; the vaccine record must be maintained for three years."
-      },
-      {
-        "id": "opt2",
-        "text": "Technicians may never administer vaccines."
-      },
-      {
-        "id": "opt3",
-        "text": "The pharmacist must personally enter every record before the patient leaves."
-      },
-      {
-        "id": "opt4",
-        "text": "The record should be destroyed after two years."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado vaccine rules combine who may administer, what must be documented, three-year record retention, and same-day return of off-site vaccine stock.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Treat vaccine authority, records, and inventory movement as separate legal checks.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-VAX-02",
-    "conceptId": "co-vax-integrated",
-    "familyId": "co-vax-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Immunizations",
-    "subtopic": "Immunizations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A vaccine is administered off-site. Unused doses remain at the event site overnight in a monitored refrigerator. What is the Colorado problem?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Remaining vaccines are to be returned to the prescription drug outlet the same day they were removed."
-      },
-      {
-        "id": "opt2",
-        "text": "Overnight storage is allowed if monitored."
-      },
-      {
-        "id": "opt3",
-        "text": "Only controlled vaccines must be returned same day."
-      },
-      {
-        "id": "opt4",
-        "text": "The doses must be destroyed rather than returned."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado vaccine rules combine who may administer, what must be documented, three-year record retention, and same-day return of off-site vaccine stock.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Treat vaccine authority, records, and inventory movement as separate legal checks.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-VAX-03",
-    "conceptId": "co-vax-integrated",
-    "familyId": "co-vax-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Immunizations",
-    "subtopic": "Immunizations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacy's vaccine record includes product, lot, expiration, date, site, consent, and VIS date, but no insurance BIN. Which conclusion is best?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The absence of an insurance BIN does not by itself make the legal vaccine-administration record deficient."
-      },
-      {
-        "id": "opt2",
-        "text": "The BIN is a mandatory Board-rule vaccine-record element."
-      },
-      {
-        "id": "opt3",
-        "text": "The entire record must be discarded and recreated."
-      },
-      {
-        "id": "opt4",
-        "text": "The vaccine administration is void."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado vaccine rules combine who may administer, what must be documented, three-year record retention, and same-day return of off-site vaccine stock.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Treat vaccine authority, records, and inventory movement as separate legal checks.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-VAX-04",
-    "conceptId": "co-vax-integrated",
-    "familyId": "co-vax-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Immunizations",
-    "subtopic": "Immunizations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A trained pharmacist delegates administration to an uncredentialed front-store employee who has CPR certification. Which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "CPR training alone does not place that employee within the pharmacy intern/technician delegation category."
-      },
-      {
-        "id": "opt2",
-        "text": "Any employee with CPR may administer."
-      },
-      {
-        "id": "opt3",
-        "text": "Delegation is valid for influenza vaccine only."
-      },
-      {
-        "id": "opt4",
-        "text": "Delegation is valid if the pharmacist watches by video."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado vaccine rules combine who may administer, what must be documented, three-year record retention, and same-day return of off-site vaccine stock.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Treat vaccine authority, records, and inventory movement as separate legal checks.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-VAX-05",
-    "conceptId": "co-vax-integrated",
-    "familyId": "co-vax-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Immunizations",
-    "subtopic": "Immunizations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A patient receives two vaccines on different dates. The pharmacy retains the first-dose record for 37 months and the second for 28 months. Which record presents the retention problem?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Only the second-dose record."
-      },
-      {
-        "id": "opt2",
-        "text": "Only the first-dose record."
-      },
-      {
-        "id": "opt3",
-        "text": "Both records."
-      },
-      {
-        "id": "opt4",
-        "text": "Neither record."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado vaccine rules combine who may administer, what must be documented, three-year record retention, and same-day return of off-site vaccine stock.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Treat vaccine authority, records, and inventory movement as separate legal checks.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-CPPA-01",
-    "conceptId": "co-cppa-integrated",
-    "familyId": "co-cppa-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Collaborative Practice",
-    "subtopic": "Collaborative Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Colorado pharmacist with a current license and PharmD enters a CPPA but carries only $500,000 per-incident professional liability coverage. What is the issue?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The coverage is below the rule's stated minimum of $1 million per incident / $3 million aggregate."
-      },
-      {
-        "id": "opt2",
-        "text": "A PharmD eliminates the insurance requirement."
-      },
-      {
-        "id": "opt3",
-        "text": "Only the aggregate limit matters."
-      },
-      {
-        "id": "opt4",
-        "text": "Insurance is required only for controlled substances."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Collaborative-practice eligibility and operation involve several independent requirements, including current licensure, practice status, training/experience, insurance, patient relationship requirements where applicable, and communication/documentation.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "A CPPA can fail because of pharmacist qualifications, prescriber relationship, or agreement infrastructure.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-CPPA-02",
-    "conceptId": "co-cppa-integrated",
-    "familyId": "co-cppa-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Collaborative Practice",
-    "subtopic": "Collaborative Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist with eight years of licensed experience but no PharmD otherwise meets the rule. Which statement is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The experience pathway can satisfy the PharmD-or-five-years qualification element."
-      },
-      {
-        "id": "opt2",
-        "text": "A PharmD is always mandatory."
-      },
-      {
-        "id": "opt3",
-        "text": "Ten years of hospital practice is required."
-      },
-      {
-        "id": "opt4",
-        "text": "Only residency-trained pharmacists qualify."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Collaborative-practice eligibility and operation involve several independent requirements, including current licensure, practice status, training/experience, insurance, patient relationship requirements where applicable, and communication/documentation.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "A CPPA can fail because of pharmacist qualifications, prescriber relationship, or agreement infrastructure.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-CPPA-03",
-    "conceptId": "co-cppa-integrated",
-    "familyId": "co-cppa-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Collaborative Practice",
-    "subtopic": "Collaborative Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist and prescriber create a CPPA but no process exists for communicating and documenting medication changes in the patient's medical record. Which deficiency is most direct?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The agreement lacks the required communication/documentation process."
-      },
-      {
-        "id": "opt2",
-        "text": "The pharmacist must own part of the prescriber's practice."
-      },
-      {
-        "id": "opt3",
-        "text": "The patient must sign a DEA form."
-      },
-      {
-        "id": "opt4",
-        "text": "The prescriber must be physically present whenever the pharmacist acts."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Collaborative-practice eligibility and operation involve several independent requirements, including current licensure, practice status, training/experience, insurance, patient relationship requirements where applicable, and communication/documentation.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "A CPPA can fail because of pharmacist qualifications, prescriber relationship, or agreement infrastructure.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-CPPA-04",
-    "conceptId": "co-cppa-integrated",
-    "familyId": "co-cppa-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Collaborative Practice",
-    "subtopic": "Collaborative Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "No statewide protocol applies. The collaborating prescriber has never established a relationship with the patient population served. What issue arises?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The required established prescriber-patient relationship condition is not met."
-      },
-      {
-        "id": "opt2",
-        "text": "The pharmacist can substitute an employer relationship."
-      },
-      {
-        "id": "opt3",
-        "text": "The rule is satisfied if the pharmacy has the patient's insurance card."
-      },
-      {
-        "id": "opt4",
-        "text": "No relationship is required under any circumstances."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Collaborative-practice eligibility and operation involve several independent requirements, including current licensure, practice status, training/experience, insurance, patient relationship requirements where applicable, and communication/documentation.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "A CPPA can fail because of pharmacist qualifications, prescriber relationship, or agreement infrastructure.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-CPPA-05",
-    "conceptId": "co-cppa-integrated",
-    "familyId": "co-cppa-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Collaborative Practice",
-    "subtopic": "Collaborative Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist entering a CPPA is licensed but currently not engaged in the practice of pharmacy. Which qualification is implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The rule's requirement that the pharmacist be engaged in pharmacy practice."
-      },
-      {
-        "id": "opt2",
-        "text": "Only the liability-insurance requirement."
-      },
-      {
-        "id": "opt3",
-        "text": "Only the patient-counseling requirement."
-      },
-      {
-        "id": "opt4",
-        "text": "None; current practice status is irrelevant."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Collaborative-practice eligibility and operation involve several independent requirements, including current licensure, practice status, training/experience, insurance, patient relationship requirements where applicable, and communication/documentation.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "A CPPA can fail because of pharmacist qualifications, prescriber relationship, or agreement infrastructure.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-SCOPE-01",
-    "conceptId": "co-practice-scope-2026",
-    "familyId": "co-practice-scope-2026",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A technician answers a prescriber's call for a new noncontrolled outpatient prescription and records it. A pharmacist verifies it before dispensing. Which statement is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The intake step remains unauthorized under the general oral-order rule despite later pharmacist verification."
-      },
-      {
-        "id": "opt2",
-        "text": "The pharmacist's later verification cures any intake limitation."
-      },
-      {
-        "id": "opt3",
-        "text": "Technicians may receive oral orders if the drug is noncontrolled."
-      },
-      {
-        "id": "opt4",
-        "text": "The only limitation is whether the technician is provisional."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado law expands independent pharmacist prescribing in defined noncontrolled circumstances and adds PCP notification/referral obligations for minors when testing or treatment occurs.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Age, drug class, condition category, FDA labeling, and follow-up obligations all matter.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-SCOPE-02",
-    "conceptId": "co-practice-scope-2026",
-    "familyId": "co-practice-scope-2026",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist independently prescribes a noncontrolled treatment for a 10-year-old under the 2026 expanded authority. The condition is minor and self-limiting and the product is used according to FDA labeling. What additional follow-up is important if treatment occurs?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Notify the child's PCP as soon as practicable consistent with privacy law, or refer if no PCP is disclosed."
-      },
-      {
-        "id": "opt2",
-        "text": "Report the prescription to DEA within 24 hours."
-      },
-      {
-        "id": "opt3",
-        "text": "Obtain a collaborative practice agreement in every case."
-      },
-      {
-        "id": "opt4",
-        "text": "Require the child to be at least 12."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado law expands independent pharmacist prescribing in defined noncontrolled circumstances and adds PCP notification/referral obligations for minors when testing or treatment occurs.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Age, drug class, condition category, FDA labeling, and follow-up obligations all matter.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-SCOPE-03",
-    "conceptId": "co-practice-scope-2026",
-    "familyId": "co-practice-scope-2026",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist proposes to use the 2026 under-12 independent prescriptive authority for a 7-year-old and a controlled substance. Which fact defeats the proposed pathway?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The authority described applies to noncontrolled drugs/drug categories/devices."
-      },
-      {
-        "id": "opt2",
-        "text": "The patient is under 12."
-      },
-      {
-        "id": "opt3",
-        "text": "The pharmacist is not in a hospital."
-      },
-      {
-        "id": "opt4",
-        "text": "The prescription would be electronic."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado law expands independent pharmacist prescribing in defined noncontrolled circumstances and adds PCP notification/referral obligations for minors when testing or treatment occurs.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Age, drug class, condition category, FDA labeling, and follow-up obligations all matter.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-SCOPE-04",
-    "conceptId": "co-practice-scope-2026",
-    "familyId": "co-practice-scope-2026",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist tests a 16-year-old and treats under the applicable independent authority but neither notifies the disclosed PCP nor refers for further care. Which requirement is implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The minor-patient PCP notification/referral requirement."
-      },
-      {
-        "id": "opt2",
-        "text": "A requirement that all treatment be under a CPPA."
-      },
-      {
-        "id": "opt3",
-        "text": "A requirement for DEA notification."
-      },
-      {
-        "id": "opt4",
-        "text": "A rule prohibiting pharmacist treatment of anyone under 18."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado law expands independent pharmacist prescribing in defined noncontrolled circumstances and adds PCP notification/referral obligations for minors when testing or treatment occurs.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Age, drug class, condition category, FDA labeling, and follow-up obligations all matter.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-SCOPE-05",
-    "conceptId": "co-practice-scope-2026",
-    "familyId": "co-practice-scope-2026",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist uses the under-12 pathway for a 9-year-old with a condition requiring a completely new complex diagnosis outside the listed categories. Which is the best conclusion?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The scenario falls outside the described statutory categories for the under-12 authority."
-      },
-      {
-        "id": "opt2",
-        "text": "Age alone makes the authority unlimited."
-      },
-      {
-        "id": "opt3",
-        "text": "Any noncontrolled drug may be prescribed to any child older than five."
-      },
-      {
-        "id": "opt4",
-        "text": "The pharmacist may proceed if the parent consents."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado law expands independent pharmacist prescribing in defined noncontrolled circumstances and adds PCP notification/referral obligations for minors when testing or treatment occurs.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Age, drug class, condition category, FDA labeling, and follow-up obligations all matter.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-SCOPE-06",
-    "conceptId": "co-practice-scope-2026",
-    "familyId": "co-practice-scope-2026",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist uses a CLIA-waived test for group A streptococcus in an 8-year-old and the proposed therapy is noncontrolled and consistent with FDA labeling. Which fact is most relevant to the new 2026 authority?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Group A streptococcus is among the listed test-guided conditions for the age 5-to-under-12 pathway."
-      },
-      {
-        "id": "opt2",
-        "text": "Only influenza testing is included."
-      },
-      {
-        "id": "opt3",
-        "text": "The pathway begins at age 12."
-      },
-      {
-        "id": "opt4",
-        "text": "All testing must occur under a CPPA."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The 2026 Colorado law expands independent pharmacist prescribing in defined noncontrolled circumstances and adds PCP notification/referral obligations for minors when testing or treatment occurs.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Age, drug class, condition category, FDA labeling, and follow-up obligations all matter.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-EMERG-01",
-    "conceptId": "co-emergency-integrated",
-    "familyId": "co-emergency-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Emergency Dispensing",
-    "subtopic": "Emergency Dispensing",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist lawfully provides an emergency supply of a qualifying chronic maintenance medication at 9:00 PM. The pharmacy waits until noon the next day to email the practitioner. What is the issue?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The rule calls for immediate written notice to the practitioner of record."
-      },
-      {
-        "id": "opt2",
-        "text": "Notice is never required."
-      },
-      {
-        "id": "opt3",
-        "text": "Notice must instead go only to the Board."
-      },
-      {
-        "id": "opt4",
-        "text": "The patient must provide the notice."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado's emergency-dispensing and LTCF first-dose rules contain specific notification, quantity, and frequency conditions.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Emergency authority is conditional; identify the exact pathway before applying the exception.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-EMERG-02",
-    "conceptId": "co-emergency-integrated",
-    "familyId": "co-emergency-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Emergency Dispensing",
-    "subtopic": "Emergency Dispensing",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "After an emergency supply, the written notice contains drug name/strength, quantity, patient name/DOB, and date, but omits the dispensing pharmacy's contact information. Which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The notice is missing required pharmacy-identification/contact information."
-      },
-      {
-        "id": "opt2",
-        "text": "The notice is complete."
-      },
-      {
-        "id": "opt3",
-        "text": "Only the prescriber's DEA number is missing."
-      },
-      {
-        "id": "opt4",
-        "text": "Emergency-dispensing notices need only patient name and drug."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado's emergency-dispensing and LTCF first-dose rules contain specific notification, quantity, and frequency conditions.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Emergency authority is conditional; identify the exact pathway before applying the exception.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-EMERG-03",
-    "conceptId": "co-emergency-integrated",
-    "familyId": "co-emergency-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Emergency Dispensing",
-    "subtopic": "Emergency Dispensing",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A duplicate LTCF chart order is used under Colorado's first-dose rule for immediate care. The pharmacist dispenses a 96-hour noncontrolled supply. What is the problem?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The rule's described maximum is 72 hours."
-      },
-      {
-        "id": "opt2",
-        "text": "The rule allows 7 days."
-      },
-      {
-        "id": "opt3",
-        "text": "The rule permits 96 hours if noncontrolled."
-      },
-      {
-        "id": "opt4",
-        "text": "No quantity/time limit applies."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado's emergency-dispensing and LTCF first-dose rules contain specific notification, quantity, and frequency conditions.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Emergency authority is conditional; identify the exact pathway before applying the exception.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-EMERG-04",
-    "conceptId": "co-emergency-integrated",
-    "familyId": "co-emergency-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Emergency Dispensing",
-    "subtopic": "Emergency Dispensing",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist uses the first-dose LTCF rule twice on the same order because the facility again requests an emergency quantity. Which limitation is implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The rule is one time per order."
-      },
-      {
-        "id": "opt2",
-        "text": "The rule allows unlimited first doses if each is 72 hours or less."
-      },
-      {
-        "id": "opt3",
-        "text": "The rule applies only to controlled substances."
-      },
-      {
-        "id": "opt4",
-        "text": "The rule requires a 30-day supply."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado's emergency-dispensing and LTCF first-dose rules contain specific notification, quantity, and frequency conditions.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Emergency authority is conditional; identify the exact pathway before applying the exception.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-EXTRA-01",
-    "conceptId": "co-practice-integrated",
-    "familyId": "co-practice-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A new-therapy patient refuses counseling in Spanish. The pharmacist documents the refusal linked to the order and retains it for two years. Which statement is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The refusal pathway can satisfy the counseling rule even though alternative-language counseling would otherwise have been required."
-      },
-      {
-        "id": "opt2",
-        "text": "A language barrier invalidates a patient's refusal."
-      },
-      {
-        "id": "opt3",
-        "text": "The record must be retained only one year."
-      },
-      {
-        "id": "opt4",
-        "text": "A technician must countersign every refusal."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "These items integrate personnel, counseling, immunization, prescribing, and collaborative-practice rules. The correct answer depends on identifying which legal duty remains with the pharmacist and which exceptions apply.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Do not let a valid delegation in one domain imply delegation of clinical judgment in another.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-EXTRA-02",
-    "conceptId": "co-practice-integrated",
-    "familyId": "co-practice-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A 17-year-old is tested and treated by a pharmacist under an applicable independent-prescribing pathway. The patient identifies a PCP. Which action is most consistent with the 2026 amendment?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Notify the PCP as soon as practicable consistent with privacy law."
-      },
-      {
-        "id": "opt2",
-        "text": "No follow-up is required because the patient is older than 12."
-      },
-      {
-        "id": "opt3",
-        "text": "Notify DEA rather than the PCP."
-      },
-      {
-        "id": "opt4",
-        "text": "Wait until the patient turns 18."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "These items integrate personnel, counseling, immunization, prescribing, and collaborative-practice rules. The correct answer depends on identifying which legal duty remains with the pharmacist and which exceptions apply.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Do not let a valid delegation in one domain imply delegation of clinical judgment in another.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-EXTRA-03",
-    "conceptId": "co-practice-integrated",
-    "familyId": "co-practice-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist delegates vaccine administration to a trained technician but asks the technician to independently decide whether a contraindication is clinically significant. Which distinction matters?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Administration may be delegable, but clinical judgment remains a pharmacist responsibility."
-      },
-      {
-        "id": "opt2",
-        "text": "Technicians always decide contraindications once trained to vaccinate."
-      },
-      {
-        "id": "opt3",
-        "text": "Contraindication review is unnecessary if consent is signed."
-      },
-      {
-        "id": "opt4",
-        "text": "The issue matters only for controlled substances."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "These items integrate personnel, counseling, immunization, prescribing, and collaborative-practice rules. The correct answer depends on identifying which legal duty remains with the pharmacist and which exceptions apply.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Do not let a valid delegation in one domain imply delegation of clinical judgment in another.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-EXTRA-04",
-    "conceptId": "co-practice-integrated",
-    "familyId": "co-practice-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist uses an FPV program and CPPA in the same pharmacy. Which activity still cannot simply be shifted to a technician merely because FPV is authorized?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Clinical judgment about therapeutic appropriateness."
-      },
-      {
-        "id": "opt2",
-        "text": "Physical verification of a noncontrolled product under the FPV safeguards."
-      },
-      {
-        "id": "opt3",
-        "text": "Barcode verification of a noncontrolled product."
-      },
-      {
-        "id": "opt4",
-        "text": "Second-person check of noncontrolled unit-dose repackaging."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "These items integrate personnel, counseling, immunization, prescribing, and collaborative-practice rules. The correct answer depends on identifying which legal duty remains with the pharmacist and which exceptions apply.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Do not let a valid delegation in one domain imply delegation of clinical judgment in another.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-EXTRA-05",
-    "conceptId": "co-practice-integrated",
-    "familyId": "co-practice-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A patient's counseling refusal is documented but cannot be retrieved during a Board inspection 14 months later. Which requirement is implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The refusal record must remain readily retrievable for at least two years."
-      },
-      {
-        "id": "opt2",
-        "text": "The retention period expired at 12 months."
-      },
-      {
-        "id": "opt3",
-        "text": "Only paper refusals must be retrievable."
-      },
-      {
-        "id": "opt4",
-        "text": "Refusal records are confidential from inspectors and need not be produced."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "These items integrate personnel, counseling, immunization, prescribing, and collaborative-practice rules. The correct answer depends on identifying which legal duty remains with the pharmacist and which exceptions apply.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Do not let a valid delegation in one domain imply delegation of clinical judgment in another.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-EXTRA-06",
-    "conceptId": "co-practice-integrated",
-    "familyId": "co-practice-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist independently treats a 6-year-old for a condition outside the statutory categories using a noncontrolled drug. The drug itself is FDA-labeled for the child. What remains problematic?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "FDA labeling alone does not eliminate the statutory limitations on eligible conditions."
-      },
-      {
-        "id": "opt2",
-        "text": "The patient's age is sufficient authority for any condition."
-      },
-      {
-        "id": "opt3",
-        "text": "Only controlled status matters."
-      },
-      {
-        "id": "opt4",
-        "text": "The pharmacist may treat any condition if a PCP is later notified."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "These items integrate personnel, counseling, immunization, prescribing, and collaborative-practice rules. The correct answer depends on identifying which legal duty remains with the pharmacist and which exceptions apply.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Do not let a valid delegation in one domain imply delegation of clinical judgment in another.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-EXTRA-07",
-    "conceptId": "co-practice-integrated",
-    "familyId": "co-practice-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist's CPPA insurance policy provides $1 million per incident but only $2 million aggregate. Which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The aggregate coverage is below the rule's stated $3 million minimum."
-      },
-      {
-        "id": "opt2",
-        "text": "The coverage fully meets the stated minimum."
-      },
-      {
-        "id": "opt3",
-        "text": "Only per-incident coverage matters."
-      },
-      {
-        "id": "opt4",
-        "text": "The rule requires $3 million per incident and $1 million aggregate."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "These items integrate personnel, counseling, immunization, prescribing, and collaborative-practice rules. The correct answer depends on identifying which legal duty remains with the pharmacist and which exceptions apply.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Do not let a valid delegation in one domain imply delegation of clinical judgment in another.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-EXTRA-08",
-    "conceptId": "co-practice-integrated",
-    "familyId": "co-practice-integrated",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Practice",
-    "subtopic": "Pharmacist Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A trained technician administers a vaccine off-site. The pharmacy documents the dose completely, returns unused doses that evening, and keeps the record four years. Which element is problematic?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "None of those listed elements conflicts with the cited vaccine rules."
-      },
-      {
-        "id": "opt2",
-        "text": "Technician administration is categorically prohibited."
-      },
-      {
-        "id": "opt3",
-        "text": "The record should have been destroyed after three years exactly."
-      },
-      {
-        "id": "opt4",
-        "text": "Unused vaccine may never be returned to the pharmacy."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "These items integrate personnel, counseling, immunization, prescribing, and collaborative-practice rules. The correct answer depends on identifying which legal duty remains with the pharmacist and which exceptions apply.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Do not let a valid delegation in one domain imply delegation of clinical judgment in another.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A3-C34-01",
-    "conceptId": "fed-c34-integrated",
-    "familyId": "fed-c34-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Schedule IV prescription is dated March 12 with five refills. It is filled March 14 and refilled April 18, May 22, June 19, and August 2. On September 15 the patient requests transfer to another pharmacy that does not share a real-time online database. The prescription was already transferred once. Which action is permissible?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Do not transfer it again under the general one-time transfer rule; remaining refill authority does not create additional transfer authority."
-      },
-      {
-        "id": "opt2",
-        "text": "Transfer it because one refill remains."
-      },
-      {
-        "id": "opt3",
-        "text": "Transfer it only if the prescriber verbally approves the transfer."
-      },
-      {
-        "id": "opt4",
-        "text": "Dispense it as a Schedule II emergency supply."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Federal Schedule III-IV rules impose independent limits on time, refill count, and transfer count. A prescription can have refills remaining but be too old or have exhausted its transfer authority.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Track three separate variables: age of prescription, refills used, and transfers used.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Schedule III-IV refills"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-C34-02",
-    "conceptId": "fed-c34-integrated",
-    "familyId": "fed-c34-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Schedule III prescription dated January 10 was filled January 10 and refilled twice. On July 12 the patient asks for another refill. What is the controlling federal problem?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The prescription is beyond the six-month fill/refill window even though fewer than five refills were used."
-      },
-      {
-        "id": "opt2",
-        "text": "No problem because fewer than five refills were used."
-      },
-      {
-        "id": "opt3",
-        "text": "Schedule III prescriptions are valid for one year."
-      },
-      {
-        "id": "opt4",
-        "text": "The prescription can be revived by transferring it."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Federal Schedule III-IV rules impose independent limits on time, refill count, and transfer count. A prescription can have refills remaining but be too old or have exhausted its transfer authority.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Track three separate variables: age of prescription, refills used, and transfers used.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Schedule III-IV refills"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-C34-03",
-    "conceptId": "fed-c34-integrated",
-    "familyId": "fed-c34-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Schedule IV prescription dated April 1 has been refilled five times by August 20. On September 1 the patient requests another refill. Which limit has been reached?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The five-refill maximum."
-      },
-      {
-        "id": "opt2",
-        "text": "Only the six-month time limit."
-      },
-      {
-        "id": "opt3",
-        "text": "Neither limit because September is within six months."
-      },
-      {
-        "id": "opt4",
-        "text": "Transfer law, not refill law, controls."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Federal Schedule III-IV rules impose independent limits on time, refill count, and transfer count. A prescription can have refills remaining but be too old or have exhausted its transfer authority.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Track three separate variables: age of prescription, refills used, and transfers used.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Schedule III-IV refills"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-C34-04",
-    "conceptId": "fed-c34-integrated",
-    "familyId": "fed-c34-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Schedule III prescription dated May 1 has three refills remaining. It was transferred once between pharmacies that do not share a qualifying real-time database. The patient wants another transfer June 15. What is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The general transfer authority has been exhausted even though refills remain."
-      },
-      {
-        "id": "opt2",
-        "text": "Three remaining refills permit three more transfers."
-      },
-      {
-        "id": "opt3",
-        "text": "The prescription became Schedule II after the first transfer."
-      },
-      {
-        "id": "opt4",
-        "text": "A technician may reset the transfer count."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Federal Schedule III-IV rules impose independent limits on time, refill count, and transfer count. A prescription can have refills remaining but be too old or have exhausted its transfer authority.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Track three separate variables: age of prescription, refills used, and transfers used.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Schedule III-IV refills"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-C34-05",
-    "conceptId": "fed-c34-integrated",
-    "familyId": "fed-c34-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "Two pharmacies share a qualifying real-time online database. A Schedule IV prescription has lawful refills remaining and is still within six months. Which statement best reflects transfer authority?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The shared-database exception can permit transfers up to the lawful refill/prescriber limits."
-      },
-      {
-        "id": "opt2",
-        "text": "A Schedule IV prescription may never move between pharmacies."
-      },
-      {
-        "id": "opt3",
-        "text": "The prescription is limited to one transfer despite the shared database."
-      },
-      {
-        "id": "opt4",
-        "text": "The database removes the five-refill/six-month limits."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Federal Schedule III-IV rules impose independent limits on time, refill count, and transfer count. A prescription can have refills remaining but be too old or have exhausted its transfer authority.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Track three separate variables: age of prescription, refills used, and transfers used.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Schedule III-IV refills"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-C34-06",
-    "conceptId": "fed-c34-integrated",
-    "familyId": "fed-c34-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Schedule IV prescription is dated February 20 with five refills. The sixth-month anniversary passes before the patient attempts the fifth refill. Which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The unused refill authorization does not extend the prescription beyond the federal six-month window."
-      },
-      {
-        "id": "opt2",
-        "text": "The fifth refill remains valid forever because it was authorized originally."
-      },
-      {
-        "id": "opt3",
-        "text": "The prescription converts to noncontrolled after six months."
-      },
-      {
-        "id": "opt4",
-        "text": "The pharmacist may extend the date by documenting a transfer."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Federal Schedule III-IV rules impose independent limits on time, refill count, and transfer count. A prescription can have refills remaining but be too old or have exhausted its transfer authority.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Track three separate variables: age of prescription, refills used, and transfers used.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Schedule III-IV refills"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-CII-01",
-    "conceptId": "fed-cii-integrated",
-    "familyId": "fed-cii-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Federal",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Schedule II prescription is written June 1 and partially filled June 1 at the patient's request under a qualifying pathway. The patient returns July 3 for the balance. State law otherwise permits the partial fill. What is the federal issue?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The remaining portion is beyond the general 30-day period from the written date for that patient/practitioner-requested partial-fill pathway."
-      },
-      {
-        "id": "opt2",
-        "text": "The balance is valid for 60 days in every Schedule II partial fill."
-      },
-      {
-        "id": "opt3",
-        "text": "A Schedule II partial fill must always be completed within 72 hours."
-      },
-      {
-        "id": "opt4",
-        "text": "No federal time limit applies."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Schedule II law contains several different pathways: no refills, multiple prescriptions up to a 90-day total under conditions, 72-hour unable-to-supply partial fills, 30-day patient/practitioner-requested partial fills, and a distinct LTCF/terminal-illness pathway.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Before applying a number, identify which Schedule II pathway the facts describe.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Schedule II prescribing/refills"
-      },
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Schedule II partial filling"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-CII-02",
-    "conceptId": "fed-cii-integrated",
-    "familyId": "fed-cii-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Federal",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacy is unable to supply the full quantity of a Schedule II prescription and dispenses part on Monday at 10 AM. The remainder does not arrive until Friday. Which statement best fits the unable-to-supply rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The 72-hour remainder period has passed; the practitioner must be notified and a new prescription is needed for additional quantity."
-      },
-      {
-        "id": "opt2",
-        "text": "The pharmacy has 30 days because every Schedule II partial fill uses the same deadline."
-      },
-      {
-        "id": "opt3",
-        "text": "The balance remains valid for six months."
-      },
-      {
-        "id": "opt4",
-        "text": "The pharmacy may dispense the rest if the patient signs a waiver."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Schedule II law contains several different pathways: no refills, multiple prescriptions up to a 90-day total under conditions, 72-hour unable-to-supply partial fills, 30-day patient/practitioner-requested partial fills, and a distinct LTCF/terminal-illness pathway.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Before applying a number, identify which Schedule II pathway the facts describe.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Schedule II prescribing/refills"
-      },
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Schedule II partial filling"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-CII-03",
-    "conceptId": "fed-cii-integrated",
-    "familyId": "fed-cii-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Federal",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A practitioner issues three separate Schedule II prescriptions at one visit, each for a 30-day supply, with appropriate earliest-fill instructions for later prescriptions. Which federal concept makes this potentially permissible?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The multiple-prescription rule allowing up to a 90-day total when all conditions are satisfied."
-      },
-      {
-        "id": "opt2",
-        "text": "Schedule II refills."
-      },
-      {
-        "id": "opt3",
-        "text": "A six-month validity period."
-      },
-      {
-        "id": "opt4",
-        "text": "The Schedule III-IV transfer exception."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Schedule II law contains several different pathways: no refills, multiple prescriptions up to a 90-day total under conditions, 72-hour unable-to-supply partial fills, 30-day patient/practitioner-requested partial fills, and a distinct LTCF/terminal-illness pathway.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Before applying a number, identify which Schedule II pathway the facts describe.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Schedule II prescribing/refills"
-      },
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Schedule II partial filling"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-CII-04",
-    "conceptId": "fed-cii-integrated",
-    "familyId": "fed-cii-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Federal",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Schedule II label in the pharmacy system shows '2 refills remaining.' The patient requests one. What should the pharmacist conclude?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The software display cannot create refill authority that federal law prohibits."
-      },
-      {
-        "id": "opt2",
-        "text": "Two refills are permitted because they appear in the system."
-      },
-      {
-        "id": "opt3",
-        "text": "Only one refill is prohibited; the second is allowed."
-      },
-      {
-        "id": "opt4",
-        "text": "Refill authority depends solely on patient consent."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Schedule II law contains several different pathways: no refills, multiple prescriptions up to a 90-day total under conditions, 72-hour unable-to-supply partial fills, 30-day patient/practitioner-requested partial fills, and a distinct LTCF/terminal-illness pathway.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Before applying a number, identify which Schedule II pathway the facts describe.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Schedule II prescribing/refills"
-      },
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Schedule II partial filling"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-CII-05",
-    "conceptId": "fed-cii-integrated",
-    "familyId": "fed-cii-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Federal",
-    "topic": "Controlled Substances",
-    "subtopic": "Controlled Substances",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A qualifying LTCF resident has a Schedule II prescription dispensed in partial quantities. The patient remains on therapy 58 days after issue. Which statement is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The special LTCF/terminal-illness provision can allow partial dispensing within a period not exceeding 60 days from issue, absent earlier discontinuation."
-      },
-      {
-        "id": "opt2",
-        "text": "All Schedule II partial fills expire after 30 days."
-      },
-      {
-        "id": "opt3",
-        "text": "The prescription can remain open for six months."
-      },
-      {
-        "id": "opt4",
-        "text": "Partial fills are prohibited in LTCF."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Schedule II law contains several different pathways: no refills, multiple prescriptions up to a 90-day total under conditions, 72-hour unable-to-supply partial fills, 30-day patient/practitioner-requested partial fills, and a distinct LTCF/terminal-illness pathway.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Before applying a number, identify which Schedule II pathway the facts describe.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Schedule II prescribing/refills"
-      },
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Schedule II partial filling"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-DISP-01",
-    "conceptId": "dispensing-judgment-integrated",
-    "familyId": "dispensing-judgment-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Dispensing Requirements",
-    "subtopic": "Dispensing Requirements",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Schedule IV prescription is facially complete, but the pharmacist has unresolved evidence that it was issued outside the usual course of professional practice. What is the most important legal principle?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The pharmacist's corresponding responsibility remains even though the prescription is facially complete."
-      },
-      {
-        "id": "opt2",
-        "text": "An active DEA number requires dispensing."
-      },
-      {
-        "id": "opt3",
-        "text": "The prescriber's signature eliminates pharmacist responsibility."
-      },
-      {
-        "id": "opt4",
-        "text": "Only the Board may question medical purpose."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Dispensing law often requires the pharmacist to determine whether the order is legally valid, whether the transfer mechanism is authorized, and whether the dispensed label accurately represents the product.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "A valid-looking form or active registration does not substitute for the pharmacist's legal evaluation.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.04",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.04",
-        "citation": "Corresponding responsibility"
-      },
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-DISP-02",
-    "conceptId": "dispensing-judgment-integrated",
-    "familyId": "dispensing-judgment-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Dispensing Requirements",
-    "subtopic": "Dispensing Requirements",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Colorado technician can orally transfer a noncontrolled prescription under state rule. The technician attempts the same traditional refill transfer for a Schedule IV prescription. What is the flaw?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The federal Schedule III-V refill-transfer pathway specifies direct pharmacist-to-pharmacist communication."
-      },
-      {
-        "id": "opt2",
-        "text": "Colorado technician authority overrides federal controlled-substance rules."
-      },
-      {
-        "id": "opt3",
-        "text": "Schedule IV prescriptions may never be transferred."
-      },
-      {
-        "id": "opt4",
-        "text": "The technician may transfer only after the fifth refill."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Dispensing law often requires the pharmacist to determine whether the order is legally valid, whether the transfer mechanism is authorized, and whether the dispensed label accurately represents the product.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "A valid-looking form or active registration does not substitute for the pharmacist's legal evaluation.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.04",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.04",
-        "citation": "Corresponding responsibility"
-      },
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-DISP-03",
-    "conceptId": "dispensing-judgment-integrated",
-    "familyId": "dispensing-judgment-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Dispensing Requirements",
-    "subtopic": "Dispensing Requirements",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A patient presents a paper marked 'COPY FOR REFERENCE ONLY' from another Colorado pharmacy and asks for dispensing. What should the receiving pharmacy recognize?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The copy is informational; dispensing requires a lawful prescription or transfer pathway."
-      },
-      {
-        "id": "opt2",
-        "text": "The copy is a valid order if it lists the drug and directions."
-      },
-      {
-        "id": "opt3",
-        "text": "The copy is valid only for controlled substances."
-      },
-      {
-        "id": "opt4",
-        "text": "The copy becomes valid when signed by the patient."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Dispensing law often requires the pharmacist to determine whether the order is legally valid, whether the transfer mechanism is authorized, and whether the dispensed label accurately represents the product.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "A valid-looking form or active registration does not substitute for the pharmacist's legal evaluation.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.04",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.04",
-        "citation": "Corresponding responsibility"
-      },
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-DISP-04",
-    "conceptId": "dispensing-judgment-integrated",
-    "familyId": "dispensing-judgment-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Dispensing Requirements",
-    "subtopic": "Dispensing Requirements",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A prescription label accurately names the prescribed brand, but the actual drug in the container is a different generic product after an undocumented substitution. Which Colorado labeling principle is implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The label should correspond with the identity of the drug actually contained, subject to lawful practitioner direction."
-      },
-      {
-        "id": "opt2",
-        "text": "The label should always display the originally prescribed brand regardless of contents."
-      },
-      {
-        "id": "opt3",
-        "text": "Only the NDC matters; drug identity on the label is optional."
-      },
-      {
-        "id": "opt4",
-        "text": "The pharmacist may intentionally mismatch label and contents if bioequivalent."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Dispensing law often requires the pharmacist to determine whether the order is legally valid, whether the transfer mechanism is authorized, and whether the dispensed label accurately represents the product.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "A valid-looking form or active registration does not substitute for the pharmacist's legal evaluation.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.04",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.04",
-        "citation": "Corresponding responsibility"
-      },
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-DISP-05",
-    "conceptId": "dispensing-judgment-integrated",
-    "familyId": "dispensing-judgment-integrated",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Dispensing Requirements",
-    "subtopic": "Dispensing Requirements",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist refuses to dispense a controlled-substance prescription after unresolved red flags. The prescriber has an active DEA registration. Which statement is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Active registration does not eliminate the pharmacist's corresponding responsibility to determine legitimacy."
-      },
-      {
-        "id": "opt2",
-        "text": "Active registration makes refusal unlawful."
-      },
-      {
-        "id": "opt3",
-        "text": "Corresponding responsibility applies only to Schedule II."
-      },
-      {
-        "id": "opt4",
-        "text": "Only insurers may question legitimacy."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Dispensing law often requires the pharmacist to determine whether the order is legally valid, whether the transfer mechanism is authorized, and whether the dispensed label accurately represents the product.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "A valid-looking form or active registration does not substitute for the pharmacist's legal evaluation.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.04",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.04",
-        "citation": "Corresponding responsibility"
-      },
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-RETURN-01",
-    "conceptId": "co-return-to-stock",
-    "familyId": "co-return-to-stock",
-    "competencyArea": 3,
-    "jurisdiction": "Colorado",
-    "topic": "Returning / Reusing Drugs",
-    "subtopic": "Returning / Reusing Drugs",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A prescription was delivered to another outlet for pickup but never reached the patient. It contains a controlled substance and is returned unopened to the originating pharmacy. Which Colorado rule is decisive?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Controlled-substance prescriptions may not be returned to stock under this return-to-stock pathway."
-      },
-      {
-        "id": "opt2",
-        "text": "Unopened packaging makes return to stock automatic."
-      },
-      {
-        "id": "opt3",
-        "text": "Any undelivered prescription may be returned to stock."
-      },
-      {
-        "id": "opt4",
-        "text": "Controlled substances may be returned if the lot number is known."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado permits return to stock only under defined conditions and expressly excludes controlled-substance prescriptions and compounded or flavored prescriptions from the cited pathway.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Undelivered does not automatically mean returnable to stock.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-RETURN-02",
-    "conceptId": "co-return-to-stock",
-    "familyId": "co-return-to-stock",
-    "competencyArea": 3,
-    "jurisdiction": "Colorado",
-    "topic": "Returning / Reusing Drugs",
-    "subtopic": "Returning / Reusing Drugs",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "An undelivered compounded flavored prescription is returned to the originating pharmacy in apparently intact condition. May it be returned to stock under the cited Colorado rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "No; compounded or flavored prescriptions are excluded from return to stock under the rule."
-      },
-      {
-        "id": "opt2",
-        "text": "Yes, if the patient never touched it."
-      },
-      {
-        "id": "opt3",
-        "text": "Yes, if refrigerated continuously."
-      },
-      {
-        "id": "opt4",
-        "text": "Yes, but only for 24 hours."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado permits return to stock only under defined conditions and expressly excludes controlled-substance prescriptions and compounded or flavored prescriptions from the cited pathway.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Undelivered does not automatically mean returnable to stock.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-RETURN-03",
-    "conceptId": "co-return-to-stock",
-    "familyId": "co-return-to-stock",
-    "competencyArea": 3,
-    "jurisdiction": "Colorado",
-    "topic": "Returning / Reusing Drugs",
-    "subtopic": "Returning / Reusing Drugs",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "An eligible noncontrolled, noncompounded prescription is returned to stock. Which record element is specifically required in the separate return-to-stock record?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Prescription number, drug name/strength, quantity returned, and date of return, plus central-fill location if applicable."
-      },
-      {
-        "id": "opt2",
-        "text": "Only patient name and prescriber DEA number."
-      },
-      {
-        "id": "opt3",
-        "text": "Only the reason the patient failed to pick up the drug."
-      },
-      {
-        "id": "opt4",
-        "text": "No separate record is required."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado permits return to stock only under defined conditions and expressly excludes controlled-substance prescriptions and compounded or flavored prescriptions from the cited pathway.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Undelivered does not automatically mean returnable to stock.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-EXTRA-01",
-    "conceptId": "controlled-integrated-advanced",
-    "familyId": "controlled-integrated-advanced",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Dispensing Requirements",
-    "subtopic": "Dispensing Requirements",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Schedule III prescription is four months old, has one refill left, and has never been transferred. The patient requests a refill transfer to a non-shared-database pharmacy. Which factors must still be satisfied?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Both lawful refill authority and the separate one-time transfer rule."
-      },
-      {
-        "id": "opt2",
-        "text": "Only the transfer rule; prescription age is irrelevant."
-      },
-      {
-        "id": "opt3",
-        "text": "Only the six-month clock; transfer history is irrelevant."
-      },
-      {
-        "id": "opt4",
-        "text": "Neither, because Schedule III prescriptions are noncontrolled."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Controlled-substance questions often stack separate legal events: issuance, initial transfer, partial fill, refill, and refill transfer. Each event has its own rule.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Name the legal event before applying the rule.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Schedule II prescribing/refills"
-      },
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Schedule II partial filling"
-      },
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Schedule III-IV refills"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      },
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-EXTRA-02",
-    "conceptId": "controlled-integrated-advanced",
-    "familyId": "controlled-integrated-advanced",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Dispensing Requirements",
-    "subtopic": "Dispensing Requirements",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Schedule II prescription is partially filled because the pharmacy lacks stock. The patient returns 48 hours later and stock is available. Which pathway controls the remaining quantity?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The unable-to-supply partial-fill rule, with its 72-hour remainder window."
-      },
-      {
-        "id": "opt2",
-        "text": "The 30-day patient-request partial-fill rule necessarily controls every stock shortage."
-      },
-      {
-        "id": "opt3",
-        "text": "The 60-day LTCF rule applies to every patient."
-      },
-      {
-        "id": "opt4",
-        "text": "The five-refill/six-month rule applies."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Controlled-substance questions often stack separate legal events: issuance, initial transfer, partial fill, refill, and refill transfer. Each event has its own rule.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Name the legal event before applying the rule.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Schedule II prescribing/refills"
-      },
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Schedule II partial filling"
-      },
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Schedule III-IV refills"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      },
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-EXTRA-03",
-    "conceptId": "controlled-integrated-advanced",
-    "familyId": "controlled-integrated-advanced",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Dispensing Requirements",
-    "subtopic": "Dispensing Requirements",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A patient requests transfer of an electronic Schedule II prescription before any dispensing. The prescription remains electronic and two licensed pharmacists communicate the transfer. Which statement is most accurate in Colorado?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "This can fit the one-time initial electronic controlled-substance transfer pathway if all other conditions are met."
-      },
-      {
-        "id": "opt2",
-        "text": "Schedule II electronic prescriptions can never be transferred for initial dispensing."
-      },
-      {
-        "id": "opt3",
-        "text": "The transfer must be converted to paper."
-      },
-      {
-        "id": "opt4",
-        "text": "The prescription may be transferred repeatedly until filled."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Controlled-substance questions often stack separate legal events: issuance, initial transfer, partial fill, refill, and refill transfer. Each event has its own rule.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Name the legal event before applying the rule.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Schedule II prescribing/refills"
-      },
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Schedule II partial filling"
-      },
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Schedule III-IV refills"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      },
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A3-EXTRA-04",
-    "conceptId": "controlled-integrated-advanced",
-    "familyId": "controlled-integrated-advanced",
-    "competencyArea": 3,
-    "jurisdiction": "Both",
-    "topic": "Dispensing Requirements",
-    "subtopic": "Dispensing Requirements",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist receives an electronic Schedule IV prescription that was previously transferred once for initial dispensing, later filled, and now has lawful refills. The patient asks for a refill transfer. What must the pharmacist avoid assuming?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "That the rules for initial electronic transfer and later refill transfer are the same legal event."
-      },
-      {
-        "id": "opt2",
-        "text": "That Schedule IV prescriptions may have refills."
-      },
-      {
-        "id": "opt3",
-        "text": "That controlled substances have recordkeeping requirements."
-      },
-      {
-        "id": "opt4",
-        "text": "That federal law applies."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Controlled-substance questions often stack separate legal events: issuance, initial transfer, partial fill, refill, and refill transfer. Each event has its own rule.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Name the legal event before applying the rule.",
-    "authority": [
-      {
-        "label": "21 CFR 1306.12",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
-        "citation": "Schedule II prescribing/refills"
-      },
-      {
-        "label": "21 CFR 1306.13",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
-        "citation": "Schedule II partial filling"
-      },
-      {
-        "label": "21 CFR 1306.22",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
-        "citation": "Schedule III-IV refills"
-      },
-      {
-        "label": "21 CFR 1306.25",
-        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
-        "citation": "Schedule III-V transfers"
-      },
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Dispensing Requirements"
-  },
-  {
-    "id": "A4-OPS-01",
-    "conceptId": "co-outlet-operations",
-    "familyId": "co-outlet-operations",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Colorado outlet permanently closes Monday at noon. The last pharmacist manager relocates prescriptions Thursday at 1 PM. What is the clearest issue?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The 72-hour relocation deadline has been exceeded."
-      },
-      {
-        "id": "opt2",
-        "text": "The manager has 30 days to relocate records."
-      },
-      {
-        "id": "opt3",
-        "text": "Record relocation is optional if patients are notified."
-      },
-      {
-        "id": "opt4",
-        "text": "Only controlled-substance records must be relocated."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado outlet-operation rules impose specific deadlines for closure, relocation, and changes affecting registration.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational deadlines are independent: 72-hour closure duties and separate relocation/registration rules.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-OPS-02",
-    "conceptId": "co-outlet-operations",
-    "familyId": "co-outlet-operations",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "An outlet closes and relocates prescription records within 72 hours but does not submit the Board closure notice until day 8. Which requirement was missed?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The closure notice also has a 72-hour deadline."
-      },
-      {
-        "id": "opt2",
-        "text": "The Board notice has a 30-day deadline."
-      },
-      {
-        "id": "opt3",
-        "text": "No Board notice is required if records are moved."
-      },
-      {
-        "id": "opt4",
-        "text": "The Board notice is required only for nonresident pharmacies."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado outlet-operation rules impose specific deadlines for closure, relocation, and changes affecting registration.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational deadlines are independent: 72-hour closure duties and separate relocation/registration rules.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-OPS-03",
-    "conceptId": "co-outlet-operations",
-    "familyId": "co-outlet-operations",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacy relocates its physical outlet and submits the relocation application 45 days before the effective move date. Which timing rule is implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The rule states the application is submitted no more than 30 days prior to the effective relocation date."
-      },
-      {
-        "id": "opt2",
-        "text": "The application must be filed at least 60 days before relocation."
-      },
-      {
-        "id": "opt3",
-        "text": "Relocation requires no Board application."
-      },
-      {
-        "id": "opt4",
-        "text": "The application can only be submitted after relocation."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado outlet-operation rules impose specific deadlines for closure, relocation, and changes affecting registration.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational deadlines are independent: 72-hour closure duties and separate relocation/registration rules.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-OPS-04",
-    "conceptId": "co-outlet-operations",
-    "familyId": "co-outlet-operations",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A nonresident outlet relocates to a different state than the state shown on its Colorado registration and continues dispensing into Colorado under the old registration. Which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The existing Colorado registration becomes void/cancelled and a new Colorado registration is required before continuing business in Colorado."
-      },
-      {
-        "id": "opt2",
-        "text": "The old registration remains valid until annual renewal."
-      },
-      {
-        "id": "opt3",
-        "text": "Only a change of pharmacist manager affects registration."
-      },
-      {
-        "id": "opt4",
-        "text": "No Colorado registration is needed for nonresident outlets."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado outlet-operation rules impose specific deadlines for closure, relocation, and changes affecting registration.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational deadlines are independent: 72-hour closure duties and separate relocation/registration rules.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-TELE-01",
-    "conceptId": "co-tele-integrated",
-    "familyId": "co-tele-integrated",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Telepharmacy",
-    "subtopic": "Telepharmacy",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A central pharmacy oversees three telepharmacies. Each telepharmacy otherwise meets staffing and physical requirements. What is the problem?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The central pharmacy definition limits oversight to no more than two telepharmacies."
-      },
-      {
-        "id": "opt2",
-        "text": "A central pharmacy may oversee unlimited telepharmacies."
-      },
-      {
-        "id": "opt3",
-        "text": "The maximum is five."
-      },
-      {
-        "id": "opt4",
-        "text": "The issue depends only on floor space."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Telepharmacy operation combines central-pharmacy oversight limits, physical-space requirements, daily temperature monitoring, and Colorado credential requirements.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Telepharmacy questions can test facility, staffing, and storage rules simultaneously.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-TELE-02",
-    "conceptId": "co-tele-integrated",
-    "familyId": "co-tele-integrated",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Telepharmacy",
-    "subtopic": "Telepharmacy",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A telepharmacy has 145 continuous square feet in its principal compounding/dispensing area. Everything else is compliant. Which requirement is not met?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The 150-continuous-square-foot minimum."
-      },
-      {
-        "id": "opt2",
-        "text": "A 100-square-foot minimum."
-      },
-      {
-        "id": "opt3",
-        "text": "A 225-square-foot minimum specifically for telepharmacies."
-      },
-      {
-        "id": "opt4",
-        "text": "No minimum applies."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Telepharmacy operation combines central-pharmacy oversight limits, physical-space requirements, daily temperature monitoring, and Colorado credential requirements.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Telepharmacy questions can test facility, staffing, and storage rules simultaneously.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-TELE-03",
-    "conceptId": "co-tele-integrated",
-    "familyId": "co-tele-integrated",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Telepharmacy",
-    "subtopic": "Telepharmacy",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A telepharmacy refrigerator uses an electronic monitor that records temperature Monday through Friday but not weekends. Drugs remain stored continuously. Which rule is implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The telepharmacy rule calls for electronic monitoring each calendar day."
-      },
-      {
-        "id": "opt2",
-        "text": "Business-day monitoring is sufficient."
-      },
-      {
-        "id": "opt3",
-        "text": "Weekly manual monitoring is the legal standard."
-      },
-      {
-        "id": "opt4",
-        "text": "Monitoring is unnecessary if the unit has an alarm."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Telepharmacy operation combines central-pharmacy oversight limits, physical-space requirements, daily temperature monitoring, and Colorado credential requirements.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Telepharmacy questions can test facility, staffing, and storage rules simultaneously.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-TELE-04",
-    "conceptId": "co-tele-integrated",
-    "familyId": "co-tele-integrated",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Telepharmacy",
-    "subtopic": "Telepharmacy",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A telepharmacy employs a nationally certified technician who has not obtained the required Colorado technician credential. Which statement is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "National certification alone does not substitute for the Colorado credential required for telepharmacy personnel."
-      },
-      {
-        "id": "opt2",
-        "text": "National certification alone is sufficient in telepharmacy."
-      },
-      {
-        "id": "opt3",
-        "text": "Telepharmacies may use any trained employee."
-      },
-      {
-        "id": "opt4",
-        "text": "Only interns need Colorado credentials."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Telepharmacy operation combines central-pharmacy oversight limits, physical-space requirements, daily temperature monitoring, and Colorado credential requirements.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Telepharmacy questions can test facility, staffing, and storage rules simultaneously.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-CENTRAL-01",
-    "conceptId": "co-central-fill",
-    "familyId": "co-central-fill",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Central Fill / Processing",
-    "subtopic": "Central Fill / Processing",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "An originating pharmacy sends a controlled-substance prescription to a contract central-fill pharmacy. Which additional identifier belongs in the originating pharmacy's transmission record under the cited Colorado rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The receiving pharmacy's DEA registration."
-      },
-      {
-        "id": "opt2",
-        "text": "The patient's driver's-license number."
-      },
-      {
-        "id": "opt3",
-        "text": "The wholesaler's DEA registration."
-      },
-      {
-        "id": "opt4",
-        "text": "The insurer's BIN number."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado central-fill/centralized-processing rules require defined transmission records, confidentiality controls, patient notification processes, and traceability of responsibility.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Central fill is a record-and-accountability problem as much as a dispensing workflow.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-CENTRAL-02",
-    "conceptId": "co-central-fill",
-    "familyId": "co-central-fill",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Central Fill / Processing",
-    "subtopic": "Central Fill / Processing",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "An originating pharmacy transmits a noncontrolled prescription to a contract central-fill pharmacy. Which item is part of the originating pharmacy's record?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Name/address of the receiving pharmacy, transmitting pharmacist, and transmission date."
-      },
-      {
-        "id": "opt2",
-        "text": "The patient's credit-card number."
-      },
-      {
-        "id": "opt3",
-        "text": "The receiving technician's home address."
-      },
-      {
-        "id": "opt4",
-        "text": "A DEA-222 number."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado central-fill/centralized-processing rules require defined transmission records, confidentiality controls, patient notification processes, and traceability of responsibility.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Central fill is a record-and-accountability problem as much as a dispensing workflow.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-CENTRAL-03",
-    "conceptId": "co-central-fill",
-    "familyId": "co-central-fill",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Central Fill / Processing",
-    "subtopic": "Central Fill / Processing",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A centralized prescription-processing agreement has no process for notifying patients that prescriptions may be outsourced and naming the processing pharmacy. Which operational requirement is implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The centralized-processing policies should address patient notification and the processing pharmacy's identity."
-      },
-      {
-        "id": "opt2",
-        "text": "Patient notification is prohibited."
-      },
-      {
-        "id": "opt3",
-        "text": "Only controlled substances require such policies."
-      },
-      {
-        "id": "opt4",
-        "text": "The deficiency is cured if the pharmacy shares ownership."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado central-fill/centralized-processing rules require defined transmission records, confidentiality controls, patient notification processes, and traceability of responsibility.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Central fill is a record-and-accountability problem as much as a dispensing workflow.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-CENTRAL-04",
-    "conceptId": "co-central-fill",
-    "familyId": "co-central-fill",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Central Fill / Processing",
-    "subtopic": "Central Fill / Processing",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A centralized processing system cannot identify which pharmacist/location performed particular dispensing functions. Which requirement is most directly implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Records should identify the location and pharmacist responsible for all aspects of dispensing an order."
-      },
-      {
-        "id": "opt2",
-        "text": "Only the originating pharmacist needs to be identifiable."
-      },
-      {
-        "id": "opt3",
-        "text": "No individual responsibility record is necessary if pharmacies share ownership."
-      },
-      {
-        "id": "opt4",
-        "text": "The insurer is responsible for the audit trail."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado central-fill/centralized-processing rules require defined transmission records, confidentiality controls, patient notification processes, and traceability of responsibility.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Central fill is a record-and-accountability problem as much as a dispensing workflow.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-COMP-01",
-    "conceptId": "co-compounding-ops",
-    "familyId": "co-compounding-ops",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Compounding",
-    "subtopic": "Compounding",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "Personnel compound Category 1 and Category 2 CSPs. After initial qualification, how often must they successfully complete the garbing competency under the cited Colorado rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "At least every 6 months."
-      },
-      {
-        "id": "opt2",
-        "text": "At least every 3 months."
-      },
-      {
-        "id": "opt3",
-        "text": "Every 12 months only."
-      },
-      {
-        "id": "opt4",
-        "text": "Only once at hire."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado compounding rules include recurring competency frequencies and environmental/cleaning controls that vary by compounding category and role.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Compounding questions often turn on category, role, frequency, or environmental condition.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-COMP-02",
-    "conceptId": "co-compounding-ops",
-    "familyId": "co-compounding-ops",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Compounding",
-    "subtopic": "Compounding",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "Personnel compound Category 3 CSPs. Which garbing competency frequency applies after initial qualification under the cited Colorado rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "At least every 3 months."
-      },
-      {
-        "id": "opt2",
-        "text": "At least every 6 months."
-      },
-      {
-        "id": "opt3",
-        "text": "Every 12 months."
-      },
-      {
-        "id": "opt4",
-        "text": "Every 24 months."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado compounding rules include recurring competency frequencies and environmental/cleaning controls that vary by compounding category and role.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Compounding questions often turn on category, role, frequency, or environmental condition.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-COMP-03",
-    "conceptId": "co-compounding-ops",
-    "familyId": "co-compounding-ops",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Compounding",
-    "subtopic": "Compounding",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A supervisor directly oversees sterile compounding personnel but does not personally compound. What garbing competency frequency is specified?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Every 12 months."
-      },
-      {
-        "id": "opt2",
-        "text": "Every 3 months."
-      },
-      {
-        "id": "opt3",
-        "text": "Every 6 months."
-      },
-      {
-        "id": "opt4",
-        "text": "No recurring competency."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado compounding rules include recurring competency frequencies and environmental/cleaning controls that vary by compounding category and role.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Compounding questions often turn on category, role, frequency, or environmental condition.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-COMP-04",
-    "conceptId": "co-compounding-ops",
-    "familyId": "co-compounding-ops",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Compounding",
-    "subtopic": "Compounding",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A nonsterile compounding sink contains unrelated items and is visibly soiled immediately before equipment cleaning. Which action best fits the Colorado compounding rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Empty unrelated items and clean the sink if visibly soiled before use."
-      },
-      {
-        "id": "opt2",
-        "text": "Proceed because sinks are not part of compounding controls."
-      },
-      {
-        "id": "opt3",
-        "text": "Use the sink only if sterile compounding is also occurring."
-      },
-      {
-        "id": "opt4",
-        "text": "Replace purified water with tap water."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado compounding rules include recurring competency frequencies and environmental/cleaning controls that vary by compounding category and role.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Compounding questions often turn on category, role, frequency, or environmental condition.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-COMP-05",
-    "conceptId": "co-compounding-ops",
-    "familyId": "co-compounding-ops",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Compounding",
-    "subtopic": "Compounding",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A nonsterile formulation calls for water as an ingredient. Which water quality does the cited Colorado rule require?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Purified water or better quality water."
-      },
-      {
-        "id": "opt2",
-        "text": "Any potable tap water."
-      },
-      {
-        "id": "opt3",
-        "text": "Distilled water is prohibited."
-      },
-      {
-        "id": "opt4",
-        "text": "Sterile water for injection is always mandatory."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado compounding rules include recurring competency frequencies and environmental/cleaning controls that vary by compounding category and role.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Compounding questions often turn on category, role, frequency, or environmental condition.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-COMP-06",
-    "conceptId": "co-compounding-ops",
-    "familyId": "co-compounding-ops",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Compounding",
-    "subtopic": "Compounding",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacy performs particle-generating nonsterile activity in the same room at the same time sterile compounding is underway, despite otherwise adequate PEC placement. Which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The cited rule prohibits particle-generating activity when sterile compounding is in process in that shared-room situation."
-      },
-      {
-        "id": "opt2",
-        "text": "It is allowed if the PECs are one meter apart."
-      },
-      {
-        "id": "opt3",
-        "text": "It is allowed only for Category 1 CSPs."
-      },
-      {
-        "id": "opt4",
-        "text": "It is required for environmental monitoring."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado compounding rules include recurring competency frequencies and environmental/cleaning controls that vary by compounding category and role.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Compounding questions often turn on category, role, frequency, or environmental condition.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-SPDO-01",
-    "conceptId": "co-spdo-records",
-    "familyId": "co-spdo-records",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A managing prescription drug outlet distributes drug stock to an SPDO. For how long must the managing outlet retain the distribution records under the cited rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "At least 2 years."
-      },
-      {
-        "id": "opt2",
-        "text": "At least 6 months."
-      },
-      {
-        "id": "opt3",
-        "text": "At least 1 year."
-      },
-      {
-        "id": "opt4",
-        "text": "At least 5 years."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "SPDO distribution records contain detailed traceability requirements and at least two years of retention; Schedule II distribution has an additional DEA-222 requirement.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational law frequently tests chain-of-custody and record content, not just dispensing.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-SPDO-02",
-    "conceptId": "co-spdo-records",
-    "familyId": "co-spdo-records",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A Schedule II controlled substance is distributed from a managing PDO to an SPDO. What additional requirement appears in the cited distribution rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Distribution only pursuant to receipt of a properly executed DEA-222 form."
-      },
-      {
-        "id": "opt2",
-        "text": "No record beyond an invoice is needed."
-      },
-      {
-        "id": "opt3",
-        "text": "The SPDO may obtain Schedule II stock from any source without documentation."
-      },
-      {
-        "id": "opt4",
-        "text": "Only the patient's name must be recorded."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "SPDO distribution records contain detailed traceability requirements and at least two years of retention; Schedule II distribution has an additional DEA-222 requirement.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational law frequently tests chain-of-custody and record content, not just dispensing.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-SPDO-03",
-    "conceptId": "co-spdo-records",
-    "familyId": "co-spdo-records",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "An SPDO's automated dispensing device releases medication stock for further dispensing rather than administration to a patient. Which operational restriction is implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "SPDO stock is for drug administration, not for further dispensing."
-      },
-      {
-        "id": "opt2",
-        "text": "SPDO stock may be used for any retail dispensing."
-      },
-      {
-        "id": "opt3",
-        "text": "The restriction applies only to noncontrolled drugs."
-      },
-      {
-        "id": "opt4",
-        "text": "The rule requires all SPDO stock to be compounded."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "SPDO distribution records contain detailed traceability requirements and at least two years of retention; Schedule II distribution has an additional DEA-222 requirement.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational law frequently tests chain-of-custody and record content, not just dispensing.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-SPDO-04",
-    "conceptId": "co-spdo-records",
-    "familyId": "co-spdo-records",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A distribution record from the managing PDO to an SPDO includes drug/quantity/date and both outlet addresses but omits the identities of the person issuing the drug and the person placing it into the SPDO automated device. Which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The cited rule includes those identities among the required record elements."
-      },
-      {
-        "id": "opt2",
-        "text": "Those identities are never required."
-      },
-      {
-        "id": "opt3",
-        "text": "Only controlled substances require staff identities."
-      },
-      {
-        "id": "opt4",
-        "text": "The omission matters only after five years."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "SPDO distribution records contain detailed traceability requirements and at least two years of retention; Schedule II distribution has an additional DEA-222 requirement.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational law frequently tests chain-of-custody and record content, not just dispensing.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-REC-01",
-    "conceptId": "co-ops-records",
-    "familyId": "co-ops-records",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Recordkeeping",
-    "subtopic": "Recordkeeping",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "An eligible prescription is returned to stock. The pharmacy keeps no separate return-to-stock record because the original prescription profile still exists. Which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Colorado requires a separate written record or separately printable record identifying return-to-stock transactions."
-      },
-      {
-        "id": "opt2",
-        "text": "The original profile alone always satisfies the return-to-stock record rule."
-      },
-      {
-        "id": "opt3",
-        "text": "Return-to-stock records are required only for controlled substances."
-      },
-      {
-        "id": "opt4",
-        "text": "No record is needed if the drug is resold within 24 hours."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado operations law emphasizes separate auditable records, complete traceability, and time-specific inventories.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "If the question is operational, look for record content, retention, responsible person, and timing.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-REC-02",
-    "conceptId": "co-ops-records",
-    "familyId": "co-ops-records",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Recordkeeping",
-    "subtopic": "Recordkeeping",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A return-to-stock record lists prescription number, drug name/strength, quantity, and date, but the prescription was centrally filled and the record omits where it was filled. Which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The central-fill location is an additional listed element when applicable."
-      },
-      {
-        "id": "opt2",
-        "text": "Central-fill location is never part of the record."
-      },
-      {
-        "id": "opt3",
-        "text": "Only patient DOB is missing."
-      },
-      {
-        "id": "opt4",
-        "text": "The record is exempt because it was centrally filled."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado operations law emphasizes separate auditable records, complete traceability, and time-specific inventories.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "If the question is operational, look for record content, retention, responsible person, and timing.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-REC-03",
-    "conceptId": "co-ops-records",
-    "familyId": "co-ops-records",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Recordkeeping",
-    "subtopic": "Recordkeeping",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A new pharmacist manager delegates the manager-change controlled-substance inventory to another qualified person. The inventory is done within 72 hours as of close of business with date/time documented. Which statement is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The rule permits the new manager or the new manager's designee to take the inventory."
-      },
-      {
-        "id": "opt2",
-        "text": "Only the manager personally may take it."
-      },
-      {
-        "id": "opt3",
-        "text": "Delegation is permitted only after 30 days."
-      },
-      {
-        "id": "opt4",
-        "text": "The inventory must be at noon."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado operations law emphasizes separate auditable records, complete traceability, and time-specific inventories.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "If the question is operational, look for record content, retention, responsible person, and timing.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-EXTRA-01",
-    "conceptId": "co-operations-integrated",
-    "familyId": "co-operations-integrated",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "An outlet closes, moves records on time, and files the Board notice on time but makes no reasonable effort to tell patrons where records are located. Which remaining duty is implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The last pharmacist manager's duty to make a reasonable effort to inform patrons of the records' location."
-      },
-      {
-        "id": "opt2",
-        "text": "A requirement to mail every patron by certified mail."
-      },
-      {
-        "id": "opt3",
-        "text": "A requirement to publish in two newspapers."
-      },
-      {
-        "id": "opt4",
-        "text": "No patient-facing duty exists."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Pharmacy operations questions test whether the facility has the required system, records, safeguards, and timing\u2014not merely whether a prescription can be dispensed.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational compliance is often a chain: registration \u2192 facility \u2192 records \u2192 storage \u2192 accountability.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-EXTRA-02",
-    "conceptId": "co-operations-integrated",
-    "familyId": "co-operations-integrated",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A nonresident pharmacy's Colorado registration has been expired for more than two years and it seeks reinstatement. Which additional inspection-document concept appears in the rule?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "A copy of the most recent resident-state Board inspection report dated within five years of the reinstatement application."
-      },
-      {
-        "id": "opt2",
-        "text": "A DEA inspection within 30 days."
-      },
-      {
-        "id": "opt3",
-        "text": "An FDA inspection within one year for every nonresident pharmacy."
-      },
-      {
-        "id": "opt4",
-        "text": "No inspection documentation is relevant."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Pharmacy operations questions test whether the facility has the required system, records, safeguards, and timing\u2014not merely whether a prescription can be dispensed.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational compliance is often a chain: registration \u2192 facility \u2192 records \u2192 storage \u2192 accountability.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-EXTRA-03",
-    "conceptId": "co-operations-integrated",
-    "familyId": "co-operations-integrated",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacy changes ownership. When should the controlled-substance inventory under the cited Colorado rule be taken?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Upon transfer of ownership, by the pharmacist manager or designee, as of opening or close of business activity."
-      },
-      {
-        "id": "opt2",
-        "text": "Only at the next federal biennial date."
-      },
-      {
-        "id": "opt3",
-        "text": "Within 30 days after the transfer at any time of day."
-      },
-      {
-        "id": "opt4",
-        "text": "Only if Schedule II drugs are stocked."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Pharmacy operations questions test whether the facility has the required system, records, safeguards, and timing\u2014not merely whether a prescription can be dispensed.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational compliance is often a chain: registration \u2192 facility \u2192 records \u2192 storage \u2192 accountability.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-EXTRA-04",
-    "conceptId": "co-operations-integrated",
-    "familyId": "co-operations-integrated",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacy intends to use technician FPV but has no mechanism to record near-miss errors because no error reached a patient. Which operational safeguard is missing?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The continuous quality-assessment process must include recording and evaluating errors and potential errors, even if they do not reach the patient."
-      },
-      {
-        "id": "opt2",
-        "text": "Near misses never need to be considered."
-      },
-      {
-        "id": "opt3",
-        "text": "Only actual patient harm must be recorded."
-      },
-      {
-        "id": "opt4",
-        "text": "The requirement applies only to controlled substances."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Pharmacy operations questions test whether the facility has the required system, records, safeguards, and timing\u2014not merely whether a prescription can be dispensed.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational compliance is often a chain: registration \u2192 facility \u2192 records \u2192 storage \u2192 accountability.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-EXTRA-05",
-    "conceptId": "co-operations-integrated",
-    "familyId": "co-operations-integrated",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A telepharmacy closes permanently but the central pharmacy assumes ordinary outlet-closure rules do not apply. Which is most accurate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Colorado telepharmacy rules also impose closure duties including a 72-hour record-relocation/notice pattern."
-      },
-      {
-        "id": "opt2",
-        "text": "Telepharmacies have no closure requirements."
-      },
-      {
-        "id": "opt3",
-        "text": "Telepharmacy records may simply be deleted."
-      },
-      {
-        "id": "opt4",
-        "text": "Only the central pharmacy Board registration matters."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Pharmacy operations questions test whether the facility has the required system, records, safeguards, and timing\u2014not merely whether a prescription can be dispensed.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational compliance is often a chain: registration \u2192 facility \u2192 records \u2192 storage \u2192 accountability.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-EXTRA-06",
-    "conceptId": "co-operations-integrated",
-    "familyId": "co-operations-integrated",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A central-fill process protects confidentiality but lacks a contingency for dispensing when the filled prescription has not arrived from the fulfillment pharmacy. Which type of policy is missing?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "A required centralized-processing operational policy addressing that circumstance."
-      },
-      {
-        "id": "opt2",
-        "text": "A vaccine-administration policy."
-      },
-      {
-        "id": "opt3",
-        "text": "A technician hardship-extension policy."
-      },
-      {
-        "id": "opt4",
-        "text": "A DEA quota policy."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Pharmacy operations questions test whether the facility has the required system, records, safeguards, and timing\u2014not merely whether a prescription can be dispensed.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational compliance is often a chain: registration \u2192 facility \u2192 records \u2192 storage \u2192 accountability.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-EXTRA-07",
-    "conceptId": "co-operations-integrated",
-    "familyId": "co-operations-integrated",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A nonsterile compounding area stores components directly on the floor. Which physical-environment requirement is implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Components, non-freestanding equipment, and containers are to be stored off the floor to prevent contamination and permit inspection/cleaning."
-      },
-      {
-        "id": "opt2",
-        "text": "Floor storage is required for bulk chemicals."
-      },
-      {
-        "id": "opt3",
-        "text": "Only sterile compounding materials must be off the floor."
-      },
-      {
-        "id": "opt4",
-        "text": "The rule addresses lighting only."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Pharmacy operations questions test whether the facility has the required system, records, safeguards, and timing\u2014not merely whether a prescription can be dispensed.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Operational compliance is often a chain: registration \u2192 facility \u2192 records \u2192 storage \u2192 accountability.",
-    "authority": [
-      {
-        "label": "Colorado State Board of Pharmacy Rules",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacy Operations"
-  },
-  {
-    "id": "A4-EXTRA-08",
-    "conceptId": "co-operations-integrated",
-    "familyId": "co-operations-integrated",
-    "competencyArea": 4,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Operations",
-    "subtopic": "Pharmacy Operations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "Personnel who compound or directly oversee sterile compounding have not completed annual knowledge/competency training in calculations, aseptic technique, equipment use, and documentation. Which requirement is implicated?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The cited Colorado rule requires recurring sterile-compounding training/competency in these areas at least every 12 months."
-      },
-      {
-        "id": "opt2",
-        "text": "Training is required only at initial hire."
-      },
-      {
-        "id": "opt3",
-        "text": "Only pharmacists require training."
-      },
-      {
-        "id": "opt4",
-        "text": "The rule applies only to nonsterile compounding."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Pharmacy operations questions test whether the facility has the required system, records, safeguards, and timing\u2014not merely whether a prescription can be dispensed.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
     },
-    "ruleToRemember": "Operational compliance is often a chain: registration \u2192 facility \u2192 records \u2192 storage \u2192 accountability.",
+    "ruleToRemember": "Check total supervised persons separately from intern and certification limits.",
     "authority": [
       {
         "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
+        "citation": "C.R.S. \u00a7 12-280-122 / related Board rules"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyAreaName": "Pharmacy Operations"
+    "subconceptId": "tech-ratio",
+    "nabpCompetencies": [
+      "1.1"
+    ]
   },
   {
-    "id": "A1-AUDIT-039",
-    "conceptId": "co-manager-change",
-    "familyId": "co-manager-change",
+    "id": "V3-A1-06",
+    "conceptId": "A1-TECH-STAFFING",
+    "familyId": "A1-TECH-STAFFING",
     "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacist Manager / PIC",
-    "subtopic": "Pharmacist Manager / PIC",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: Following termination of the former pharmacist manager, the owner generally must employ a new pharmacist manager and apply to transfer the outlet registration within: Which conclusion should the pharmacist accept?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "30 days"
-      },
-      {
-        "id": "opt2",
-        "text": "72 hours"
-      },
-      {
-        "id": "opt3",
-        "text": "10 days"
-      },
-      {
-        "id": "opt4",
-        "text": "60 days"
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Rule 5.00.70 states that the owner must employ a pharmacist manager and, within 30 days after termination of the former manager's employment, apply to transfer the registration and pay the transfer fee.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "PIC/manager change: distinguish the 30-day registration action from the 72-hour controlled-substance inventory.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 5.00.60 / 5.00.70 / 5.01.10",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-AUDIT-040",
-    "conceptId": "co-tech-ratio",
-    "familyId": "co-tech-ratio",
-    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
     "jurisdiction": "Colorado",
     "topic": "Pharmacy Technicians",
     "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
+    "difficulty": 2,
+    "reasoningLevel": 2,
+    "legalDeterminations": 2,
     "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: One pharmacist is supervising two pharmacy interns in a public-facing Colorado pharmacy. Under the general statutory ratio, what is the maximum number of additional pharmacy technicians the pharmacist may supervise at the same time? Which conclusion should the pharmacist accept?",
+    "stem": "Five technicians are on duty; three are fully Board-certified and two are provisional. No other staffing issue exists. Which conclusion best fits the majority-certification requirement?",
     "answers": [
       {
         "id": "opt1",
-        "text": "4"
+        "text": "The staffing mix satisfies the majority-certification element because three of five technicians are fully certified."
       },
       {
         "id": "opt2",
-        "text": "2"
+        "text": "The staffing mix fails because a majority requires four of five technicians to be fully certified."
       },
       {
         "id": "opt3",
-        "text": "6"
+        "text": "The staffing mix satisfies the rule only if one provisional technician is removed from the shift."
       },
       {
         "id": "opt4",
-        "text": "No statutory maximum"
+        "text": "The staffing mix fails because provisional technicians are excluded when determining the technician count."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "The general ratio permits supervision of up to six persons who are interns or technicians, with no more than two interns. With two interns already included, up to four technicians fit within the six-person maximum.",
+    "explanation": "Three of five is a majority, so the certification-mix requirement is met.",
     "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
     },
-    "ruleToRemember": "General ratio: up to 6 interns/techs total, with no more than 2 interns.",
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "When three or more technicians are on duty, test whether a majority are fully certified.",
     "authority": [
       {
-        "label": "C.R.S. \u00a7 12-280-122",
-        "url": "https://content.leg.colorado.gov/agencies/office-legislative-legal-services/2026-crs-titles-download",
-        "citation": "2026 Colorado Revised Statutes, Title 12"
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "C.R.S. \u00a7 12-280-122"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyAreaName": "Licensure / Personnel"
+    "subconceptId": "tech-majority",
+    "nabpCompetencies": [
+      "1.1"
+    ]
   },
   {
-    "id": "A1-AUDIT-041",
-    "conceptId": "co-tech-majority",
-    "familyId": "co-tech-majority",
+    "id": "V3-A1-07",
+    "conceptId": "A1-DELEGATION-SCOPE",
+    "familyId": "A1-DELEGATION-SCOPE",
     "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
     "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
+    "topic": "Licensure / Personnel",
+    "subtopic": "Licensure / Personnel",
+    "difficulty": 2,
+    "reasoningLevel": 2,
+    "legalDeterminations": 2,
     "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: Four pharmacy technicians are on duty under the general Colorado supervision-ratio statute. Which staffing statement satisfies the certification mix requirement? Which conclusion should the pharmacist accept?",
+    "stem": "A certified technician receives a new noncontrolled oral prescription and enters it. A pharmacist immediately reviews every detail before dispensing. Which conclusion is most accurate?",
     "answers": [
       {
         "id": "opt1",
-        "text": "At least three of the four must be fully certified."
+        "text": "The later pharmacist review does not cure the unauthorized oral-order receipt step."
       },
       {
         "id": "opt2",
-        "text": "At least one of the four must be fully certified."
+        "text": "The later pharmacist review makes the oral-order receipt step legally sufficient."
       },
       {
         "id": "opt3",
-        "text": "At least two of the four must be fully certified."
+        "text": "Certification permits the receipt step when the drug is noncontrolled."
       },
       {
         "id": "opt4",
-        "text": "All four must be fully certified; provisional certification never counts as being on duty."
+        "text": "The receipt step becomes valid if the prescriber later confirms the directions."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "When three or more pharmacy technicians are on duty, the majority must be fully certified by the Board. For four technicians, a majority means at least three.",
+    "explanation": "The general Colorado rule reserves receipt and reduction of oral orders to a pharmacist or intern, apart from stated exceptions.",
     "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
     },
-    "ruleToRemember": "Three or more techs on duty: the majority must be fully Board-certified.",
-    "authority": [
-      {
-        "label": "C.R.S. \u00a7 12-280-122",
-        "url": "https://content.leg.colorado.gov/agencies/office-legislative-legal-services/2026-crs-titles-download",
-        "citation": "2026 Colorado Revised Statutes, Title 12"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-AUDIT-042",
-    "conceptId": "co-tech-cert",
-    "familyId": "co-tech-cert",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: For a non-provisional Colorado pharmacy technician certification, the applicant must provide proof of certification by: Which conclusion should the pharmacist accept?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "A nationally recognized certification board/body approved by NABP or NCCA."
-      },
-      {
-        "id": "opt2",
-        "text": "Any employer-approved pharmacy training program."
-      },
-      {
-        "id": "opt3",
-        "text": "Only PTCB; no other certifying body can qualify."
-      },
-      {
-        "id": "opt4",
-        "text": "A Colorado community college, regardless of national certification."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Rule 29.00.30 defines the qualifying nationally recognized certification boards/bodies as those approved by NABP or NCCA.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Non-provisional Colorado technician certification requires qualifying national certification.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 29.00.00",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-AUDIT-043",
-    "conceptId": "co-tech-hardship",
-    "familyId": "co-tech-hardship",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "Pharmacy Technicians",
-    "subtopic": "Pharmacy Technicians",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: A Colorado provisional pharmacy technician seeks the hardship extension described in Rule 29.00.50. Which timing/duration combination is correct? Which conclusion should the pharmacist accept?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Apply at least 60 days before expiration; one-time extension of 9 months."
-      },
-      {
-        "id": "opt2",
-        "text": "Apply at least 30 days before expiration; extension up to 6 months."
-      },
-      {
-        "id": "opt3",
-        "text": "Apply before expiration; extension of 18 months."
-      },
-      {
-        "id": "opt4",
-        "text": "Apply within 30 days after expiration; extension of 9 months."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The Board considers a one-time, fee-waived nine-month hardship extension based on a detailed written explanation submitted at least 60 days before expiration.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Hardship extension: one time, 9 months, request at least 60 days before provisional certification expires.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 29.00.00",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A1-AUDIT-044",
-    "conceptId": "co-2026-fpv",
-    "familyId": "co-2026-fpv",
-    "competencyArea": 1,
-    "jurisdiction": "Colorado",
-    "topic": "2026 Law Changes",
-    "subtopic": "2026 Law Changes",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: Under the 2026 Colorado amendment to C.R.S. \u00a7 12-280-122, a supervising pharmacist's new final-product-verification delegation authority described in subsection (5) applies to physical preparation/processing tasks for orders that are: Which conclusion should the pharmacist accept?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Not for controlled substances."
-      },
-      {
-        "id": "opt2",
-        "text": "Only Schedule III-V controlled substances."
-      },
-      {
-        "id": "opt3",
-        "text": "Only Schedule II controlled substances."
-      },
-      {
-        "id": "opt4",
-        "text": "Any drug or device order without limitation."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "HB 26-1336 added subsection (5), allowing specified delegated tasks associated with physical preparation and processing of drug/device/product orders that are not for controlled substances.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "2026 FPV delegation provision: noncontrolled orders only.",
-    "authority": [
-      {
-        "label": "HB 26-1336 / C.R.S. \u00a7 12-280-122(5)",
-        "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective Aug. 12, 2026"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Licensure / Personnel"
-  },
-  {
-    "id": "A2-AUDIT-052",
-    "conceptId": "co-counsel-new",
-    "familyId": "co-counsel-new",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Patient Counseling",
-    "subtopic": "Patient Counseling",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: A patient is picking up a medication that represents new medication therapy. The patient has not declined counseling. Which statement best reflects the Colorado pharmacist's legal obligation? Which conclusion should the pharmacist accept?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The pharmacist must provide patient counseling on the new medication therapy."
-      },
-      {
-        "id": "opt2",
-        "text": "Counseling is required only if the patient asks a drug-information question."
-      },
-      {
-        "id": "opt3",
-        "text": "Counseling may be delegated to any trained pharmacy technician."
-      },
-      {
-        "id": "opt4",
-        "text": "Written manufacturer information alone always satisfies the counseling requirement."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado requires pharmacist counseling on new medication therapy, subject to statutory exceptions. The obligation is not triggered only by a patient question.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "New medication therapy triggers pharmacist counseling unless an applicable exception or patient refusal applies.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 1.00.18",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1, Rule 1.00.18"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-AUDIT-053",
-    "conceptId": "co-counsel-refusal",
-    "familyId": "co-counsel-refusal",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Patient Counseling",
-    "subtopic": "Patient Counseling",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: A patient clearly declines counseling for a new prescription. What must the pharmacy do with the refusal record under Colorado Board rules? Which conclusion should the pharmacist accept?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Keep it for at least 2 years."
-      },
-      {
-        "id": "opt2",
-        "text": "Keep it for at least 6 months."
-      },
-      {
-        "id": "opt3",
-        "text": "Keep it for at least 1 year."
-      },
-      {
-        "id": "opt4",
-        "text": "No record is required if the patient verbally refuses."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "A patient's refusal must be clearly documented in the corresponding record and remain readily retrievable for at least two years following the refusal.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Document a counseling refusal and retain it in a readily retrievable form for at least 2 years.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 1.00.18",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1, Rule 1.00.18"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-AUDIT-054",
-    "conceptId": "co-counsel-language",
-    "familyId": "co-counsel-language",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Patient Counseling",
-    "subtopic": "Patient Counseling",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: A pharmacist cannot counsel a patient orally because of a language barrier. Which response most closely follows Colorado law? Which conclusion should the pharmacist accept?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Use alternative means necessary to assure the patient is properly counseled in a way the patient understands."
-      },
-      {
-        "id": "opt2",
-        "text": "Skip counseling if the prescription label is printed in English."
-      },
-      {
-        "id": "opt3",
-        "text": "Ask a technician to decide whether counseling is necessary."
-      },
-      {
-        "id": "opt4",
-        "text": "Dispense only after the prescriber personally counsels the patient."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado requires the pharmacist to use alternative means when oral counseling cannot be provided because of a language barrier.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "A language barrier changes the method, not the duty, of required pharmacist counseling.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 1.00.18",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1, Rule 1.00.18"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-AUDIT-055",
-    "conceptId": "co-oral-order",
-    "familyId": "co-oral-order",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Prescription Requirements",
-    "subtopic": "Prescription Requirements",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: In a Colorado community pharmacy, who may receive and reduce to writing an oral prescription order, apart from the chart-order exception? Which conclusion should the pharmacist accept?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "A pharmacist or pharmacy intern"
-      },
-      {
-        "id": "opt2",
-        "text": "A pharmacist, intern, or certified technician"
-      },
-      {
-        "id": "opt3",
-        "text": "Only the pharmacist manager"
-      },
-      {
-        "id": "opt4",
-        "text": "Any employee trained on prescription intake"
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Board Rule 2.00.10 provides that only a pharmacist or intern may receive and reduce to writing an oral order, apart from the chart-order exception.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Colorado oral orders: pharmacist or intern, except the specified chart-order exception.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 2.00.10 / 2.01.50-2.01.53",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-AUDIT-056",
-    "conceptId": "co-oral-order",
-    "familyId": "co-oral-order",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Prescription Requirements",
-    "subtopic": "Prescription Requirements",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: A certified pharmacy technician answers a prescriber's telephone call and the prescriber dictates a new outpatient prescription. No chart-order exception applies. Which action is legally appropriate? Which conclusion should the pharmacist accept?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The call must be handled by a pharmacist or pharmacy intern for receipt and reduction to writing."
-      },
-      {
-        "id": "opt2",
-        "text": "The technician records it because certification permits oral-order receipt."
-      },
-      {
-        "id": "opt3",
-        "text": "The technician records it if a pharmacist later performs final verification."
-      },
-      {
-        "id": "opt4",
-        "text": "The technician may receive it only if it is noncontrolled."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado does not authorize a pharmacy technician to receive and reduce a new oral order to writing under the general rule. A pharmacist or intern must do so.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
     },
     "ruleToRemember": "Final verification does not expand who may legally receive an oral order.",
     "authority": [
       {
-        "label": "Colorado Board Rules 2.00.10 / 2.01.50-2.01.53",
+        "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
+        "citation": "Rule 2.00.10"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyAreaName": "Pharmacist Practice"
+    "subconceptId": "oral-order-scope",
+    "nabpCompetencies": [
+      "1.1"
+    ]
   },
   {
-    "id": "A2-AUDIT-057",
-    "conceptId": "co-reference-copy",
-    "familyId": "co-reference-copy",
-    "competencyArea": 2,
+    "id": "V3-A1-08",
+    "conceptId": "A1-PIC-TRANSITION",
+    "familyId": "A1-PIC-TRANSITION",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
     "jurisdiction": "Colorado",
-    "topic": "Prescription Requirements",
-    "subtopic": "Prescription Requirements",
-    "difficulty": 5,
+    "topic": "Pharmacist Manager / PIC",
+    "subtopic": "Pharmacist Manager / PIC",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
     "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: A patient asks a Colorado pharmacist for a written copy of a prescription for personal records. Which statement is correct? Which conclusion should the pharmacist accept?",
+    "stem": "A new pharmacist manager begins July 1. The controlled-substance inventory is completed July 3 at close of business, while the ownership paperwork is filed July 20. Which timing conclusion is most accurate?",
     "answers": [
       {
         "id": "opt1",
-        "text": "The copy must be marked 'COPY FOR REFERENCE ONLY,' and refill authority is not included."
+        "text": "Both actions can fit their separate Colorado timing requirements."
       },
       {
         "id": "opt2",
-        "text": "The copy may include refill authority if the patient requests it."
+        "text": "The inventory is timely but the ownership paperwork is necessarily late."
       },
       {
         "id": "opt3",
-        "text": "A written copy is prohibited unless the prescriber approves it."
+        "text": "The paperwork is timely but the inventory is necessarily late."
       },
       {
         "id": "opt4",
-        "text": "The copy becomes a valid prescription at another pharmacy if signed by the pharmacist."
+        "text": "Both actions are late because each uses a 72-hour deadline."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "A pharmacist may issue a written copy conspicuously marked 'COPY FOR REFERENCE ONLY.' No information regarding authority to refill is to be issued in that written copy.",
+    "explanation": "The manager-change inventory uses a 72-hour window, while the registration-transfer action uses a different 30-day clock.",
     "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
     },
-    "ruleToRemember": "A Colorado prescription copy is for reference only and does not carry refill authority.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 2.00.10 / 2.01.50-2.01.53",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-AUDIT-058",
-    "conceptId": "co-emergency-maintenance",
-    "familyId": "co-emergency-maintenance",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Emergency Dispensing",
-    "subtopic": "Emergency Dispensing",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: A Colorado pharmacist properly dispenses an emergency supply of a qualifying chronic maintenance drug without a current valid order. What notification does the Board rule require? Which conclusion should the pharmacist accept?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "Notify the practitioner of record immediately in writing with the required dispensing details."
-      },
-      {
-        "id": "opt2",
-        "text": "Notify the practitioner by the end of the next business day; oral notice is sufficient."
-      },
-      {
-        "id": "opt3",
-        "text": "Notify the Board within 72 hours."
-      },
-      {
-        "id": "opt4",
-        "text": "No notice is required if the patient has used the drug for more than six months."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "When emergency dispensing occurs under Rule 3.00.23, the dispensing pharmacist or designee must immediately notify the practitioner of record in writing with specified details.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
     },
-    "ruleToRemember": "Emergency chronic-maintenance dispensing requires immediate written notice to the practitioner of record.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 3.00.23 / 3.00.25",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true,
-    "competencyAreaName": "Pharmacist Practice"
-  },
-  {
-    "id": "A2-AUDIT-059",
-    "conceptId": "co-vax-counsel-crosscheck",
-    "familyId": "co-vax-counsel-crosscheck",
-    "competencyArea": 2,
-    "competencyAreaName": "Pharmacist Practice",
-    "jurisdiction": "Colorado",
-    "topic": "Immunizations",
-    "subtopic": "Immunizations",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "A pharmacist delegates vaccine administration to a properly trained technician. Before administration, the patient asks whether a newly prescribed oral medication can be taken with the vaccine. The technician proposes to answer the medication-therapy question independently and then administer the vaccine. Which action is most appropriate?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "The technician may administer within the delegated vaccine role, but the pharmacist should address the medication-therapy counseling question."
-      },
-      {
-        "id": "opt2",
-        "text": "The technician may answer any medication-therapy question once trained to administer vaccines."
-      },
-      {
-        "id": "opt3",
-        "text": "The pharmacist must personally administer the vaccine whenever the patient asks any question."
-      },
-      {
-        "id": "opt4",
-        "text": "The vaccine must be cancelled because counseling and administration cannot occur in the same visit."
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Colorado may allow trained technicians to perform delegated vaccine administration, but that delegation does not convert the technician into the pharmacist for medication-therapy counseling or clinical judgment.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling Colorado rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling Colorado rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling Colorado rule in this scenario."
-    },
-    "ruleToRemember": "Do not let authority to perform a physical delegated task imply authority to perform pharmacist clinical judgment.",
+    "ruleToRemember": "PIC changes can trigger separate deadlines; do not substitute one clock for another.",
     "authority": [
       {
         "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true
-  },
-  {
-    "id": "A2-AUDIT-060",
-    "conceptId": "co-ltcf-first-dose",
-    "familyId": "co-ltcf-first-dose",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Long-Term Care",
-    "subtopic": "Long-Term Care",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: Under Colorado's first-dose dispensing rule, a pharmacist at a prescription drug outlet may use a duplicate LTCF chart order from another outlet to provide immediate care for a resident. What is the maximum supply described by the rule? Which conclusion should the pharmacist accept?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "72 hours"
-      },
-      {
-        "id": "opt2",
-        "text": "24 hours"
-      },
-      {
-        "id": "opt3",
-        "text": "48 hours"
-      },
-      {
-        "id": "opt4",
-        "text": "7 days"
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "Rule 3.00.25 permits up to a 72-hour supply of a noncontrolled prescription drug for this specific first-dose LTCF situation, one time per order and subject to the rule's conditions.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "Colorado LTCF first-dose rule: up to 72 hours, noncontrolled, one time per order, with required documentation.",
-    "authority": [
-      {
-        "label": "Colorado Board Rules 3.00.23 / 3.00.25",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
+        "citation": "Rules 5.00.70 and 5.01.10"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyAreaName": "Pharmacist Practice"
+    "subconceptId": "manager-change",
+    "nabpCompetencies": [
+      "1.1",
+      "1.2"
+    ]
   },
   {
-    "id": "A2-AUDIT-061",
-    "conceptId": "co-vax-delegation",
-    "familyId": "co-vax-delegation",
-    "competencyArea": 2,
+    "id": "V3-A1-09",
+    "conceptId": "A1-DELEGATION-SCOPE",
+    "familyId": "A1-DELEGATION-SCOPE",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
     "jurisdiction": "Colorado",
-    "topic": "Immunizations",
-    "subtopic": "Immunizations",
+    "topic": "2026 Law Changes",
+    "subtopic": "2026 Law Changes",
     "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: A trained Colorado pharmacist wishes to delegate vaccine administration. To whom may administration be delegated under Rule 19.01.20? Which conclusion should the pharmacist accept?",
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
+    "type": "ktype",
+    "stem": "Which statements correctly describe Colorado's 2026 final-product-verification delegation framework?\n\nI. The delegated verification pathway is limited to noncontrolled orders.\nII. The delegated task may not require technician clinical judgment.\nIII. Use of barcode verification eliminates the need for the program's continuous quality-assessment process.",
     "answers": [
       {
         "id": "opt1",
-        "text": "Only a trained pharmacy intern or trained pharmacy technician."
+        "text": "I only"
       },
       {
         "id": "opt2",
-        "text": "Any pharmacy employee who has current CPR."
+        "text": "III only"
       },
       {
         "id": "opt3",
-        "text": "Only another pharmacist."
+        "text": "I and II only"
       },
       {
         "id": "opt4",
-        "text": "A medical assistant employed by the pharmacy, regardless of pharmacy credentials."
+        "text": "II and III only"
+      },
+      {
+        "id": "opt5",
+        "text": "I, II, and III"
       }
     ],
     "correctAnswers": [
-      "opt1"
+      "opt3"
     ],
-    "explanation": "A trained pharmacist may delegate vaccine and immunization administration only to a trained pharmacy intern or pharmacy technician.",
+    "explanation": "Statements I and II are correct. Barcode technology may be part of the workflow, but it does not eliminate the statutory quality-assessment requirement.",
     "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
+      "opt1": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
     },
-    "ruleToRemember": "Vaccine delegation is credential- and training-specific, not merely employer-specific.",
+    "misconceptionTested": {
+      "opt1": "Misapplies a nearby legal rule.",
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule.",
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "FPV delegation is not a delegation of therapeutic judgment.",
     "authority": [
       {
-        "label": "Colorado Board Rules 19.01.20-19.01.50",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
+        "label": "HB 26-1336",
+        "url": "https://leg.colorado.gov/bills/HB26-1336",
+        "citation": "2026 Colorado pharmacy amendments"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyAreaName": "Pharmacist Practice"
+    "subconceptId": "fpv-delegation",
+    "nabpCompetencies": [
+      "1.1"
+    ]
   },
   {
-    "id": "A2-AUDIT-062",
-    "conceptId": "co-vax-records",
-    "familyId": "co-vax-records",
-    "competencyArea": 2,
+    "id": "V3-A1-10",
+    "conceptId": "A1-IMPAIRMENT-REPORTING",
+    "familyId": "A1-IMPAIRMENT-REPORTING",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
     "jurisdiction": "Colorado",
-    "topic": "Immunizations",
-    "subtopic": "Immunizations",
-    "difficulty": 5,
+    "topic": "Licensure / Personnel",
+    "subtopic": "Licensure / Personnel",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 2,
     "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: How long must a Colorado prescription drug outlet maintain the vaccine-administration records required by Rule 19.01.40 for each dose? Which conclusion should the pharmacist accept?",
+    "stem": "A pharmacist previously reported a condition that limited safe practice. Four months later, treatment materially improves the condition and restrictions are reduced. Which reporting approach best fits the confidential-agreement rule?",
     "answers": [
       {
         "id": "opt1",
-        "text": "3 years"
+        "text": "Report the significant positive change within the required 30-day period."
       },
       {
         "id": "opt2",
-        "text": "2 years"
+        "text": "Delay reporting unless the condition later worsens during active practice."
       },
       {
         "id": "opt3",
-        "text": "5 years"
+        "text": "Report the improvement at the pharmacist's next license renewal."
       },
       {
         "id": "opt4",
-        "text": "The life of the patient"
+        "text": "Delay reporting unless the pharmacist also changes employment or practice setting."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "Rule 19.01.40 requires the listed administration information to be maintained for three years for each dose.",
+    "explanation": "Significant positive or negative changes in the condition are reportable.",
     "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
     },
-    "ruleToRemember": "Colorado vaccine-administration records: 3 years.",
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "A material improvement can trigger the same change-of-condition reporting duty.",
     "authority": [
       {
-        "label": "Colorado Board Rules 19.01.20-19.01.50",
+        "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
+        "citation": "Rule 24.00.20"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyAreaName": "Pharmacist Practice"
+    "subconceptId": "health-condition-reporting",
+    "nabpCompetencies": [
+      "1.2"
+    ]
   },
   {
-    "id": "A2-AUDIT-063",
-    "conceptId": "co-minor-prescribing-crosscheck",
-    "familyId": "co-minor-prescribing-crosscheck",
+    "id": "V3-A1-11",
+    "conceptId": "A1-TECH-CREDENTIALS",
+    "familyId": "A1-TECH-CREDENTIALS",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacy Technicians",
+    "subtopic": "Pharmacy Technicians",
+    "difficulty": 2,
+    "reasoningLevel": 2,
+    "legalDeterminations": 1,
+    "type": "single",
+    "stem": "A provisional technician submits a documented hardship request 75 days before expiration. Which extension duration is contemplated by the cited rule?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "A one-time nine-month extension."
+      },
+      {
+        "id": "opt2",
+        "text": "A one-time six-month extension."
+      },
+      {
+        "id": "opt3",
+        "text": "A renewable nine-month extension."
+      },
+      {
+        "id": "opt4",
+        "text": "A renewable twelve-month extension."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The hardship pathway provides a one-time nine-month extension when its conditions are met.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "The provisional hardship extension is one-time and nine months.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 29.00.50"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "provisional-tech",
+    "nabpCompetencies": [
+      "1.1",
+      "1.2"
+    ]
+  },
+  {
+    "id": "V3-A1-12",
+    "conceptId": "A1-LICENSURE-LIFECYCLE",
+    "familyId": "A1-LICENSURE-LIFECYCLE",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
+    "jurisdiction": "Colorado",
+    "topic": "Licensure / Personnel",
+    "subtopic": "Licensure / Personnel",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A pharmacist seeking Colorado licensure by transfer meets the education, examination, and good-standing requirements but lacks the required recent practice or qualifying alternative experience. Which conclusion best follows?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The transfer application remains incomplete because the experience element is independent."
+      },
+      {
+        "id": "opt2",
+        "text": "The experience element is waived once good standing is established."
+      },
+      {
+        "id": "opt3",
+        "text": "The experience element is waived if the pharmacist has national certification."
+      },
+      {
+        "id": "opt4",
+        "text": "The experience element applies only to pharmacists transferring from outside the United States."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Transfer criteria operate cumulatively; satisfying other elements does not erase the experience requirement.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Licensure by transfer is a multi-element test, not a pick-one pathway.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 4.00.40"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "license-transfer-experience",
+    "nabpCompetencies": [
+      "1.2"
+    ]
+  },
+  {
+    "id": "V3-A2-01",
+    "conceptId": "A2-COUNSELING",
+    "familyId": "A2-COUNSELING",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Patient Counseling",
+    "subtopic": "Patient Counseling",
+    "difficulty": 2,
+    "reasoningLevel": 2,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A patient declines counseling on a new therapy. The pharmacy documents the refusal in a note that is not linked to the prescription and cannot be retrieved from the patient profile. Which defect is most important?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The refusal record is not directly linked and readily retrievable as required."
+      },
+      {
+        "id": "opt2",
+        "text": "The patient should have been required to accept counseling before dispensing."
+      },
+      {
+        "id": "opt3",
+        "text": "The refusal is invalid unless the prescriber also signs the note."
+      },
+      {
+        "id": "opt4",
+        "text": "The refusal is valid only when the patient signs a paper form."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado permits refusal but requires documentation in the corresponding record and ready retrievability.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "A valid refusal does not eliminate the documentation requirement.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 1.00.18"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "counsel-refusal",
+    "nabpCompetencies": [
+      "2.3"
+    ]
+  },
+  {
+    "id": "V3-A2-02",
+    "conceptId": "A2-COUNSELING",
+    "familyId": "A2-COUNSELING",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Patient Counseling",
+    "subtopic": "Patient Counseling",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A patient cannot understand the pharmacist's spoken English and has not refused counseling. Which next step best fits Colorado law?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Use an alternative method that allows the patient to understand the counseling."
+      },
+      {
+        "id": "opt2",
+        "text": "Provide the English label and treat the counseling duty as completed."
+      },
+      {
+        "id": "opt3",
+        "text": "Ask the technician to document a refusal on the patient's behalf."
+      },
+      {
+        "id": "opt4",
+        "text": "Delay the prescription until the prescriber performs the counseling."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "A language barrier changes how counseling is delivered; it does not remove the duty.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Use an alternative means when oral counseling cannot be understood.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 1.00.18"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "counsel-language",
+    "nabpCompetencies": [
+      "2.3"
+    ]
+  },
+  {
+    "id": "V3-A2-03",
+    "conceptId": "A2-CONFIDENTIALITY",
+    "familyId": "A2-CONFIDENTIALITY",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Confidentiality",
+    "subtopic": "Confidentiality",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A caller correctly states a patient's name, address, and date of birth but has no patient authorization and no independent legal authority to receive prescription information. What should the pharmacist conclude?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Successful identity verification does not create authority to receive the information."
+      },
+      {
+        "id": "opt2",
+        "text": "Successful identity verification is enough to permit disclosure of the drug name."
+      },
+      {
+        "id": "opt3",
+        "text": "Disclosure is permitted if the caller knows the prescription number."
+      },
+      {
+        "id": "opt4",
+        "text": "Disclosure is permitted if the caller agrees not to share the information."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Authentication and authorization are distinct. The rule identifies categories of permitted recipients.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Knowing patient identifiers proves identity, not permission to receive protected information.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 1.00.16"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "confidentiality",
+    "nabpCompetencies": [
+      "2.5"
+    ]
+  },
+  {
+    "id": "V3-A2-04",
+    "conceptId": "A2-CONFIDENTIALITY",
+    "familyId": "A2-CONFIDENTIALITY",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Confidentiality",
+    "subtopic": "Confidentiality",
+    "difficulty": 5,
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
+    "type": "ktype",
+    "stem": "Which statements describe recipients who fall within Colorado's permitted disclosure categories on the stated facts?\n\nI. A neighbor who routinely drives the patient but has no authorization.\nII. A spouse who pays the patient's premiums but has no representative authority.\nIII. A third-party payer receiving information needed to process the patient's claim.",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "I only"
+      },
+      {
+        "id": "opt2",
+        "text": "III only"
+      },
+      {
+        "id": "opt3",
+        "text": "I and II only"
+      },
+      {
+        "id": "opt4",
+        "text": "II and III only"
+      },
+      {
+        "id": "opt5",
+        "text": "I, II, and III"
+      }
+    ],
+    "correctAnswers": [
+      "opt2"
+    ],
+    "explanation": "Statement III is correct. Informal caregiving or payment of premiums does not itself create authorization to receive protected prescription information.",
+    "distractorExplanations": {
+      "opt1": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt1": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule.",
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Confidentiality analysis asks both who is requesting and why disclosure is authorized.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 1.00.16"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "confidentiality-recipients",
+    "nabpCompetencies": [
+      "2.5"
+    ]
+  },
+  {
+    "id": "V3-A2-05",
+    "conceptId": "A2-TESTING-PRESCRIBING",
+    "familyId": "A2-TESTING-PRESCRIBING",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacist Practice",
+    "subtopic": "Pharmacist Practice",
+    "difficulty": 2,
+    "reasoningLevel": 2,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "An appropriately trained pharmacist wants to order and administer an FDA-authorized CLIA-waived test in the pharmacy. Which statement best fits the cited Board rule?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The trained pharmacist may order and administer the qualifying CLIA-waived test subject to applicable FDA limitations."
+      },
+      {
+        "id": "opt2",
+        "text": "The trained pharmacist may administer the test after a practitioner issues a patient-specific order."
+      },
+      {
+        "id": "opt3",
+        "text": "The trained pharmacist may order the test when the pharmacy has a collaborative practice agreement covering that condition."
+      },
+      {
+        "id": "opt4",
+        "text": "The trained pharmacist may administer the test independently but needs practitioner authorization to order it."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado authorizes appropriately trained pharmacists to order and administer CLIA-waived tests under the cited rule.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "The testing rule grants both ordering and administration authority.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 1.00.25"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "clia-testing",
+    "nabpCompetencies": [
+      "2.1",
+      "2.2"
+    ]
+  },
+  {
+    "id": "V3-A2-06",
+    "conceptId": "A2-SPECIAL-DISPENSING",
+    "familyId": "A2-SPECIAL-DISPENSING",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacist Practice",
+    "subtopic": "Pharmacist Practice",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "At the original dispensing, a parent requests an extra eye-drop bottle for school. Insurance coverage and total quantity are adequate, but the prescription itself does not state a school-use need. Which conclusion is most accurate?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The special additional-bottle pathway is unavailable because the original order lacks the required school-use statement."
+      },
+      {
+        "id": "opt2",
+        "text": "The additional bottle may be dispensed because the request was made at the original dispensing and total quantity is adequate."
+      },
+      {
+        "id": "opt3",
+        "text": "The additional bottle may be dispensed when the parent documents the school location in the prescription record."
+      },
+      {
+        "id": "opt4",
+        "text": "The additional bottle may be dispensed when the pharmacist reduces each bottle so total quantity remains unchanged."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The special exception requires several conditions together, including the prescription-order statement.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Meeting some conditions does not substitute for a missing required condition.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 3.00.20(b)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "eyedrop-school-bottle",
+    "nabpCompetencies": [
+      "2.1",
+      "2.4"
+    ]
+  },
+  {
+    "id": "V3-A2-07",
+    "conceptId": "A2-SPECIAL-DISPENSING",
+    "familyId": "A2-SPECIAL-DISPENSING",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacist Practice",
+    "subtopic": "Pharmacist Practice",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A 30-day eye-drop supply was last dispensed 20 days ago. The patient asks for an early refill under Colorado's special eye-drop rule, and the order otherwise qualifies. Which conclusion follows?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The request is one day before the 21-day threshold for a 30-day supply."
+      },
+      {
+        "id": "opt2",
+        "text": "The request meets the threshold because two-thirds of the supply has elapsed."
+      },
+      {
+        "id": "opt3",
+        "text": "The request meets the threshold because the order authorizes additional quantity."
+      },
+      {
+        "id": "opt4",
+        "text": "The request is barred until the full 30-day period has elapsed."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The cited rule uses specific 21/42/63-day thresholds for 30/60/90-day supplies.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Use the rule's specified threshold rather than a general fraction-of-days heuristic.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 3.00.20(c)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "eyedrop-refill",
+    "nabpCompetencies": [
+      "2.1",
+      "2.4"
+    ]
+  },
+  {
+    "id": "V3-A2-08",
+    "conceptId": "A2-SPECIAL-DISPENSING",
+    "familyId": "A2-SPECIAL-DISPENSING",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacist Practice",
+    "subtopic": "Pharmacist Practice",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "A physician sends a nonpatient-specific order for commercially manufactured antibiotics for clinic stock. A veterinarian sends a separate request for compounded office stock under the veterinary pathway. Which distinction matters?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The general office-use order is invalid, while the veterinary compounded-stock pathway has separate requirements."
+      },
+      {
+        "id": "opt2",
+        "text": "Both requests are valid because both practitioners may prescribe prescription drugs."
+      },
+      {
+        "id": "opt3",
+        "text": "Both requests are invalid because no office-stock pathway exists in Colorado."
+      },
+      {
+        "id": "opt4",
+        "text": "The physician request is valid, while the veterinarian request is barred because it is compounded."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado distinguishes invalid general office-use prescriptions from the veterinary compounded office-stock pathway.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Do not apply the general office-use rule without checking for a specific statutory exception.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 3.00.20(d)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "office-use",
+    "nabpCompetencies": [
+      "2.1",
+      "2.4"
+    ]
+  },
+  {
+    "id": "V3-A2-09",
+    "conceptId": "A2-SPECIAL-DISPENSING",
+    "familyId": "A2-SPECIAL-DISPENSING",
     "competencyArea": 2,
     "competencyAreaName": "Pharmacist Practice",
     "jurisdiction": "Colorado",
     "topic": "Pharmacist Practice",
     "subtopic": "Pharmacist Practice",
     "difficulty": 5,
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
     "type": "scenario",
-    "stem": "A Colorado pharmacist treats an 11-year-old using the 2026 independent-prescribing pathway for a listed test-guided condition. The drug is noncontrolled and used according to FDA labeling. The parent identifies the child's primary care provider. What additional step remains important?",
+    "stem": "A routine prescription comes from a practitioner with no valid patient-practitioner relationship. A separate opiate-antagonist order is issued in good faith under the statutory exception. Which conclusion best fits Colorado law?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The routine order has a relationship problem; the antagonist order may fit the exception."
+      },
+      {
+        "id": "opt2",
+        "text": "Both orders are valid because a lawful relationship does not require an in-person examination."
+      },
+      {
+        "id": "opt3",
+        "text": "Both orders are invalid because each prescription requires a prior in-person examination."
+      },
+      {
+        "id": "opt4",
+        "text": "The routine order is valid, while the antagonist order requires a preexisting relationship."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The rule requires a valid relationship for ordinary orders while recognizing a specific opiate-antagonist exception.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "A valid relationship need not be in person, but it generally must exist unless an exception applies.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 3.00.21"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "patient-practitioner",
+    "nabpCompetencies": [
+      "2.1",
+      "2.4"
+    ]
+  },
+  {
+    "id": "V3-A2-10",
+    "conceptId": "A2-PRESCRIPTION-CHANGES",
+    "familyId": "A2-PRESCRIPTION-CHANGES",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Prescription Requirements",
+    "subtopic": "Prescription Requirements",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A pharmacist makes a lawful minor adaptation and updates the directions, but the record omits the date and pharmacist identifier. Which requirement is missing?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The record should identify when the adaptation occurred and who made it."
+      },
+      {
+        "id": "opt2",
+        "text": "The record should contain a new prescription number for the adapted order."
+      },
+      {
+        "id": "opt3",
+        "text": "The record should contain the wholesaler invoice for the dispensed product."
+      },
+      {
+        "id": "opt4",
+        "text": "The record should contain a patient waiver of counseling for the adapted order."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado requires traceable documentation of the adaptation date and pharmacist identity.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "A lawful adaptation still requires a clear audit trail.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 2.01.10(f)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "minor-adaptation",
+    "nabpCompetencies": [
+      "2.1"
+    ]
+  },
+  {
+    "id": "V3-A2-11",
+    "conceptId": "A2-PRESCRIPTION-CHANGES",
+    "familyId": "A2-PRESCRIPTION-CHANGES",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Prescription Requirements",
+    "subtopic": "Prescription Requirements",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A lawful manufacturer substitution is documented with both drug names and the substitution date, but neither the distributor name nor NDC appears. Which conclusion is correct?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The substitution record remains incomplete because a required product-source identifier is missing."
+      },
+      {
+        "id": "opt2",
+        "text": "The substitution record is complete because both drug names and date are present."
+      },
+      {
+        "id": "opt3",
+        "text": "The substitution record is incomplete only when the substituted drug is controlled."
+      },
+      {
+        "id": "opt4",
+        "text": "The substitution record is complete if a wholesaler invoice remains retrievable later."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The cited rule requires the distributor name or NDC in addition to drug names and date.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Substitution records must identify what changed and the actual product source.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 2.01.20"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "substitution-record",
+    "nabpCompetencies": [
+      "2.1"
+    ]
+  },
+  {
+    "id": "V3-A2-12",
+    "conceptId": "A2-PRESCRIPTION-CHANGES",
+    "familyId": "A2-PRESCRIPTION-CHANGES",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Prescription Requirements",
+    "subtopic": "Prescription Requirements",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A technician documents a permissible clarification but omits the date of contact and the name of the person conveying the change. A pharmacist later verifies the prescription. Which statement is most accurate?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Final verification does not replace the missing clarification audit-trail elements."
+      },
+      {
+        "id": "opt2",
+        "text": "Final verification cures the missing documentation because the drug is noncontrolled."
+      },
+      {
+        "id": "opt3",
+        "text": "The clarification is void because technicians may not document clarifications."
+      },
+      {
+        "id": "opt4",
+        "text": "The clarification is valid if the prescriber's office keeps its own call record."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado requires date/contact identity information in the pharmacy record for a change or clarification.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Final verification and transaction documentation are separate duties.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 2.01.20(a)"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "clarification-record",
+    "nabpCompetencies": [
+      "2.1"
+    ]
+  },
+  {
+    "id": "V3-A2-13",
+    "conceptId": "A2-PROFESSIONAL-CONDUCT",
+    "familyId": "A2-PROFESSIONAL-CONDUCT",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Professional Conduct",
+    "subtopic": "Professional Conduct",
+    "difficulty": 2,
+    "reasoningLevel": 2,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A pharmacist observes a repeated verification shortcut that creates a continuing patient-safety risk, although no injury has yet occurred. Management starts internal remediation. Which duty remains?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The repeated dangerous practice creates a timely Board-reporting responsibility even before documented patient injury."
+      },
+      {
+        "id": "opt2",
+        "text": "The pharmacist may rely on the employer's corrective-action process unless the conduct results in patient injury."
+      },
+      {
+        "id": "opt3",
+        "text": "The pharmacist may defer Board reporting while the internal investigation remains open and patient harm has not occurred."
+      },
+      {
+        "id": "opt4",
+        "text": "The pharmacist should report after the pattern is substantiated by a second pharmacist or compliance officer."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The professional-conduct rule addresses a dangerous pattern before actual injury occurs.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Internal remediation does not erase a separate professional reporting duty.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 1.00.22"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "misconduct-reporting",
+    "nabpCompetencies": [
+      "2.5"
+    ]
+  },
+  {
+    "id": "V3-A2-14",
+    "conceptId": "A2-IMMUNIZATION",
+    "familyId": "A2-IMMUNIZATION",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Immunizations",
+    "subtopic": "Immunizations",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "A trained technician is delegated vaccine administration. The patient then asks whether a complex drug interaction creates a contraindication. Which task remains with the pharmacist?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Evaluate the clinical interaction while the technician may perform the delegated administration task."
+      },
+      {
+        "id": "opt2",
+        "text": "Allow the technician to resolve the interaction because administration authority includes clinical judgment."
+      },
+      {
+        "id": "opt3",
+        "text": "Cancel the vaccine because delegation ends when the patient asks a medication question."
+      },
+      {
+        "id": "opt4",
+        "text": "Refer the question to the prescriber because pharmacists may not assess interaction risk."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Delegated administration does not transfer pharmacist clinical judgment.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Separate a delegable physical task from a clinical decision.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 19.01.20"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "vaccine-delegation",
+    "nabpCompetencies": [
+      "2.2"
+    ]
+  },
+  {
+    "id": "V3-A2-15",
+    "conceptId": "A2-IMMUNIZATION",
+    "familyId": "A2-IMMUNIZATION",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Immunizations",
+    "subtopic": "Immunizations",
+    "difficulty": 5,
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
+    "type": "ktype",
+    "stem": "Which statements correctly describe Colorado vaccine-administration operations?\n\nI. Required administration records are retained for three years.\nII. Remaining vaccine from an off-site event may stay at the site overnight if continuously refrigerated.\nIII. A pharmacist may delegate administration to any employee who has current CPR certification.",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "I only"
+      },
+      {
+        "id": "opt2",
+        "text": "III only"
+      },
+      {
+        "id": "opt3",
+        "text": "I and II only"
+      },
+      {
+        "id": "opt4",
+        "text": "II and III only"
+      },
+      {
+        "id": "opt5",
+        "text": "I, II, and III"
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Statement I is correct. Off-site vaccine stock is returned the same day, and delegation is limited to the trained pharmacy personnel identified by the rule.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule.",
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Vaccine compliance requires checking personnel, records, and inventory handling.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 19.01.20-.50"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "vaccine-records",
+    "nabpCompetencies": [
+      "2.2"
+    ]
+  },
+  {
+    "id": "V3-A2-16",
+    "conceptId": "A2-COLLABORATIVE-PRACTICE",
+    "familyId": "A2-COLLABORATIVE-PRACTICE",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Collaborative Practice",
+    "subtopic": "Collaborative Practice",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A pharmacist has eight years of licensed practice, adequate insurance, and a current Colorado license but no PharmD. Which CPPA qualification element is satisfied by the experience pathway?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The experience can satisfy the alternative experience-based qualification for collaborative practice."
+      },
+      {
+        "id": "opt2",
+        "text": "The experience cannot substitute because a PharmD is required for collaborative practice."
+      },
+      {
+        "id": "opt3",
+        "text": "The experience qualifies when the full period occurred in hospital practice."
+      },
+      {
+        "id": "opt4",
+        "text": "The experience qualifies when the collaborating prescriber directly employs the pharmacist."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The cited rule permits a PharmD or at least five years of licensed-pharmacist experience.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "CPPA eligibility includes an alternative experience pathway.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 17.00.30"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "cppa-eligibility",
+    "nabpCompetencies": [
+      "2.1",
+      "2.2"
+    ]
+  },
+  {
+    "id": "V3-A2-17",
+    "conceptId": "A2-COLLABORATIVE-PRACTICE",
+    "familyId": "A2-COLLABORATIVE-PRACTICE",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Collaborative Practice",
+    "subtopic": "Collaborative Practice",
+    "difficulty": 2,
+    "reasoningLevel": 2,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A pharmacist has a current Colorado license, a PharmD, and adequate professional liability coverage but is not currently engaged in the practice of pharmacy. Which CPPA qualification is most directly implicated?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The rule's requirement that the pharmacist be engaged in the practice of pharmacy."
+      },
+      {
+        "id": "opt2",
+        "text": "The rule's requirement that the pharmacist have at least five years of licensed practice despite holding a PharmD."
+      },
+      {
+        "id": "opt3",
+        "text": "The rule's requirement that the pharmacist be employed by the collaborating prescriber before entering the agreement."
+      },
+      {
+        "id": "opt4",
+        "text": "The rule's requirement that the pharmacist maintain a separate controlled-substance registration for collaborative practice."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The CPPA qualification rule includes being currently engaged in the practice of pharmacy as an independent qualification.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt3": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt4": "This option applies a related legal rule or a nearby but different factual pathway."
+    },
+    "misconceptionTested": {
+      "opt2": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt3": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt4": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway."
+    },
+    "ruleToRemember": "A CPPA is not just authorization; it needs operational communication and documentation.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 17.00.00"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "cppa-structure",
+    "nabpCompetencies": [
+      "2.1",
+      "2.2"
+    ]
+  },
+  {
+    "id": "V3-A2-18",
+    "conceptId": "A2-TESTING-PRESCRIBING",
+    "familyId": "A2-TESTING-PRESCRIBING",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "2026 Law Changes",
+    "subtopic": "2026 Law Changes",
+    "difficulty": 5,
+    "reasoningLevel": 5,
+    "legalDeterminations": 4,
+    "type": "scenario",
+    "stem": "A pharmacist considers treating a 9-year-old after a qualifying test. The proposed drug is noncontrolled and FDA-labeled for the child, but the condition is outside the statutory categories. Which fact prevents use of the cited independent-prescribing pathway?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The condition falls outside the categories authorized for that age group."
+      },
+      {
+        "id": "opt2",
+        "text": "The patient is younger than twelve despite meeting the other stated conditions."
+      },
+      {
+        "id": "opt3",
+        "text": "The drug is noncontrolled rather than a controlled substance."
+      },
+      {
+        "id": "opt4",
+        "text": "The drug is being used according to FDA labeling."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The 2026 pathway is conditional on age, condition category, drug status, and other requirements.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "FDA labeling alone does not expand the statute's condition categories.",
+    "authority": [
+      {
+        "label": "HB 26-1336",
+        "url": "https://leg.colorado.gov/bills/HB26-1336",
+        "citation": "2026 Colorado pharmacy amendments"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "minor-prescribing",
+    "nabpCompetencies": [
+      "2.1",
+      "2.2"
+    ]
+  },
+  {
+    "id": "V3-A2-19",
+    "conceptId": "A2-TESTING-PRESCRIBING",
+    "familyId": "A2-TESTING-PRESCRIBING",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "2026 Law Changes",
+    "subtopic": "2026 Law Changes",
+    "difficulty": 2,
+    "reasoningLevel": 2,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A pharmacist lawfully tests and treats a 10-year-old and the parent identifies a primary care provider. Which additional duty remains relevant after treatment?",
     "answers": [
       {
         "id": "opt1",
@@ -10381,194 +4970,2602 @@ window.QUESTION_BANK = [
       },
       {
         "id": "opt2",
-        "text": "No follow-up is required because the patient is older than five."
+        "text": "Wait until the next refill before communicating with the primary care provider."
       },
       {
         "id": "opt3",
-        "text": "Report the encounter to DEA because a prescription was issued."
+        "text": "Report the treatment to DEA because the pharmacist issued a prescription."
       },
       {
         "id": "opt4",
-        "text": "Convert the encounter to a collaborative practice agreement after the prescription is dispensed."
+        "text": "Convert the encounter into a collaborative practice agreement after dispensing."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "For patients younger than 12 treated under the new pathway, the statute includes PCP notification as soon as practicable, or referral if no PCP is disclosed.",
+    "explanation": "The 2026 minor-patient pathway includes PCP notification or referral requirements.",
     "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling Colorado rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling Colorado rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling Colorado rule in this scenario."
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
     },
-    "ruleToRemember": "For minor independent-prescribing scenarios, check age, condition, drug class, FDA labeling, and PCP notification/referral.",
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Minor-patient authority includes follow-up duties, not just prescribing criteria.",
     "authority": [
       {
-        "label": "HB 26-1336 / 2026 Colorado pharmacy amendments",
+        "label": "HB 26-1336",
         "url": "https://leg.colorado.gov/bills/HB26-1336",
-        "citation": "Effective August 12, 2026"
+        "citation": "2026 Colorado pharmacy amendments"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
-    "active": true
+    "active": true,
+    "subconceptId": "minor-prescribing-followup",
+    "nabpCompetencies": [
+      "2.1",
+      "2.2"
+    ]
   },
   {
-    "id": "A2-AUDIT-064",
-    "conceptId": "co-cppa-counsel-crosscheck",
-    "familyId": "co-cppa-counsel-crosscheck",
+    "id": "V3-A2-20",
+    "conceptId": "A2-EMERGENCY-LTCF",
+    "familyId": "A2-EMERGENCY-LTCF",
     "competencyArea": 2,
     "competencyAreaName": "Pharmacist Practice",
     "jurisdiction": "Colorado",
-    "topic": "Collaborative Practice",
-    "subtopic": "Collaborative Practice",
-    "difficulty": 5,
+    "topic": "Emergency Dispensing",
+    "subtopic": "Emergency Dispensing",
+    "difficulty": 2,
+    "reasoningLevel": 2,
+    "legalDeterminations": 2,
     "type": "scenario",
-    "stem": "A pharmacist operates under a valid collaborative pharmacy practice agreement. A patient starts a new medication therapy under the agreement and does not refuse counseling. Which statement is most accurate?",
+    "stem": "A pharmacist lawfully provides an emergency chronic-maintenance supply but waits until the next afternoon to notify the practitioner in writing. Which condition was not met?",
     "answers": [
       {
         "id": "opt1",
-        "text": "The existence of the collaborative agreement does not by itself eliminate the pharmacist's Colorado new-therapy counseling duty."
+        "text": "The pharmacist failed the requirement for immediate written practitioner notification after dispensing."
       },
       {
         "id": "opt2",
-        "text": "A collaborative agreement automatically waives all patient counseling requirements."
+        "text": "The pharmacist should have reported the emergency supply to the Board instead."
       },
       {
         "id": "opt3",
-        "text": "Only the collaborating prescriber may counsel on medication initiated under the agreement."
+        "text": "The patient should have delivered written notice before receiving the emergency medication."
       },
       {
         "id": "opt4",
-        "text": "Counseling is optional whenever the pharmacist has professional liability insurance."
+        "text": "The pharmacist should have waited for a new prescription instead of dispensing."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "A collaborative-practice agreement changes the pharmacist's authorized patient-care activities but does not itself erase a separate counseling obligation that applies to new medication therapy.",
+    "explanation": "The cited emergency-dispensing pathway requires immediate written notification to the practitioner of record.",
     "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling Colorado rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling Colorado rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling Colorado rule in this scenario."
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
     },
-    "ruleToRemember": "When rules overlap, satisfy each independent legal duty unless a specific exception applies.",
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Emergency authority comes with a prompt notification obligation.",
     "authority": [
       {
         "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      }
-    ],
-    "effectiveDate": "Current",
-    "lastVerified": "2026-09-16",
-    "active": true
-  },
-  {
-    "id": "A2-AUDIT-065",
-    "conceptId": "co-cppa-insurance",
-    "familyId": "co-cppa-insurance",
-    "competencyArea": 2,
-    "jurisdiction": "Colorado",
-    "topic": "Collaborative Practice",
-    "subtopic": "Collaborative Practice",
-    "difficulty": 5,
-    "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: What minimum professional liability coverage does Colorado Rule 17.00.30 specify for a pharmacist entering collaborative practice? Which conclusion should the pharmacist accept?",
-    "answers": [
-      {
-        "id": "opt1",
-        "text": "$1 million per incident / $3 million aggregate"
-      },
-      {
-        "id": "opt2",
-        "text": "$500,000 per incident / $1 million aggregate"
-      },
-      {
-        "id": "opt3",
-        "text": "$2 million per incident / $2 million aggregate"
-      },
-      {
-        "id": "opt4",
-        "text": "$3 million per incident / $5 million aggregate"
-      }
-    ],
-    "correctAnswers": [
-      "opt1"
-    ],
-    "explanation": "The rule states coverage of at least $1,000,000 per incident and at least $3,000,000 aggregate.",
-    "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
-    },
-    "ruleToRemember": "CPPA liability minimum: $1M per incident / $3M aggregate.",
-    "authority": [
-      {
-        "label": "Colorado Board Rule 17.00.30",
-        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
+        "citation": "Rule 3.00.23"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyAreaName": "Pharmacist Practice"
+    "subconceptId": "emergency-maintenance",
+    "nabpCompetencies": [
+      "2.1"
+    ]
   },
   {
-    "id": "A2-AUDIT-066",
-    "conceptId": "co-cppa-patient",
-    "familyId": "co-cppa-patient",
+    "id": "V3-A2-21",
+    "conceptId": "A2-EMERGENCY-LTCF",
+    "familyId": "A2-EMERGENCY-LTCF",
     "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
     "jurisdiction": "Colorado",
-    "topic": "Collaborative Practice",
-    "subtopic": "Collaborative Practice",
-    "difficulty": 5,
+    "topic": "Long-Term Care",
+    "subtopic": "Long-Term Care",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
     "type": "scenario",
-    "stem": "During a Colorado pharmacy compliance review, four staff members give different conclusions about the following issue: A pharmacist wants to enter a patient-specific collaborative practice arrangement. No statewide protocol applies. Which additional relationship condition is generally required by Colorado statute/rules? Which conclusion should the pharmacist accept?",
+    "stem": "An LTCF first-dose request otherwise qualifies, but the pharmacy proposes a 96-hour noncontrolled supply and has already used the first-dose pathway once for the same order. Which defects are present?",
     "answers": [
       {
         "id": "opt1",
-        "text": "The collaborating prescriber must have an established relationship with the patient(s) served."
+        "text": "Both the quantity limit and the one-time-per-order condition are exceeded."
       },
       {
         "id": "opt2",
-        "text": "The pharmacist and patient must have had a dispensing relationship for at least one year."
+        "text": "The quantity is acceptable, but the repeat use is not acceptable."
       },
       {
         "id": "opt3",
-        "text": "The pharmacist must be employed by the prescriber."
+        "text": "The repeat use is acceptable, but the quantity is not acceptable."
       },
       {
         "id": "opt4",
-        "text": "The patient must have Medicare Part D coverage."
+        "text": "Neither condition is a problem because the drug is noncontrolled."
       }
     ],
     "correctAnswers": [
       "opt1"
     ],
-    "explanation": "Absent a statewide protocol, collaborative practice generally requires the physician/APRN collaborator to have an established relationship with the patient or patients served.",
+    "explanation": "The first-dose pathway is limited to up to 72 hours and one use per order.",
     "distractorExplanations": {
-      "opt2": "This option does not satisfy the controlling rule in this scenario.",
-      "opt3": "This option does not satisfy the controlling rule in this scenario.",
-      "opt4": "This option does not satisfy the controlling rule in this scenario."
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
     },
-    "ruleToRemember": "Without a statewide protocol, look for the collaborating prescriber's established patient relationship.",
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Check both the quantity ceiling and the frequency limit.",
     "authority": [
       {
-        "label": "Colorado Board Rule 17.00.30",
+        "label": "Colorado State Board of Pharmacy Rules",
         "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
-        "citation": "3 CCR 719-1"
-      },
-      {
-        "label": "C.R.S. \u00a7 12-280-602",
-        "url": "https://content.leg.colorado.gov/agencies/office-legislative-legal-services/2026-crs-titles-download",
-        "citation": "2026 Title 12"
+        "citation": "Rule 3.00.25"
       }
     ],
     "effectiveDate": "Current",
     "lastVerified": "2026-09-16",
     "active": true,
-    "competencyAreaName": "Pharmacist Practice"
+    "subconceptId": "ltcf-first-dose",
+    "nabpCompetencies": [
+      "2.1"
+    ]
+  },
+  {
+    "id": "V3-A2-22",
+    "conceptId": "A2-PROFESSIONAL-CONDUCT",
+    "familyId": "A2-PROFESSIONAL-CONDUCT",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Professional Conduct",
+    "subtopic": "Professional Conduct",
+    "difficulty": 5,
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
+    "type": "ktype",
+    "stem": "Which statements correctly describe Colorado's covered professional-services disclosure rule?\n\nI. When an appointment is scheduled in advance, disclosure may always wait until immediately before treatment.\nII. A change in required disclosure information during a treatment series can require an updated signed disclosure.\nIII. Certain unscheduled or last-minute encounters have timing exceptions.",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "I only"
+      },
+      {
+        "id": "opt2",
+        "text": "III only"
+      },
+      {
+        "id": "opt3",
+        "text": "I and II only"
+      },
+      {
+        "id": "opt4",
+        "text": "II and III only"
+      },
+      {
+        "id": "opt5",
+        "text": "I, II, and III"
+      }
+    ],
+    "correctAnswers": [
+      "opt4"
+    ],
+    "explanation": "Statements II and III are correct. For a scheduled appointment, the rule ties disclosure to the scheduling date rather than universally allowing delay until treatment.",
+    "distractorExplanations": {
+      "opt1": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt1": "Misapplies a nearby legal rule.",
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Disclosure analysis requires checking when the visit was scheduled, whether information changed, and whether an exception applies.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 1.00.26"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "professional-disclosure",
+    "nabpCompetencies": [
+      "2.5"
+    ]
+  },
+  {
+    "id": "V3-A2-23",
+    "conceptId": "A3-VALIDITY-AND-AUTHORITY",
+    "familyId": "A3-VALIDITY-AND-AUTHORITY",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Colorado",
+    "topic": "Prescription Transfers",
+    "subtopic": "Prescription Requirements",
+    "difficulty": 5,
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "A patient presents a paper marked 'COPY FOR REFERENCE ONLY' with refills remaining. A technician can process a lawful noncontrolled transfer. Which action is appropriate?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Use the copy as information, then obtain authority through a lawful transfer or prescriber authorization."
+      },
+      {
+        "id": "opt2",
+        "text": "Dispense directly from the copy because the remaining refills make it a valid prescription."
+      },
+      {
+        "id": "opt3",
+        "text": "Have the technician convert the copy into a new oral prescription before dispensing."
+      },
+      {
+        "id": "opt4",
+        "text": "Dispense one refill from the copy, then complete a transfer for future refills."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "A reference copy is informational and does not itself authorize dispensing.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Refill information and dispensing authority are separate concepts.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rules 2.01.40 and 2.01.50"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "reference-copy",
+    "nabpCompetencies": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "id": "V3-A3-01",
+    "conceptId": "A3-CIII-IV-LIFECYCLE",
+    "familyId": "A3-CIII-IV-LIFECYCLE",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Federal",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A Schedule IV prescription is five months old and has already been refilled five times. The patient requests another refill. Which limit controls?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The five-refill maximum has been reached even though six months have not elapsed."
+      },
+      {
+        "id": "opt2",
+        "text": "The refill is permitted because the prescription is still within six months."
+      },
+      {
+        "id": "opt3",
+        "text": "The refill is permitted if the pharmacy has not transferred the prescription."
+      },
+      {
+        "id": "opt4",
+        "text": "The refill is permitted if the prescriber originally wrote 'PRN refills'."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Schedule III-IV prescriptions must satisfy both the time limit and refill-count limit.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "The six-month clock and five-refill ceiling are independent.",
+    "authority": [
+      {
+        "label": "21 CFR 1306.22",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
+        "citation": "Federal controlled-substance rule 1306.22"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "c34-time-refill",
+    "nabpCompetencies": [
+      "3.1",
+      "3.4"
+    ]
+  },
+  {
+    "id": "V3-A3-02",
+    "conceptId": "A3-CIII-IV-LIFECYCLE",
+    "familyId": "A3-CIII-IV-LIFECYCLE",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Federal",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 5,
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "A Schedule IV prescription is four months old, has two refills remaining, and has already been transferred once between pharmacies that do not share a qualifying real-time database. The patient requests another transfer. What is the controlling issue?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The general one-time transfer authority has already been used."
+      },
+      {
+        "id": "opt2",
+        "text": "The remaining two refills authorize two additional transfers."
+      },
+      {
+        "id": "opt3",
+        "text": "The prescription age bars transfer because four months have elapsed."
+      },
+      {
+        "id": "opt4",
+        "text": "The prescription may transfer again if the original pharmacy cancels its copy."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Remaining refills do not create additional transfer authority under the general one-time rule.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Track refill count, prescription age, and transfer count separately.",
+    "authority": [
+      {
+        "label": "21 CFR 1306.25",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
+        "citation": "Federal controlled-substance rule 1306.25"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "c34-transfer",
+    "nabpCompetencies": [
+      "3.1",
+      "3.4"
+    ]
+  },
+  {
+    "id": "V3-A3-03",
+    "conceptId": "A3-CIII-IV-LIFECYCLE",
+    "familyId": "A3-CIII-IV-LIFECYCLE",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Federal",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 5,
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "Two pharmacies share the qualifying real-time online database. A Schedule III prescription is three months old, has lawful refills remaining, and was previously moved between the two pharmacies. Which fact changes the ordinary one-transfer analysis?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The shared database can permit additional transfers while lawful refill authority remains."
+      },
+      {
+        "id": "opt2",
+        "text": "The prior transfer permanently prevents future dispensing by either participating pharmacy."
+      },
+      {
+        "id": "opt3",
+        "text": "The prescription's age converts the remaining refills into noncontrolled refill authority."
+      },
+      {
+        "id": "opt4",
+        "text": "The shared database removes the underlying federal refill-count and time limitations."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The shared-database exception changes the transfer limit but not the underlying refill limits.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "A shared database affects transfer authority, not refill authority.",
+    "authority": [
+      {
+        "label": "21 CFR 1306.25",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
+        "citation": "Federal controlled-substance rule 1306.25"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "c34-shared-db",
+    "nabpCompetencies": [
+      "3.1",
+      "3.4"
+    ]
+  },
+  {
+    "id": "V3-A3-04",
+    "conceptId": "A3-CII-LIFECYCLE",
+    "familyId": "A3-CII-LIFECYCLE",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Federal",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 2,
+    "reasoningLevel": 2,
+    "legalDeterminations": 1,
+    "type": "single",
+    "stem": "A valid Schedule II prescription appears in the pharmacy system with two refills remaining. Which legal conclusion controls?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The software field does not create refill authority for Schedule II prescriptions."
+      },
+      {
+        "id": "opt2",
+        "text": "The software field authorizes the two refills if the prescription was electronic."
+      },
+      {
+        "id": "opt3",
+        "text": "The software field authorizes one refill if the prescriber confirms it verbally."
+      },
+      {
+        "id": "opt4",
+        "text": "The software field authorizes the refills until six months from the written date."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Federal law prohibits Schedule II refills.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "A software field cannot create authority that federal law does not permit.",
+    "authority": [
+      {
+        "label": "21 CFR 1306.12",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
+        "citation": "Federal controlled-substance rule 1306.12"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "cii-refill",
+    "nabpCompetencies": [
+      "3.1",
+      "3.4"
+    ]
+  },
+  {
+    "id": "V3-A3-05",
+    "conceptId": "A3-CII-LIFECYCLE",
+    "familyId": "A3-CII-LIFECYCLE",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Federal",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "A pharmacy partially fills a Schedule II prescription because it cannot supply the full quantity. The remainder arrives 80 hours later. Which pathway controls the missing balance?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The stock-shortage remainder period has expired, so the remaining quantity cannot be completed under that prescription."
+      },
+      {
+        "id": "opt2",
+        "text": "The patient-requested 30-day partial-fill pathway applies because the patient accepted the first quantity."
+      },
+      {
+        "id": "opt3",
+        "text": "The LTCF 60-day partial-fill pathway applies because the shortage was documented by the pharmacy."
+      },
+      {
+        "id": "opt4",
+        "text": "The Schedule III-IV six-month refill rule applies because part of the prescription was dispensed."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The stock-shortage pathway uses a 72-hour remainder period and is distinct from other partial-fill rules.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Identify why the Schedule II prescription was partially filled before applying a deadline.",
+    "authority": [
+      {
+        "label": "21 CFR 1306.13",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
+        "citation": "Federal controlled-substance rule 1306.13"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "cii-partial-shortage",
+    "nabpCompetencies": [
+      "3.1",
+      "3.4"
+    ]
+  },
+  {
+    "id": "V3-A3-06",
+    "conceptId": "A3-CII-LIFECYCLE",
+    "familyId": "A3-CII-LIFECYCLE",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Federal",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A patient requests a permissible partial fill of a Schedule II prescription on June 1 for reasons unrelated to stock. The patient returns July 2 for the balance. Which issue is most important?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The patient-request partial-fill pathway generally requires completion within 30 days of the written date."
+      },
+      {
+        "id": "opt2",
+        "text": "The stock-shortage partial-fill pathway controls because any partial Schedule II dispensing uses the 72-hour remainder rule."
+      },
+      {
+        "id": "opt3",
+        "text": "The LTCF partial-fill pathway controls because the prescription remains open after the initial partial dispensing."
+      },
+      {
+        "id": "opt4",
+        "text": "The multiple-prescription pathway controls when the patient requests the remainder after the first partial dispensing."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The patient/practitioner-requested pathway generally uses 30 days from the written date.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Different Schedule II partial-fill pathways have different clocks.",
+    "authority": [
+      {
+        "label": "21 CFR 1306.13",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
+        "citation": "Federal controlled-substance rule 1306.13"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "cii-partial-request",
+    "nabpCompetencies": [
+      "3.1",
+      "3.4"
+    ]
+  },
+  {
+    "id": "V3-A3-07",
+    "conceptId": "A3-CII-LIFECYCLE",
+    "familyId": "A3-CII-LIFECYCLE",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Federal",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 5,
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
+    "type": "ktype",
+    "stem": "Which statements correctly describe federal Schedule II dispensing pathways?\n\nI. A Schedule II prescription is not refillable.\nII. Multiple prescriptions can total up to a 90-day supply when all regulatory conditions are satisfied.\nIII. A stock-shortage partial fill uses a different remainder deadline from a patient-request partial fill.",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "I only"
+      },
+      {
+        "id": "opt2",
+        "text": "III only"
+      },
+      {
+        "id": "opt3",
+        "text": "I and II only"
+      },
+      {
+        "id": "opt4",
+        "text": "II and III only"
+      },
+      {
+        "id": "opt5",
+        "text": "I, II, and III"
+      }
+    ],
+    "correctAnswers": [
+      "opt5"
+    ],
+    "explanation": "All three statements are correct and describe distinct federal Schedule II pathways.",
+    "distractorExplanations": {
+      "opt1": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt1": "Misapplies a nearby legal rule.",
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Classify the legal pathway before applying its number or deadline.",
+    "authority": [
+      {
+        "label": "21 CFR 1306.12",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.12",
+        "citation": "Federal controlled-substance rule 1306.12"
+      },
+      {
+        "label": "21 CFR 1306.13",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.13",
+        "citation": "Federal controlled-substance rule 1306.13"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "cii-pathways",
+    "nabpCompetencies": [
+      "3.1",
+      "3.4"
+    ]
+  },
+  {
+    "id": "V3-A3-08",
+    "conceptId": "A3-VALIDITY-AND-AUTHORITY",
+    "familyId": "A3-VALIDITY-AND-AUTHORITY",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Federal",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "A controlled-substance prescription is complete on its face, but unresolved facts strongly suggest it was not issued for a legitimate medical purpose. The prescriber's DEA registration is active. Which principle controls?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The pharmacist's corresponding responsibility remains despite the facial completeness and active registration."
+      },
+      {
+        "id": "opt2",
+        "text": "The active DEA registration resolves the legitimacy question unless DEA has suspended the prescriber."
+      },
+      {
+        "id": "opt3",
+        "text": "The complete prescription form requires dispensing unless the patient requests a transfer."
+      },
+      {
+        "id": "opt4",
+        "text": "The pharmacist may ignore the red flags if the prescription quantity is within usual dosing limits."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Federal law places a corresponding responsibility on the pharmacist who fills a controlled-substance prescription.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Technical completeness is not the same as legal validity.",
+    "authority": [
+      {
+        "label": "21 CFR 1306.04",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.04",
+        "citation": "Federal controlled-substance rule 1306.04"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "corresponding-responsibility",
+    "nabpCompetencies": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "id": "V3-A3-09",
+    "conceptId": "A3-CONTROLLED-TRANSFER",
+    "familyId": "A3-CONTROLLED-TRANSFER",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Both",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "An unfilled electronic Schedule II prescription is transferred once between Colorado pharmacies by licensed pharmacists, remains electronic, and is not altered. Which event would most clearly defeat this initial-transfer pathway?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "A second request to transfer the same prescription again before initial dispensing."
+      },
+      {
+        "id": "opt2",
+        "text": "The receiving pharmacist assigns the prescription an internal pharmacy identifier."
+      },
+      {
+        "id": "opt3",
+        "text": "The patient asks to pick up the prescription at the receiving pharmacy."
+      },
+      {
+        "id": "opt4",
+        "text": "The receiving pharmacy documents the source pharmacy in its record."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The initial electronic controlled-substance transfer pathway is one-time and has specific electronic-preservation conditions.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Initial EPCS transfer is a distinct one-time event.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 2.01.50"
+      },
+      {
+        "label": "21 CFR 1306.25",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
+        "citation": "Federal controlled-substance rule 1306.25"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "epcs-initial-transfer",
+    "nabpCompetencies": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "V3-A3-10",
+    "conceptId": "A3-VALIDITY-AND-AUTHORITY",
+    "familyId": "A3-VALIDITY-AND-AUTHORITY",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Colorado",
+    "topic": "Prescription Transfers",
+    "subtopic": "Prescription Transfers",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A paper reference copy shows an active noncontrolled prescription with three refills. The receiving pharmacy has not contacted the prescriber or transferring pharmacy. Which action is appropriate?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Obtain dispensing authority through a lawful transfer or prescriber authorization first."
+      },
+      {
+        "id": "opt2",
+        "text": "Dispense one refill because the copy documents remaining refill authority."
+      },
+      {
+        "id": "opt3",
+        "text": "Dispense all three refills because the copy came from a licensed pharmacy."
+      },
+      {
+        "id": "opt4",
+        "text": "Convert the copy into an electronic prescription in the receiving pharmacy's system."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "A reference copy is informational only.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Information about an order is not the same as legal authority to dispense it.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rules 2.01.40 and 2.01.50"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "reference-copy",
+    "nabpCompetencies": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "id": "V3-A3-11",
+    "conceptId": "A3-LABEL-PACKAGE-INTEGRITY",
+    "familyId": "A3-LABEL-PACKAGE-INTEGRITY",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Colorado",
+    "topic": "Labeling",
+    "subtopic": "Labeling",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A pharmacy lawfully substitutes an equivalent product but prints a container label naming a different product than the drug actually placed in the container. Which rule is implicated?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The label should identify the drug actually contained in the package, subject to lawful practitioner direction."
+      },
+      {
+        "id": "opt2",
+        "text": "The label should preserve the originally prescribed product name when an equivalent product is substituted."
+      },
+      {
+        "id": "opt3",
+        "text": "The label may identify either product if the substitution record contains the dispensed product's NDC."
+      },
+      {
+        "id": "opt4",
+        "text": "The label may use the prescribed product name when the pharmacist documents therapeutic equivalence in the record."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado requires the container label to correspond to the identity of the actual drug, subject to lawful practitioner direction.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "The label should identify what is in the container.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 3.00.30"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "label-identity",
+    "nabpCompetencies": [
+      "3.5",
+      "3.6",
+      "3.7"
+    ]
+  },
+  {
+    "id": "V3-A3-12",
+    "conceptId": "A2-SPECIAL-DISPENSING",
+    "familyId": "A2-SPECIAL-DISPENSING",
+    "competencyArea": 2,
+    "competencyAreaName": "Pharmacist Practice",
+    "jurisdiction": "Colorado",
+    "topic": "Returning / Reusing Drugs",
+    "subtopic": "Returning / Reusing Drugs",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "Two undelivered prescriptions return unopened to the pharmacy: one is a controlled substance and the other is a flavored compounded product. Which is eligible under the cited return-to-stock pathway?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Neither prescription fits the cited return-to-stock pathway because one is controlled and the other is compounded/flavored."
+      },
+      {
+        "id": "opt2",
+        "text": "The controlled prescription may return to stock because the package is unopened, while the compounded prescription may not."
+      },
+      {
+        "id": "opt3",
+        "text": "The compounded prescription may return to stock because it never reached the patient, while the controlled prescription may not."
+      },
+      {
+        "id": "opt4",
+        "text": "Both prescriptions may return to stock if storage conditions, lot information, and expiration remain verifiable."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The cited Colorado pathway excludes controlled-substance prescriptions and compounded or flavored prescriptions.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Undelivered status alone does not make a prescription returnable to stock.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Return-to-stock provisions"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "return-to-stock",
+    "nabpCompetencies": [
+      "2.1",
+      "2.4"
+    ]
+  },
+  {
+    "id": "V3-A3-13",
+    "conceptId": "A3-LABEL-PACKAGE-INTEGRITY",
+    "familyId": "A3-LABEL-PACKAGE-INTEGRITY",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Colorado",
+    "topic": "Dispensing Requirements",
+    "subtopic": "Dispensing Requirements",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A lawful substitution record contains both drug names, the substitution date, and the NDC but omits a required notation identifying an intentional therapeutic-class substitution. Which defect remains?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The record lacks the required notation identifying the therapeutic-class substitution."
+      },
+      {
+        "id": "opt2",
+        "text": "The record lacks a second prescription number assigned to the substituted product."
+      },
+      {
+        "id": "opt3",
+        "text": "The record lacks a patient waiver covering counseling before the substitution occurred."
+      },
+      {
+        "id": "opt4",
+        "text": "The record lacks a new prescriber signature obtained after the substitution occurred."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Therapeutic-class substitution carries an additional notation requirement beyond ordinary substitution documentation.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "A special substitution pathway can add documentation beyond the ordinary substitution fields.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 2.01.20"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "substitution-documentation",
+    "nabpCompetencies": [
+      "3.5",
+      "3.6",
+      "3.7"
+    ]
+  },
+  {
+    "id": "V3-A3-14",
+    "conceptId": "A3-VALIDITY-AND-AUTHORITY",
+    "familyId": "A3-VALIDITY-AND-AUTHORITY",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Colorado",
+    "topic": "Prescription Requirements",
+    "subtopic": "Prescription Requirements",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A certified technician receives a new oral noncontrolled prescription and a pharmacist verifies the transcription before dispensing. Which part of the transaction is legally defective?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The technician's receipt and reduction of the new oral order."
+      },
+      {
+        "id": "opt2",
+        "text": "The pharmacist's final verification of the transcribed order."
+      },
+      {
+        "id": "opt3",
+        "text": "The noncontrolled status of the prescribed medication."
+      },
+      {
+        "id": "opt4",
+        "text": "The use of an electronic record after the telephone call."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The general oral-order rule reserves receipt/reduction to a pharmacist or intern, apart from specific exceptions.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Later verification does not retroactively authorize an intake task.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 2.00.10"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "oral-order",
+    "nabpCompetencies": [
+      "3.1",
+      "3.2"
+    ]
+  },
+  {
+    "id": "V3-A3-15",
+    "conceptId": "A3-CIII-IV-LIFECYCLE",
+    "familyId": "A3-CIII-IV-LIFECYCLE",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Federal",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A prescriber orally authorizes additional refills on an existing Schedule III prescription four months after issue. Which limit still controls the added authorization?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The added authorization remains subject to the original five-refill and six-month federal limits."
+      },
+      {
+        "id": "opt2",
+        "text": "The added authorization starts a new six-month period from the date of authorization."
+      },
+      {
+        "id": "opt3",
+        "text": "The added authorization permits five new refills beyond those already used on the prescription."
+      },
+      {
+        "id": "opt4",
+        "text": "The added authorization creates a new prescription for purposes of future transfer."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Additional refill authorization does not reset the original federal ceilings.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Added refills do not restart the original six-month clock.",
+    "authority": [
+      {
+        "label": "21 CFR 1306.22",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
+        "citation": "Federal controlled-substance rule 1306.22"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "c34-refill-added",
+    "nabpCompetencies": [
+      "3.1",
+      "3.4"
+    ]
+  },
+  {
+    "id": "V3-A3-16",
+    "conceptId": "A4-PRODUCT-SELECTION",
+    "familyId": "A4-PRODUCT-SELECTION",
+    "competencyArea": 4,
+    "competencyAreaName": "Pharmacy Operations",
+    "jurisdiction": "Colorado",
+    "topic": "Product Selection",
+    "subtopic": "Product Selection",
+    "difficulty": 4,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A prescription drug outlet located in a Colorado town does not stock the prescribed product. The only qualifying equivalent product available in stock costs more than the prescribed product. Which fact is necessary before using the statutory higher-priced substitution pathway?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The purchaser consents to receiving the higher-priced qualifying substitute that is available in stock."
+      },
+      {
+        "id": "opt2",
+        "text": "The prescriber issues a replacement order specifically naming the higher-priced qualifying substitute in stock."
+      },
+      {
+        "id": "opt3",
+        "text": "The pharmacy documents that no lower-priced qualifying substitute is available elsewhere in Colorado."
+      },
+      {
+        "id": "opt4",
+        "text": "The patient previously received the same manufacturer's qualifying substitute from the dispensing pharmacy."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado's statute contains a limited pathway allowing a higher-priced qualifying substitute at a prescription drug outlet located in a town when the purchaser consents.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt3": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt4": "This option applies a related legal rule or a nearby but different factual pathway."
+    },
+    "misconceptionTested": {
+      "opt2": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt3": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt4": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway."
+    },
+    "ruleToRemember": "The higher-priced substitution exception depends on the statutory setting and purchaser consent, not a statewide product search.",
+    "authority": [
+      {
+        "label": "C.R.S. \u00a7 12-280-125(5)",
+        "url": "https://leg.colorado.gov/laws/colorado-revised-statutes",
+        "citation": "Higher-priced substitution provision"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "product-selection-higher-price",
+    "nabpCompetencies": [
+      "4.4"
+    ]
+  },
+  {
+    "id": "V3-A3-17",
+    "conceptId": "A3-CIII-IV-LIFECYCLE",
+    "familyId": "A3-CIII-IV-LIFECYCLE",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Federal",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 5,
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "A Schedule III prescription is five months old, has one refill left, and has never been transferred. The patient requests transfer to a non-shared-database pharmacy. Which facts must be checked independently before transfer?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The remaining refill authority and the separate transfer authority."
+      },
+      {
+        "id": "opt2",
+        "text": "The remaining refill authority alone because transfer count follows refill count."
+      },
+      {
+        "id": "opt3",
+        "text": "The transfer authority alone because prescription age does not matter."
+      },
+      {
+        "id": "opt4",
+        "text": "The prescriber's DEA registration alone because it supersedes transfer limits."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Transfer validity depends on more than one independent controlled-substance rule.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Refill authority and transfer authority are separate legal questions.",
+    "authority": [
+      {
+        "label": "21 CFR 1306.22",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.22",
+        "citation": "Federal controlled-substance rule 1306.22"
+      },
+      {
+        "label": "21 CFR 1306.25",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
+        "citation": "Federal controlled-substance rule 1306.25"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "transfer-vs-refill",
+    "nabpCompetencies": [
+      "3.1",
+      "3.4"
+    ]
+  },
+  {
+    "id": "V3-A3-18",
+    "conceptId": "A3-CONTROLLED-TRANSFER",
+    "familyId": "A3-CONTROLLED-TRANSFER",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Both",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 5,
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
+    "type": "ktype",
+    "stem": "Which statements correctly describe controlled-substance transfer rules relevant in Colorado?\n\nI. The traditional Schedule III-V refill-transfer pathway is generally pharmacist-to-pharmacist.\nII. A qualifying shared real-time database can change the transfer-frequency limitation.\nIII. Initial electronic Schedule II-V transfer for dispensing is governed by the same refill-transfer event and frequency rule.",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "I only"
+      },
+      {
+        "id": "opt2",
+        "text": "III only"
+      },
+      {
+        "id": "opt3",
+        "text": "I and II only"
+      },
+      {
+        "id": "opt4",
+        "text": "II and III only"
+      },
+      {
+        "id": "opt5",
+        "text": "I, II, and III"
+      }
+    ],
+    "correctAnswers": [
+      "opt3"
+    ],
+    "explanation": "Statements I and II are correct. Initial EPCS transfer for dispensing is a distinct pathway from a later refill transfer.",
+    "distractorExplanations": {
+      "opt1": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt1": "Misapplies a nearby legal rule.",
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule.",
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Identify whether the question concerns initial electronic transfer or a refill transfer.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 2.01.50"
+      },
+      {
+        "label": "21 CFR 1306.25",
+        "url": "https://www.ecfr.gov/current/title-21/section-1306.25",
+        "citation": "Federal controlled-substance rule 1306.25"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "transfer-rules",
+    "nabpCompetencies": [
+      "3.2"
+    ]
+  },
+  {
+    "id": "V3-A3-19",
+    "conceptId": "A3-LABEL-PACKAGE-INTEGRITY",
+    "familyId": "A3-LABEL-PACKAGE-INTEGRITY",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Colorado",
+    "topic": "Dispensing Requirements",
+    "subtopic": "Dispensing Requirements",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A pharmacist discovers that a manufacturer's container seal is compromised and the product's integrity cannot be established. Which dispensing principle should control?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Do not dispense the product until integrity and suitability are established."
+      },
+      {
+        "id": "opt2",
+        "text": "Dispense the product if the expiration date has not passed."
+      },
+      {
+        "id": "opt3",
+        "text": "Dispense the product if the patient accepts the packaging condition."
+      },
+      {
+        "id": "opt4",
+        "text": "Dispense the product if the prescription label includes the lot number."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The current MPJE blueprint includes product conditions prohibiting dispensing; product integrity is a threshold issue.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "A valid prescription does not make an unsuitable product dispensable.",
+    "authority": [
+      {
+        "label": "NABP MPJE competency statement",
+        "url": "https://nabp.pharmacy/programs/examinations/mpje/competency-statements/",
+        "citation": "Area 3 product conditions prohibiting dispensing"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "packaging-integrity",
+    "nabpCompetencies": [
+      "3.5",
+      "3.6",
+      "3.7"
+    ]
+  },
+  {
+    "id": "V3-A3-20",
+    "conceptId": "A3-PDMP-DUR",
+    "familyId": "A3-PDMP-DUR",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Colorado",
+    "topic": "Dispensing Requirements",
+    "subtopic": "Dispensing Requirements",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "Before dispensing a new prescription, the pharmacist identifies a clinically significant duplication with an active therapy and cannot resolve the issue from the available record. Which legal-practice function is most directly implicated?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Prospective drug-use review before dispensing the prescription."
+      },
+      {
+        "id": "opt2",
+        "text": "Inventory reconciliation after dispensing the prescription."
+      },
+      {
+        "id": "opt3",
+        "text": "Transfer documentation before moving the prescription."
+      },
+      {
+        "id": "opt4",
+        "text": "Registration renewal before processing the prescription."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The current MPJE blueprint includes prospective DUR as part of pharmacist dispensing obligations.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Prospective DUR occurs before dispensing and can require resolution of clinically significant problems.",
+    "authority": [
+      {
+        "label": "NABP MPJE competency statement",
+        "url": "https://nabp.pharmacy/programs/examinations/mpje/competency-statements/",
+        "citation": "Area 3 prospective drug-use review"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "dur-prospective",
+    "nabpCompetencies": [
+      "3.3"
+    ]
+  },
+  {
+    "id": "V3-A4-01",
+    "conceptId": "A3-PDMP-DUR",
+    "familyId": "A3-PDMP-DUR",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Colorado",
+    "topic": "PDMP / Prospective DUR",
+    "subtopic": "PDMP / Prospective DUR",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A Colorado pharmacist maintains an active PDMP user account and wants a technician to query the program on the pharmacist's behalf. The technician works for the same prescription drug outlet and has been trained to use the program. Which additional condition is central to the delegation?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The pharmacist remains responsible for limiting the designee's access to authorized purposes and protecting confidentiality."
+      },
+      {
+        "id": "opt2",
+        "text": "The technician must hold an individual DEA registration before accessing the pharmacist's PDMP account."
+      },
+      {
+        "id": "opt3",
+        "text": "The pharmacist must obtain patient-specific prescriber approval before authorizing the technician as a designee."
+      },
+      {
+        "id": "opt4",
+        "text": "The technician may use the PDMP only when the prescription under review is itself a controlled substance."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado law permits a pharmacist to authorize qualifying designees associated with the same prescription drug outlet, but the pharmacist remains responsible for authorized use and confidentiality.",
+    "distractorExplanations": {
+      "opt2": "This choice applies a related legal rule or would fit a slightly different fact pattern.",
+      "opt3": "This choice applies a related legal rule or would fit a slightly different fact pattern.",
+      "opt4": "This choice applies a related legal rule or would fit a slightly different fact pattern."
+    },
+    "misconceptionTested": {
+      "opt2": "Applies a nearby rule to the wrong pathway or omits a required condition.",
+      "opt3": "Applies a nearby rule to the wrong pathway or omits a required condition.",
+      "opt4": "Applies a nearby rule to the wrong pathway or omits a required condition."
+    },
+    "ruleToRemember": "PDMP delegation does not transfer the pharmacist's responsibility for appropriate access and confidentiality.",
+    "authority": [
+      {
+        "label": "C.R.S. \u00a7\u00a7 12-280-403 to -404",
+        "url": "https://leg.colorado.gov/laws/colorado-revised-statutes",
+        "citation": "Colorado PDMP registration, designee, and access provisions"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "pdmp-access-use",
+    "nabpCompetencies": [
+      "3.3"
+    ]
+  },
+  {
+    "id": "V3-A4-02",
+    "conceptId": "A3-PDMP-DUR",
+    "familyId": "A3-PDMP-DUR",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Colorado",
+    "topic": "PDMP / Prospective DUR",
+    "subtopic": "PDMP / Prospective DUR",
+    "difficulty": 4,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A pharmacist is considering dispensing a noncontrolled prescription to a current patient. The pharmacist wants to review the patient's PDMP history because the medication profile raises concern about possible drug misuse. Which statement best fits Colorado's access framework?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The pharmacist or an authorized designee may query the program for the current patient within an authorized PDMP purpose."
+      },
+      {
+        "id": "opt2",
+        "text": "The pharmacist may query when the prescription under review is a controlled substance and the patient is currently receiving it."
+      },
+      {
+        "id": "opt3",
+        "text": "The pharmacist may query after the prescriber documents a diversion concern in the prescription or medical record."
+      },
+      {
+        "id": "opt4",
+        "text": "The pharmacist may query after obtaining a patient authorization specific to the PDMP review being performed."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado's PDMP access provisions permit pharmacist access concerning a current patient within the authorized statutory purposes; access is not limited solely to a controlled prescription currently being dispensed.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt3": "This option applies a related legal rule or a nearby but different factual pathway.",
+      "opt4": "This option applies a related legal rule or a nearby but different factual pathway."
+    },
+    "misconceptionTested": {
+      "opt2": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt3": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway.",
+      "opt4": "Confuses the controlling rule with a related exception, timing rule, or authorization pathway."
+    },
+    "ruleToRemember": "PDMP access turns on the authorized relationship and purpose, not simply the schedule of the prescription currently presented.",
+    "authority": [
+      {
+        "label": "C.R.S. \u00a7 12-280-404",
+        "url": "https://leg.colorado.gov/laws/colorado-revised-statutes",
+        "citation": "Colorado PDMP access provisions"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "pdmp-access-current-patient",
+    "nabpCompetencies": [
+      "3.3"
+    ]
+  },
+  {
+    "id": "V3-A4-03",
+    "conceptId": "A3-PDMP-DUR",
+    "familyId": "A3-PDMP-DUR",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Colorado",
+    "topic": "PDMP / Prospective DUR",
+    "subtopic": "PDMP / Prospective DUR",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "The PDMP flags an error in a transaction dispensed on September 8. The pharmacy can correct it. Which deadline applies under the cited correction rule?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Correct and resubmit no later than October 1."
+      },
+      {
+        "id": "opt2",
+        "text": "Correct and resubmit no later than September 16."
+      },
+      {
+        "id": "opt3",
+        "text": "Correct and resubmit no later than October 16."
+      },
+      {
+        "id": "opt4",
+        "text": "Correct and resubmit with the pharmacy's next license renewal."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Errors for transactions from the first through the 15th are corrected by the first day of the following month.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "PDMP reporting and PDMP error-correction use different calendars.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 23.00.00",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 23"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "pdmp-correction",
+    "nabpCompetencies": [
+      "3.3"
+    ]
+  },
+  {
+    "id": "V3-A4-04",
+    "conceptId": "A3-PDMP-DUR",
+    "familyId": "A3-PDMP-DUR",
+    "competencyArea": 3,
+    "competencyAreaName": "Dispensing Requirements",
+    "jurisdiction": "Colorado",
+    "topic": "PDMP / Prospective DUR",
+    "subtopic": "PDMP / Prospective DUR",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A PDMP error cannot be corrected after reasonable efforts. Which record is required under the cited Colorado rule?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "Retain written documentation describing the error notice and why correction was not possible."
+      },
+      {
+        "id": "opt2",
+        "text": "Delete the rejected transaction after documenting that correction could not be completed."
+      },
+      {
+        "id": "opt3",
+        "text": "Replace the rejected transaction with a zero report for the reporting period."
+      },
+      {
+        "id": "opt4",
+        "text": "Transfer responsibility for the unresolved error to the prescribing practitioner."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The rule requires written documentation when an error cannot be corrected.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "An uncorrectable PDMP error still needs a documented audit trail.",
+    "authority": [
+      {
+        "label": "Colorado Board Rule 23.00.00",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "3 CCR 719-1, Rule 23"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "pdmp-uncorrected",
+    "nabpCompetencies": [
+      "3.3"
+    ]
+  },
+  {
+    "id": "V3-A4-05",
+    "conceptId": "A4-CLOSURE-MANAGER-INVENTORY",
+    "familyId": "A4-CLOSURE-MANAGER-INVENTORY",
+    "competencyArea": 4,
+    "competencyAreaName": "Pharmacy Operations",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacy Operations",
+    "subtopic": "Pharmacy Operations",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A Colorado outlet closes Monday at noon. Prescription records are relocated Thursday at 1 PM, while the Board closure notice was sent Wednesday. Which requirement is violated?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The record relocation exceeded the applicable 72-hour deadline after closure."
+      },
+      {
+        "id": "opt2",
+        "text": "The Board notice exceeded the applicable 72-hour deadline after closure."
+      },
+      {
+        "id": "opt3",
+        "text": "Both closure duties exceeded their applicable 24-hour deadlines after closure."
+      },
+      {
+        "id": "opt4",
+        "text": "Neither closure duty is late because both use a 30-day period."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado's closure rule uses a 72-hour deadline for both record relocation and Board notice.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Calculate each closure duty from the time of closure.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 5.00.60"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "closure",
+    "nabpCompetencies": [
+      "4.2",
+      "4.7"
+    ]
+  },
+  {
+    "id": "V3-A4-06",
+    "conceptId": "A4-CLOSURE-MANAGER-INVENTORY",
+    "familyId": "A4-CLOSURE-MANAGER-INVENTORY",
+    "competencyArea": 4,
+    "competencyAreaName": "Pharmacy Operations",
+    "jurisdiction": "Colorado",
+    "topic": "Controlled Substances",
+    "subtopic": "Controlled Substances",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "A new pharmacist manager begins Monday morning. The manager's designee completes the controlled-substance inventory Wednesday at close of business and records the date and time. Which conclusion is most accurate?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The inventory can satisfy the manager-change rule on these facts."
+      },
+      {
+        "id": "opt2",
+        "text": "The inventory is invalid because the manager personally must perform it."
+      },
+      {
+        "id": "opt3",
+        "text": "The inventory is late because it had to occur before Monday opening."
+      },
+      {
+        "id": "opt4",
+        "text": "The inventory is premature because it should wait for the next biennial inventory."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The new manager or designee may take the inventory within 72 hours, as of opening or close of business activity.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Manager-change inventory is distinct from routine federal biennial inventory.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 5.01.10"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "manager-inventory",
+    "nabpCompetencies": [
+      "4.2",
+      "4.7"
+    ]
+  },
+  {
+    "id": "V3-A4-07",
+    "conceptId": "A4-PRACTICE-SETTING-OPS",
+    "familyId": "A4-PRACTICE-SETTING-OPS",
+    "competencyArea": 4,
+    "competencyAreaName": "Pharmacy Operations",
+    "jurisdiction": "Colorado",
+    "topic": "Telepharmacy",
+    "subtopic": "Telepharmacy",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "A central pharmacy oversees two telepharmacies. One telepharmacy has 150 continuous square feet but its refrigerated drug storage is monitored only on weekdays. Which defect remains?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The refrigerated storage is not electronically monitored each calendar day."
+      },
+      {
+        "id": "opt2",
+        "text": "The central pharmacy exceeds the permitted telepharmacy count."
+      },
+      {
+        "id": "opt3",
+        "text": "The telepharmacy principal area is below the minimum square footage."
+      },
+      {
+        "id": "opt4",
+        "text": "The telepharmacy must double its floor area when refrigerated drugs are stocked."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The central-pharmacy count and floor area are satisfied; daily electronic temperature monitoring is not.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Telepharmacy questions can require checking several independent facility rules.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 31.01.10"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "telepharmacy-ops",
+    "nabpCompetencies": [
+      "4.2",
+      "4.7"
+    ]
+  },
+  {
+    "id": "V3-A4-08",
+    "conceptId": "A4-PRACTICE-SETTING-OPS",
+    "familyId": "A4-PRACTICE-SETTING-OPS",
+    "competencyArea": 4,
+    "competencyAreaName": "Pharmacy Operations",
+    "jurisdiction": "Colorado",
+    "topic": "Central Fill / Processing",
+    "subtopic": "Central Fill / Processing",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A central-fill arrangement can identify the originating pharmacy but cannot identify which pharmacist and location performed specific dispensing functions. Which operational requirement is deficient?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The arrangement lacks the required ability to identify the pharmacist and location responsible for dispensing functions."
+      },
+      {
+        "id": "opt2",
+        "text": "The arrangement lacks a required second prescription number that distinguishes the originating and processing pharmacies."
+      },
+      {
+        "id": "opt3",
+        "text": "The arrangement lacks a required patient authorization identifying each pharmacy that performs a processing function."
+      },
+      {
+        "id": "opt4",
+        "text": "The arrangement lacks a required separate registration for each pharmacist who performs centralized processing."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Centralized processing requires records that identify location and pharmacist responsibility for dispensing functions.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Central fill depends on traceability, not just transmission of the prescription.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Central fill / centralized processing provisions"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "central-fill",
+    "nabpCompetencies": [
+      "4.3",
+      "4.6"
+    ]
+  },
+  {
+    "id": "V3-A4-09",
+    "conceptId": "A4-PRACTICE-SETTING-OPS",
+    "familyId": "A4-PRACTICE-SETTING-OPS",
+    "competencyArea": 4,
+    "competencyAreaName": "Pharmacy Operations",
+    "jurisdiction": "Colorado",
+    "topic": "Delivery / Storage",
+    "subtopic": "Delivery / Storage",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "At a patient's request, a pharmacist approves temporary storage of a filled prescription outside the dispensing area. Which operational safeguard is required?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The storage arrangement must satisfy the rule's conditions for security, environment, patient request, and pharmacist approval."
+      },
+      {
+        "id": "opt2",
+        "text": "The storage arrangement is permissible when patient request and pharmacist approval are documented, regardless of location controls."
+      },
+      {
+        "id": "opt3",
+        "text": "The storage arrangement is permissible when the prescription remains in the manufacturer's original container during temporary storage."
+      },
+      {
+        "id": "opt4",
+        "text": "The storage arrangement is permissible when the medication is noncontrolled and the patient has waived in-person counseling."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado permits delivery/temporary storage outside the dispensing area with pharmacist approval and manager-approved procedures.",
+    "distractorExplanations": {
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt4": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt4": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Alternative pickup locations require controlled procedures for security, confidentiality, counseling, and records.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 5.01.34"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "delivery-storage",
+    "nabpCompetencies": [
+      "4.3",
+      "4.6"
+    ]
+  },
+  {
+    "id": "V3-A4-10",
+    "conceptId": "A4-PRACTICE-SETTING-OPS",
+    "familyId": "A4-PRACTICE-SETTING-OPS",
+    "competencyArea": 4,
+    "competencyAreaName": "Pharmacy Operations",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacy Operations",
+    "subtopic": "Pharmacy Operations",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A pharmacy has the most recent Board inspection report filed in the manager's office but displays an older inspection report in the principal dispensing area. Which operational requirement is implicated?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The current inspection report or newer self-inspection should be displayed."
+      },
+      {
+        "id": "opt2",
+        "text": "The inspection report should remain in the pharmacist manager's office."
+      },
+      {
+        "id": "opt3",
+        "text": "The older displayed report remains acceptable until the next registration renewal."
+      },
+      {
+        "id": "opt4",
+        "text": "The display requirement applies to nonresident pharmacies and telepharmacy sites."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The rule requires display of the most recent Board inspection report or the more recent self-inspection.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Inspection documentation must be both current and displayed in the specified area.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 5.01.31"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "inspection-display",
+    "nabpCompetencies": [
+      "4.2",
+      "4.7"
+    ]
+  },
+  {
+    "id": "V3-A4-11",
+    "conceptId": "A4-COMPOUNDING-HAZARDOUS",
+    "familyId": "A4-COMPOUNDING-HAZARDOUS",
+    "competencyArea": 4,
+    "competencyAreaName": "Pharmacy Operations",
+    "jurisdiction": "Colorado",
+    "topic": "Hazardous Drugs",
+    "subtopic": "Hazardous Drugs",
+    "difficulty": 4,
+    "reasoningLevel": 4,
+    "legalDeterminations": 3,
+    "type": "scenario",
+    "stem": "A sterile compounding program prepares hazardous drugs using appropriate aseptic technique but has no written procedures for major/minor spills or generated waste. Which requirement remains unmet?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The hazardous-drug program lacks required spill and waste procedures in its policy manual."
+      },
+      {
+        "id": "opt2",
+        "text": "The program is compliant because aseptic technique replaces separate containment procedures."
+      },
+      {
+        "id": "opt3",
+        "text": "The program is compliant if spill procedures are available from the drug manufacturer."
+      },
+      {
+        "id": "opt4",
+        "text": "The program is deficient only if a spill has already occurred in the compounding area."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The hazardous-drug rule requires written spill/waste procedures in addition to aseptic technique and containment controls.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Sterility and hazardous-drug containment are overlapping but separate compliance systems.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 21.22.10"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "hazardous-compounding",
+    "nabpCompetencies": [
+      "4.2",
+      "4.5"
+    ]
+  },
+  {
+    "id": "V3-A4-12",
+    "conceptId": "A4-COMPOUNDING-HAZARDOUS",
+    "familyId": "A4-COMPOUNDING-HAZARDOUS",
+    "competencyArea": 4,
+    "competencyAreaName": "Pharmacy Operations",
+    "jurisdiction": "Colorado",
+    "topic": "Hazardous Drugs",
+    "subtopic": "Hazardous Drugs",
+    "difficulty": 5,
+    "reasoningLevel": 5,
+    "legalDeterminations": 3,
+    "type": "ktype",
+    "stem": "Which statements correctly describe Colorado hazardous-drug preparation requirements under the cited rule?\n\nI. Hazardous-drug preparation may use the same noncontainment engineering control as nonhazardous compounding when aseptic technique is adequate.\nII. Appropriate safety and containment techniques are used together with sterile aseptic technique.\nIII. Written spill and generated-waste procedures belong in the policy and procedure manual.",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "I only"
+      },
+      {
+        "id": "opt2",
+        "text": "III only"
+      },
+      {
+        "id": "opt3",
+        "text": "I and II only"
+      },
+      {
+        "id": "opt4",
+        "text": "II and III only"
+      },
+      {
+        "id": "opt5",
+        "text": "I, II, and III"
+      }
+    ],
+    "correctAnswers": [
+      "opt4"
+    ],
+    "explanation": "Statements II and III are correct. Hazardous-drug preparation requires the specified containment controls rather than relying on noncontainment equipment.",
+    "distractorExplanations": {
+      "opt1": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt2": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt3": "This option applies a related rule but does not satisfy the controlling facts.",
+      "opt5": "This option applies a related rule but does not satisfy the controlling facts."
+    },
+    "misconceptionTested": {
+      "opt1": "Misapplies a nearby legal rule.",
+      "opt2": "Misapplies a nearby legal rule.",
+      "opt3": "Misapplies a nearby legal rule.",
+      "opt5": "Misapplies a nearby legal rule."
+    },
+    "ruleToRemember": "Hazardous-drug compliance is broader than sterility alone.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 21.22.10"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "hazardous-compounding",
+    "nabpCompetencies": [
+      "4.2",
+      "4.5"
+    ]
+  },
+  {
+    "id": "V3-A4-13",
+    "conceptId": "A4-RECORDS-DISTRIBUTION",
+    "familyId": "A4-RECORDS-DISTRIBUTION",
+    "competencyArea": 4,
+    "competencyAreaName": "Pharmacy Operations",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacy Operations",
+    "subtopic": "Pharmacy Operations",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A managing prescription drug outlet distributes stock to an SPDO and records the drug, quantity, and date but not who issued the stock or who placed it into the automated device. Which defect is most direct?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The distribution record lacks required identification of the personnel handling the stock."
+      },
+      {
+        "id": "opt2",
+        "text": "The distribution record is complete because drug, quantity, and date are documented."
+      },
+      {
+        "id": "opt3",
+        "text": "The distribution record is incomplete only when the distributed drug is Schedule II."
+      },
+      {
+        "id": "opt4",
+        "text": "The distribution record is complete if month-end inventory totals reconcile correctly."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The cited SPDO rule requires detailed chain-of-custody information, including involved personnel.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Inventory movement records must identify both product and responsible people.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "SPDO distribution provisions"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "spdo-records",
+    "nabpCompetencies": [
+      "4.1",
+      "4.2"
+    ]
+  },
+  {
+    "id": "V3-A4-14",
+    "conceptId": "A4-PRACTICE-SETTING-OPS",
+    "familyId": "A4-PRACTICE-SETTING-OPS",
+    "competencyArea": 4,
+    "competencyAreaName": "Pharmacy Operations",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacy Operations",
+    "subtopic": "Pharmacy Operations",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A prescription drug outlet opens one day each week for eight continuous hours and remains closed the rest of the week. Which cited minimum-hours requirement is not met?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The outlet lacks the required two designated operating days per week."
+      },
+      {
+        "id": "opt2",
+        "text": "The outlet lacks enough total weekly hours because sixteen hours are required."
+      },
+      {
+        "id": "opt3",
+        "text": "The outlet lacks a required weekend operating period."
+      },
+      {
+        "id": "opt4",
+        "text": "The outlet lacks a required daily four-hour opening on every weekday."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "The cited rule requires at least two designated days each week and at least four continuous hours on each such day.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "The minimum-hours rule tests both number of days and continuous hours per designated day.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 5.01.40"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "operating-hours",
+    "nabpCompetencies": [
+      "4.2",
+      "4.7"
+    ]
+  },
+  {
+    "id": "V3-A1-13",
+    "conceptId": "A1-TECH-CREDENTIALS",
+    "familyId": "A1-TECH-CREDENTIALS",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacy Technicians",
+    "subtopic": "Pharmacy Technicians",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A technician completes an employer training program and has extensive pharmacy experience but does not hold certification from a nationally recognized certifying body accepted under Colorado's standard certification pathway. Which conclusion is most accurate?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The employer training alone does not satisfy the standard national-certification element."
+      },
+      {
+        "id": "opt2",
+        "text": "The employer training substitutes for national certification after one year of employment."
+      },
+      {
+        "id": "opt3",
+        "text": "The experience substitutes for national certification if the pharmacist manager approves it."
+      },
+      {
+        "id": "opt4",
+        "text": "The experience substitutes for national certification when the pharmacy is independently owned."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado's standard technician certification pathway requires qualifying national certification; employer training alone is not the same requirement.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Employer competency training and the Board's standard certification requirement are separate concepts.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 29.00.30"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "tech-national-cert",
+    "nabpCompetencies": [
+      "1.1",
+      "1.2"
+    ]
+  },
+  {
+    "id": "V3-A1-14",
+    "conceptId": "A1-TECH-CREDENTIALS",
+    "familyId": "A1-TECH-CREDENTIALS",
+    "competencyArea": 1,
+    "competencyAreaName": "Licensure / Personnel",
+    "jurisdiction": "Colorado",
+    "topic": "Pharmacist Manager / PIC",
+    "subtopic": "Pharmacist Manager / PIC",
+    "difficulty": 3,
+    "reasoningLevel": 3,
+    "legalDeterminations": 2,
+    "type": "scenario",
+    "stem": "A pharmacist manager has verified every technician's current credential but keeps the information only in a private spreadsheet that is not posted as required in the dispensing area. Which responsibility remains unmet?",
+    "answers": [
+      {
+        "id": "opt1",
+        "text": "The manager has not satisfied the cited posting requirement for technician information."
+      },
+      {
+        "id": "opt2",
+        "text": "The manager has satisfied the rule because electronic verification replaces posting."
+      },
+      {
+        "id": "opt3",
+        "text": "The manager has satisfied the rule if the spreadsheet is available during inspections."
+      },
+      {
+        "id": "opt4",
+        "text": "The manager has not satisfied the rule unless every technician also holds an intern license."
+      }
+    ],
+    "correctAnswers": [
+      "opt1"
+    ],
+    "explanation": "Colorado manager responsibilities include posting specified technician information in the compounding/dispensing area.",
+    "distractorExplanations": {
+      "opt2": "This option applies a different rule or misses a required condition.",
+      "opt3": "This option applies a different rule or misses a required condition.",
+      "opt4": "This option applies a different rule or misses a required condition."
+    },
+    "misconceptionTested": {
+      "opt2": "Misapplies the governing rule.",
+      "opt3": "Misapplies the governing rule.",
+      "opt4": "Misapplies the governing rule."
+    },
+    "ruleToRemember": "Verifying a credential and posting required information are separate operational duties.",
+    "authority": [
+      {
+        "label": "Colorado State Board of Pharmacy Rules",
+        "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=3+CCR+719-1&ruleVersionId=11936",
+        "citation": "Rule 7.00.30"
+      }
+    ],
+    "effectiveDate": "Current",
+    "lastVerified": "2026-09-16",
+    "active": true,
+    "subconceptId": "manager-tech-posting",
+    "nabpCompetencies": [
+      "1.1",
+      "1.2"
+    ]
   }
 ];
