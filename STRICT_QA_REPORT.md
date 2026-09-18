@@ -1,3 +1,5 @@
+> Historical report from the previous release. Not a validation of v5. See QUESTION_REVISION_NOTES.md.
+
 # Colorado MPJE Mastery v3 — Strict QA Report
 
 Verified through: **2026-09-16**

@@ -1,3 +1,5 @@
+> Historical report from the previous release. Not a validation of v5. See QUESTION_REVISION_NOTES.md.
+
 # Source Audit
 
 Verified through: **2026-09-16**
