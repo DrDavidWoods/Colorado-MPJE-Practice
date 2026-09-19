@@ -1,11 +1,11 @@
-const CACHE="co-mpje-mastery-v5.0.0";
+const CACHE="co-mpje-mastery-v6.0.0";
 const ASSETS=[
   "./",
   "./index.html",
-  "./styles.css?v=5.0.0",
-  "./app.js?v=5.0.0",
-  "./questions.js?v=5.0.0",
-  "./manifest.webmanifest?v=5.0.0"
+  "./styles.css?v=6.0.0",
+  "./app.js?v=6.0.0",
+  "./questions.js?v=6.0.0",
+  "./manifest.webmanifest?v=6.0.0"
 ];
 
 self.addEventListener("install", event=>{

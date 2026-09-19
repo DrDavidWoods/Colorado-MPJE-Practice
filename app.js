@@ -83,7 +83,7 @@
     $("#masteryPct").textContent = `${m}%`;
   }
 
-  function chooseQuestions(mode, topics=[]){
+  function chooseQuestions(mode, topics=[], depth="all"){
     let qs=[...BANK];
     if(mode==="colorado") qs=qs.filter(q=>q.jurisdiction==="Colorado");
     if(mode==="federal") qs=qs.filter(q=>q.jurisdiction==="Federal");
@@ -96,6 +96,8 @@
       const weakIds = new Set(conceptStats().filter(c=>c.attempts===0 || c.accuracy<75 || c.mastery<65 || c.confidentWrong>0).map(c=>c.conceptId));
       qs=qs.filter(q=>weakIds.has(q.conceptId));
     }
+    if(mode==="topic" && depth==="foundations") qs=qs.filter(q=>q.difficulty<=2);
+    if(mode==="topic" && depth==="application") qs=qs.filter(q=>q.difficulty>=3);
     // Prioritize due/missed/never-seen, then randomize within broad priority.
     qs=shuffle(qs).sort((a,b)=>{
       const pa=qProgress(a.id), pb=qProgress(b.id);
@@ -134,8 +136,8 @@
     return shuffle(chosen);
   }
 
-  function startSession(mode, topics=[]){
-    const pool=chooseQuestions(mode,topics);
+  function startSession(mode, topics=[], depth="all"){
+    const pool=chooseQuestions(mode,topics,depth);
     if(!pool.length){
       alert("No questions are available in that category yet.");
       return;
@@ -146,7 +148,7 @@
       exam=true;
       qs=chooseWeightedExam(pool);
       if(qs.length<120){
-        alert("The verified bank does not yet contain enough questions in every blueprint area for a full 120-question simulation.");
+        alert("The active bank does not yet contain enough questions in every blueprint area for a full 120-question simulation.");
         return;
       }
       minutes=150;
@@ -154,7 +156,7 @@
       qs=pool.slice(0, Math.min(30,pool.length));
     }
     session={mode,topics,questions:qs,index:0,exam,minutes,answers:{},startedAt:Date.now(),expiresAt: exam?Date.now()+minutes*60000:null};
-    $("#quizModeName").textContent = modeName(mode);
+    $("#quizModeName").textContent = modeName(mode) + (mode==="topic" && depth!=="all" ? ` · ${depth==="foundations"?"Foundations":"Application"}` : "");
     $("#timer").hidden=!exam;
     if(exam) startTimer();
     showView("quiz");
@@ -327,7 +329,7 @@
     const list=$("#authorityList"); list.innerHTML="";
     current.authority.forEach(a=>{
       const d=document.createElement("div"); d.className="authority-item";
-      d.innerHTML=`<a href="${a.url}" target="_blank" rel="noopener">${escapeHtml(a.label)}</a><small>${escapeHtml(a.citation||"")}</small><small>Question last verified: ${escapeHtml(current.lastVerified)}</small>`;
+      d.innerHTML=`<a href="${a.url}" target="_blank" rel="noopener">${escapeHtml(a.label)}</a><small>${escapeHtml(a.citation||"")}</small><small>Source checked: ${escapeHtml(current.lastVerified)}</small>`;
       list.appendChild(d);
     });
     $("#authorityDialog").showModal();
@@ -407,12 +409,13 @@
   // ---------- Topics ----------
   function buildTopicDialog(){
     const topics=[...new Set(BANK.map(q=>q.topic))].sort();
-    $("#topicOptions").innerHTML=topics.map(t=>`<label class="topic-check"><input type="checkbox" value="${escapeHtml(t)}"> <span>${escapeHtml(t)}</span></label>`).join("");
+    $("#topicOptions").innerHTML=topics.map(t=>`<label class="topic-check"><input type="checkbox" value="${escapeHtml(t)}"> <span>${escapeHtml(t)} <small>(${BANK.filter(q=>q.topic===t).length})</small></span></label>`).join("");
   }
   $("#startTopics").addEventListener("click",(e)=>{
     const topics=$$("#topicOptions input:checked").map(x=>x.value);
     if(!topics.length){ e.preventDefault(); alert("Choose at least one topic."); return; }
-    setTimeout(()=>startSession("topic",topics),0);
+    const depth=$("#practiceDepth").value;
+    setTimeout(()=>startSession("topic",topics,depth),0);
   });
 
   // ---------- Navigation ----------
@@ -437,7 +440,7 @@
     await loadState(); buildTopicDialog(); updateHome();
     if("serviceWorker" in navigator){
       try{
-        const reg=await navigator.serviceWorker.register("./service-worker.js?v=5.0.0");
+        const reg=await navigator.serviceWorker.register("./service-worker.js?v=6.0.0");
         await reg.update();
         let refreshing=false;
         navigator.serviceWorker.addEventListener("controllerchange",()=>{

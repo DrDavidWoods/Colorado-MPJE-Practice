@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#0b1f33">
   <meta name="description" content="Colorado MPJE law mastery app with source-linked questions, spaced retrieval, confidence tracking, and mobile-first design.">
   <title>Colorado MPJE Mastery</title>
-  <link rel="manifest" href="manifest.webmanifest?v=5.0.0">
-  <link rel="stylesheet" href="styles.css?v=5.0.0">
+  <link rel="manifest" href="manifest.webmanifest?v=6.0.0">
+  <link rel="stylesheet" href="styles.css?v=6.0.0">
 </head>
 <body>
   <div id="app">
@@ -84,8 +84,9 @@
         </div>
 
         <aside class="source-note">
-          <strong>Source discipline</strong>
-          <p>Questions display authority only after you answer. If a rule cannot be verified, it should not enter the active bank.</p>
+          <strong>New to pharmacy law?</strong>
+          <p>Open Topic Practice, choose Foundations, and select Compounding or another topic. Read the explanation and each answer rationale after submitting, then return for Application questions. Practice sets contain up to 30 questions and prioritize unseen items.</p>
+          <p>Authorities appear after answering. This is an expanding study bank, not a complete substitute for the cited laws and rules.</p>
         </aside>
       </section>
 
@@ -174,6 +175,8 @@
   <dialog id="topicDialog" class="dialog">
     <form method="dialog">
       <div class="dialog-head"><h2>Choose topics</h2><button value="cancel" class="icon-btn">×</button></div>
+      <label class="depth-label" for="practiceDepth">Question level</label>
+      <select id="practiceDepth"><option value="all">All levels</option><option value="foundations">Foundations — learn the rules</option><option value="application">Application — use the rules in cases</option></select>
       <div id="topicOptions" class="topic-options"></div>
       <button id="startTopics" value="default" class="action primary-action">Start practice</button>
     </form>
@@ -199,7 +202,7 @@
     </form>
   </dialog>
 
-  <script src="questions.js?v=5.0.0"></script>
-  <script src="app.js?v=5.0.0"></script>
+  <script src="questions.js?v=6.0.0"></script>
+  <script src="app.js?v=6.0.0"></script>
 </body>
 </html>

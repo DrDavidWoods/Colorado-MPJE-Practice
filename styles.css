@@ -73,3 +73,5 @@ button{cursor:pointer}
 @media(max-width:430px){.blueprint-grid{grid-template-columns:1fr}}
 
 #buildInfo{display:block;font-size:.66rem;color:#7a8997;margin-top:1px}
+
+.depth-label{display:block;font-weight:700;margin-top:14px}#practiceDepth{display:block;width:100%;min-height:48px;padding:10px;margin-top:8px;border:1px solid var(--border);border-radius:10px;background:white;color:var(--text);font:inherit;font-size:16px}.topic-options{max-height:42dvh}.dialog{max-height:90dvh;overflow:auto}
